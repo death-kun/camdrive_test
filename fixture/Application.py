@@ -1,4 +1,5 @@
 from selenium import webdriver
+import time
 
 
 
@@ -9,14 +10,45 @@ class Application:
         driver = self.driver
         driver.delete_all_cookies()
 
-    def Authorization(self):
+    def open_home_page(self):
         driver = self.driver
         driver.get('http://test.camdrive.org/')
-        login = driver.find_element_by_xpath('//input[@name="username"]')
-        login.send_keys('autotest')
-        password = driver.find_element_by_xpath('//input[@name="password"]')
-        password.send_keys('111')
 
+    def login_with_incorrect_data(self):
+        driver = self.driver
+        self.open_home_page()
+        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
+        driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
+        driver.find_element_by_id('login').click()
+        time.sleep(1)
+        warning = driver.find_element_by_xpath('//div[@id="login-box"]/div[2]/span/p')
+        # Проверка того, что указан не вернный пароль
+        if not warning:
+            raise AssertionError('Введены корректные значения')
+
+    def password_visibility_check(self):
+        driver = self.driver
+        self.open_home_page()
+        entry_field = driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
+        time.sleep(1)
+        driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
+        time.sleep(1)
+        # if entry_field.get_attribute('111'):
+        #     print('Указан пароль 111')
+        # else:
+        #     print('Пароль скрыт')
+
+    def login_with_valid_data(self):
+        driver = self.driver
+        self.open_home_page()
+        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
+        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
+        driver.find_element_by_id('login').click()
+        time.sleep(1)
+        title = driver.find_element_by_xpath('//div[@id="title"]/div')
+        # Проверка того, что указан вернный пароль
+        if not title:
+            raise AssertionError('Введены некорректные значения')
 
 
 
