@@ -31,12 +31,14 @@ class Application:
         self.open_home_page()
         entry_field = driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
         time.sleep(1)
-        driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
-        time.sleep(1)
+        eye = driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
+
         # if entry_field.get_attribute('111'):
         #     print('Указан пароль 111')
         # else:
         #     print('Пароль скрыт')
+
+
 
     def login_with_valid_data(self):
         driver = self.driver
@@ -45,11 +47,9 @@ class Application:
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
         driver.find_element_by_id('login').click()
         time.sleep(1)
-        title = driver.find_element_by_xpath('//div[@id="title"]/div')
         # Проверка того, что указан вернный пароль
-        if not title:
-            raise AssertionError('Введены некорректные значения')
-
+        if driver.find_element_by_xpath('//div[@id="title"]/div').is_displayed():
+            print('Пароль введен корректно')
 
 
     def Stop(self):
