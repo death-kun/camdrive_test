@@ -13,7 +13,7 @@ class AuthorizationHelper:
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
         driver.find_element_by_id('login').click()
         time.sleep(1)
-        # Проверка того, что указан не вернный пароль
+        #Проверка того, что указан не вернный пароль
         if driver.find_element_by_xpath(
                 '//div[@id="login-box"]/div[2]/span/p').text == "Ошибка идентификации. Проверьте правильность логина и введите Ваш пароль еще раз. Количество попыток ограничено!":
             print('Проверка того, что указан не вернный пароль. Проверка прошла успешно. Введен некорректный пароль')
@@ -26,7 +26,7 @@ class AuthorizationHelper:
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
         time.sleep(1)
         driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
-        # Проверка, что при нажатии на "глаз" видно введенный пароль
+        #Проверка, что при нажатии на "глаз" видно введенный пароль
         if driver.find_element_by_xpath('//input[@name="password"]').get_attribute('value') == "111":
             print('Проверка, что при нажатии на "глаз" видно введенный пароль. Проверка прошла успешно. Пароль - 111')
         else:
@@ -40,8 +40,7 @@ class AuthorizationHelper:
         driver.find_element_by_id('login').click()
         time.sleep(1)
         #Проверка того, что указан вернный логин и пароль
-        if driver.find_element_by_xpath('//div[@id="title"]/div').get_attribute('value') == "Онлайн":
-            driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
+        if driver.find_element_by_id('logo'):
             print('Проверка того, что указан вернный логин и пароль. Проверка прошла успешно. Логин и пароль введены корректно')
         else:
             print('Проверка того, что указан вернный логин и пароль. Проверка провалилась. Данные введены некорректно')

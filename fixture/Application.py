@@ -18,10 +18,11 @@ class Application:
     def forgot_your_password(self):
         driver = self.driver
         self.open_home_page()
+        driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
         driver.find_element_by_link_text('Забыли пароль?').click()
         time.sleep(1)
         #Проверка перехода на форму "Забыли пароль?"
-        if driver.find_element_by_xpath('//*[@id="login-box"]/div[2]').get_attribute('value') == "Восстановление пароля":
+        if driver.find_element_by_class_name("info-title").get_attribute('value') == "Восстановление пароля":
             print('Проверка перехода на форму "Забыли пароль?". Проверка прошла успешно. Открылась форма "Забыли пароль?".')
         else:
             print('Проверка перехода на форму "Забыли пароль?". Проверка провалилась. Форма "Забыли пароль?" не открылась.')
