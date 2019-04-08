@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fixture/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+            <state relative-caret-position="514">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -228,9 +228,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.04.08 at 09h 02m 40s.xml">
-      <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_camdrive_autotest - 2019.04.08 at 09h 03m 00s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
@@ -256,6 +253,9 @@
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
     <history-entry file="pytest_for_test_camdrive_autotest - 2019.04.08 at 10h 55m 16s.xml">
+      <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.04.08 at 11h 00m 25s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
   </component>
@@ -312,8 +312,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+        <state relative-caret-position="514">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
