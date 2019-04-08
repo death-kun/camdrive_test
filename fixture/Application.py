@@ -20,9 +20,10 @@ class Application:
         self.open_home_page()
         driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
         driver.find_element_by_link_text('Забыли пароль?').click()
-        time.sleep(1)
         #Проверка перехода на форму "Забыли пароль?"
-        if driver.find_element_by_class_name("info-title").get_attribute('value') == "Восстановление пароля":
+        if driver.find_element_by_css_selector('.info-title').text == "Восстановление пароля":
+        # if driver.find_element_by_xpath('/html/body/div/div/div[2]').get_attribute('text') == "Восстановление пароля":
+            time.sleep(1)
             print('Проверка перехода на форму "Забыли пароль?". Проверка прошла успешно. Открылась форма "Забыли пароль?".')
         else:
             print('Проверка перехода на форму "Забыли пароль?". Проверка провалилась. Форма "Забыли пароль?" не открылась.')
