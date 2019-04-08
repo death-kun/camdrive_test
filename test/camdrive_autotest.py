@@ -6,3 +6,6 @@ def test_log_out(app):
 
 def test_forgot_your_password(app):
     app.forgot_your_password() #Проверка перехода на форму "Забыли пароль?"
+
+def test_checkbox(app):
+    app.tick_activity() #Проверка авктивности "галочки"
