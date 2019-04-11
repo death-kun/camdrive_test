@@ -1,4 +1,3 @@
-
 import time
 
 class AuthorizationHelper:
@@ -34,13 +33,10 @@ class AuthorizationHelper:
 
     def login_with_valid_data(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
-        driver.find_element_by_id('login').click()
-        time.sleep(1)
+        self.app.login_autotest()
         #Проверка того, что указан верный логин и пароль
         if driver.find_element_by_id('logo'):
+            self.app.logout_butten()
             print('Проверка того, что указан верный логин и пароль. Проверка прошла успешно. Логин и пароль введены корректно')
         else:
             print('Проверка того, что указан верный логин и пароль. Проверка провалилась. Данные введены некорректно')

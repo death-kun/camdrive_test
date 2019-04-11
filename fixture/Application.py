@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 from fixture.Authorization import AuthorizationHelper
+from fixture.OnlinePageTestSuite import onlineTestSuite
 
 
 class Application:
@@ -10,15 +11,34 @@ class Application:
         driver = self.driver
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
+        self.OnlinePageTestSuite = onlineTestSuite(self)
+
+    def is_valid(self):
+        try:
+            self.driver.current_url
+            return True
+        except:
+            return False
 
     def open_home_page(self):
         driver = self.driver
         driver.get('http://test.camdrive.org/')
 
+    def login_autotest(self):
+        driver = self.driver
+        self.open_home_page()
+        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
+        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
+        driver.find_element_by_id('login').click()
+        time.sleep(1)
+
+    def logout_butten(self):
+        driver = self.driver
+        driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
+
     def forgot_your_password(self):
         driver = self.driver
         self.open_home_page()
-        driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
         driver.find_element_by_link_text('Забыли пароль?').click()
         #Проверка перехода на форму "Забыли пароль?"
         if driver.find_element_by_css_selector('.info-title').text == "Восстановление пароля":
@@ -39,5 +59,5 @@ class Application:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
 
 
-    def Stop(self):
+    def destroy(self):
         self.driver.quit()
