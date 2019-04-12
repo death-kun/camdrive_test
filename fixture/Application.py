@@ -9,6 +9,7 @@ class Application:
     def __init__(self):
         self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')
         driver = self.driver
+        self.driver.implicitly_wait(5)
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)

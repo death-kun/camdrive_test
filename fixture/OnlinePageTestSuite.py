@@ -63,3 +63,17 @@ class onlineTestSuite:
         self.app.login_autotest()
         time.sleep(1)
         driver.find_element_by_xpath('//li[@id="node_3073"]/a').click()
+
+    def archive_search(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        time.sleep(1)
+        # i = 0
+        # while i == 31:
+        #      driver.find_element_by_xpath('/html/body/div[1]/div[4]/div[5]/div[2]/table/tbody/tr[3]/td[1]')
+        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
+        if driver.find_element_by_css_selector('.today').click():
+            print('нашел архив')
+        else:
+            print('не ')

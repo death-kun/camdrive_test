@@ -11,7 +11,7 @@ def app(request):
         fixture = Application()
     else:
         if not fixture.is_valid():
-            fixture = Application()
+            fixture = Application() 
     return fixture
 
 @pytest.fixture(scope='session', autouse=True)
