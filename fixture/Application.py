@@ -9,7 +9,6 @@ class Application:
     def __init__(self):
         self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')
         driver = self.driver
-        self.driver.implicitly_wait(5)
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
@@ -58,6 +57,15 @@ class Application:
             print('Проверка авктивности "галочки". Проверка прошла успешно. Галочка поставилась в чекбокс')
         else:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
+
+    def get_archive(self):
+        driver = self.driver
+        list_archive = []
+        for element in driver.find_elements_by_css_selector('div.item.day'):
+            id = element.find_elements_by_class_name('item day')
+            list_archive.append(id)
+        return list_archive
+
 
 
     def destroy(self):

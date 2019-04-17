@@ -69,11 +69,8 @@ class onlineTestSuite:
         self.app.open_home_page()
         self.app.login_autotest()
         time.sleep(1)
-        # i = 0
-        # while i == 31:
-        #      driver.find_element_by_xpath('/html/body/div[1]/div[4]/div[5]/div[2]/table/tbody/tr[3]/td[1]')
+        old_archive = self.app.get_archive()
+        new_archive = self.app.get_archive()
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
-        if driver.find_element_by_css_selector('.today').click():
-            print('нашел архив')
-        else:
-            print('не ')
+        assert len(old_archive) + 1 == len(new_archive), 'Проверка провалилась'
+
