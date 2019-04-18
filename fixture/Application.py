@@ -58,14 +58,6 @@ class Application:
         else:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
 
-    def get_archive(self):
-        driver = self.driver
-        list_archive = []
-        for element in driver.find_elements_by_css_selector('div.item.day'):
-            id = element.find_elements_by_class_name('item day')
-            list_archive.append(id)
-        return list_archive
-
 
 
     def destroy(self):

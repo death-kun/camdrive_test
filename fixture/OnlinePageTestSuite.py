@@ -69,8 +69,9 @@ class onlineTestSuite:
         self.app.open_home_page()
         self.app.login_autotest()
         time.sleep(1)
-        old_archive = self.app.get_archive()
-        new_archive = self.app.get_archive()
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
-        assert len(old_archive) + 1 == len(new_archive), 'Проверка провалилась'
-
+        #Проверка, что появился новый день с архивом
+        if driver.find_element_by_css_selector('div.item.day.today').is_displayed():
+            print('Проверка, что появился новый день с архивом. Проверка прошла успешно. Найден архив за текущий день')
+        else:
+            print('Проверка, что появился новый день с архивом. Проверка провалилась. Архив за текущий день не найден')
