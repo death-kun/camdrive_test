@@ -1,4 +1,5 @@
 import time
+import random
 
 class onlineTestSuite:
 
@@ -57,13 +58,6 @@ class onlineTestSuite:
             else:
                 print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 4')
 
-    def click_name_camera(self):
-        driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
-        time.sleep(1)
-        driver.find_element_by_xpath('//li[@id="node_3073"]/a').click()
-
     def archive_search(self):
         driver = self.app.driver
         self.app.open_home_page()
@@ -75,3 +69,19 @@ class onlineTestSuite:
             print('Проверка, что появился новый день с архивом. Проверка прошла успешно. Найден архив за текущий день')
         else:
             print('Проверка, что появился новый день с архивом. Проверка провалилась. Архив за текущий день не найден')
+
+    def archive_playback(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        time.sleep(1)
+        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
+        driver.find_element_by_css_selector('div.item.day.today').click()
+        element = driver.find_elements_by_css_selector('div.time.item.constant')
+        random_element = random.choice(element)
+        random_element.click()
+        time.sleep(5)
+        if driver.find_element_by_css_selector('div.container.active').is_displayed():
+            print('Плеер с архивом открыт')
+        else:
+            print('Видео архива не найдено')

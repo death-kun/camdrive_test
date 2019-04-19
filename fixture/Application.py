@@ -13,6 +13,7 @@ class Application:
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
 
+
     def is_valid(self):
         try:
             self.driver.current_url
