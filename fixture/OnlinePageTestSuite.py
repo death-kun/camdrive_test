@@ -18,6 +18,7 @@ class onlineTestSuite:
                 self.app.logout_butten()
             else:
                 print('Проверка добавления камеры в Плеер 1. Проверка провалилась.Камера не добавлена в Плеер 1')
+                self.app.logout_butten()
 
     def add_camera_player2(self):
         driver = self.app.driver
@@ -31,6 +32,7 @@ class onlineTestSuite:
                 self.app.logout_butten()
             else:
                 print('Проверка добавления камеры в Плеер 2. Проверка провалилась. Камера не добавлена в Плеер 2')
+                self.app.logout_butten()
 
     def add_camera_player3(self):
         driver = self.app.driver
@@ -44,6 +46,7 @@ class onlineTestSuite:
                 self.app.logout_butten()
             else:
                 print('Проверка добавления камеры в Плеер 3. Проверка провалилась. Камера не добавлена в Плеер 3')
+                self.app.logout_butten()
 
     def add_camera_player4(self):
         driver = self.app.driver
@@ -57,6 +60,7 @@ class onlineTestSuite:
                 self.app.logout_butten()
             else:
                 print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 4')
+                self.app.logout_butten()
 
     def archive_search(self):
         driver = self.app.driver
@@ -67,8 +71,10 @@ class onlineTestSuite:
         #Проверка, что появился новый день с архивом
         if driver.find_element_by_css_selector('div.item.day.today').is_displayed():
             print('Проверка, что появился новый день с архивом. Проверка прошла успешно. Найден архив за текущий день')
+            self.app.logout_butten()
         else:
             print('Проверка, что появился новый день с архивом. Проверка провалилась. Архив за текущий день не найден')
+            self.app.logout_butten()
 
     def archive_playback(self):
         driver = self.app.driver
@@ -83,5 +89,7 @@ class onlineTestSuite:
         time.sleep(5)
         if driver.find_element_by_css_selector('div.container.active').is_displayed():
             print('Плеер с архивом открыт')
+            self.app.logout_butten()
         else:
             print('Видео архива не найдено')
+            self.app.logout_butten()
