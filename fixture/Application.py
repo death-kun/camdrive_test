@@ -9,10 +9,10 @@ class Application:
     def __init__(self):
         self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')
         driver = self.driver
-        self.driver.implicitly_wait(5)
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
+
 
     def is_valid(self):
         try:
@@ -58,6 +58,7 @@ class Application:
             print('Проверка авктивности "галочки". Проверка прошла успешно. Галочка поставилась в чекбокс')
         else:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
+
 
 
     def destroy(self):

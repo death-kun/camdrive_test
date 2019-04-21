@@ -1,4 +1,4 @@
-#
+
 # def test_log_in(app):
 #     app.Authorization.login_with_incorrect_data() #Проверка того, что указан не верный пароль
 #     app.Authorization.password_visibility_check() #Проверка, что при нажатии на "глаз" видно введенный пароль
@@ -15,5 +15,5 @@ def test_Online_Page(app):
     # app.OnlinePageTestSuite.add_camera_player2() #Проверка добавления камеры в Плеер 2
     # app.OnlinePageTestSuite.add_camera_player3() #Проверка добавления камеры в Плеер 3
     # app.OnlinePageTestSuite.add_camera_player4() #Проверка добавления камеры в Плеер 4
-    # app.OnlinePageTestSuite.click_name_camera()
-    app.OnlinePageTestSuite.archive_search()
+    # app.OnlinePageTestSuite.archive_search() #Проверка, что появился новый день с архивом
+    app.OnlinePageTestSuite.archive_playback()
