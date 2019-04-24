@@ -1,5 +1,7 @@
 import time
 import random
+from selenium.common.exceptions import NoSuchElementException
+
 
 class onlineTestSuite:
 
@@ -83,13 +85,26 @@ class onlineTestSuite:
         time.sleep(1)
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         driver.find_element_by_css_selector('div.item.day.today').click()
-        element = driver.find_elements_by_css_selector('div.time.item.constant')
-        random_element = random.choice(element)
-        random_element.click()
-        time.sleep(5)
-        if driver.find_element_by_css_selector('div.container.active').is_displayed():
+
+        # element = driver.find_elements_by_css_selector('div.time.item.constant')
+        # # list_archive = [element]
+        # # random_element = random.choice(list_archive)
+        # # random_element.click()
+        # click_element = driver.find_element_by_class_name("time item  constant")
+        # driver.execute_script("arguments[0].click();", click_element)
+        # javaScript = "document.querySelector('div.time.item.constant')[0].click();"
+        # driver.execute_script(javaScript)
+        # driver.find_element_by_class_name('time item  constant').click
+
+        driver.find_element_by_xpath('//*[@id="1"]/td[2]').click()
+        time.sleep(10)
+        
+        #Проверка, что открылся плеер с архивом
+        try:
+            driver.find_element_by_css_selector('div.hover-video')
             print('Плеер с архивом открыт')
             self.app.logout_butten()
-        else:
-            print('Видео архива не найдено')
+
+        except NoSuchElementException:
+            print('Плеер с архивом не открыт')
             self.app.logout_butten()
