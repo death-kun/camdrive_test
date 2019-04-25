@@ -16,4 +16,4 @@ def test_Online_Page(app):
     # app.OnlinePageTestSuite.add_camera_player3() #Проверка добавления камеры в Плеер 3
     # app.OnlinePageTestSuite.add_camera_player4() #Проверка добавления камеры в Плеер 4
     # app.OnlinePageTestSuite.archive_search() #Проверка, что появился новый день с архивом
-    app.OnlinePageTestSuite.archive_playback()
+    app.OnlinePageTestSuite.archive_playback() #Проверка, что открылся плеер с архивом

@@ -85,20 +85,10 @@ class onlineTestSuite:
         time.sleep(1)
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         driver.find_element_by_css_selector('div.item.day.today').click()
-
-        # element = driver.find_elements_by_css_selector('div.time.item.constant')
-        # # list_archive = [element]
-        # # random_element = random.choice(list_archive)
-        # # random_element.click()
-        # click_element = driver.find_element_by_class_name("time item  constant")
-        # driver.execute_script("arguments[0].click();", click_element)
-        # javaScript = "document.querySelector('div.time.item.constant')[0].click();"
-        # driver.execute_script(javaScript)
-        # driver.find_element_by_class_name('time item  constant').click
-
-        driver.find_element_by_xpath('//*[@id="1"]/td[2]').click()
-        time.sleep(10)
-        
+        click_element = driver.find_element_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')
+        time.sleep(1)
+        click_element.click()
+        time.sleep(2)
         #Проверка, что открылся плеер с архивом
         try:
             driver.find_element_by_css_selector('div.hover-video')
