@@ -71,6 +71,20 @@ class onlineTestSuite:
             print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 4')
             self.app.logout_butten()
 
+    def expand_screen_button(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        driver.find_element_by_xpath('//*[@id="screen_1"]').click()
+        time.sleep(1)
+        expand_button = driver.find_element_by_css_selector('img.iePNG ch screen-1x1')
+        expand_button.click()
+        try:
+            driver.find_element_by_css_selector('div.player player-online loader')
+            print('Плеер развернулся в Формате 1х1')
+        except NoSuchElementException:
+            print('Плеер не развернулся')
+
     def archive_search(self):
         driver = self.app.driver
         self.app.open_home_page()
