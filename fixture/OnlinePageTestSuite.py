@@ -113,6 +113,14 @@ class onlineTestSuite:
 
     def download_archive(self):
         driver = self.app.driver
+
+        #Проверка есть ли в папке Downloads файл с расширением avi и удаляет его
+        PATH = os.path.expanduser('~/Downloads')
+        filelist = glob.glob(os.path.join(PATH, "*.avi"))
+        for f in filelist:
+            os.remove(f)
+            print('Файл удален')
+
         self.app.open_home_page()
         self.app.login_autotest()
         self.open_archive()

@@ -18,3 +18,6 @@ def test_Online_Page(app):
     # app.OnlinePageTestSuite.archive_search() #Проверка, что появился новый день с архивом
     # app.OnlinePageTestSuite.archive_playback() #Проверка, что открылся плеер с архивом
     app.OnlinePageTestSuite.download_archive() #Проверка, что скачался видеофайл архива
+
+# def test_Localization(app):
+#     app.Localization_RU.local()

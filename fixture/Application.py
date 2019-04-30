@@ -2,6 +2,7 @@ from selenium import webdriver
 import time
 from fixture.Authorization import AuthorizationHelper
 from fixture.OnlinePageTestSuite import onlineTestSuite
+from fixture.Localization_RU import Local_RU
 
 
 class Application:
@@ -12,7 +13,7 @@ class Application:
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
-
+        self.Localization_RU = Local_RU(self)
 
     def is_valid(self):
         try:
