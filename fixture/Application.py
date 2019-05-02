@@ -3,6 +3,8 @@ import time
 from fixture.Authorization import AuthorizationHelper
 from fixture.OnlinePageTestSuite import onlineTestSuite
 from fixture.Localization_RU import Local_RU
+from fixture.Player import player_check
+from fixture.Archive import archive_check
 
 
 class Application:
@@ -14,6 +16,8 @@ class Application:
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
         self.Localization_RU = Local_RU(self)
+        self.Player = player_check(self)
+        self.Archive = archive_check(self)
 
     def is_valid(self):
         try:
