@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fixture/Archive.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fixture/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/camdrive_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/camdrive_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fixture/TopEditButtons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/OnlinePageTestSuite.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/OnlinePageTestSuite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/camdrive_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/camdrive_autotest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,23 +15,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+            <state relative-caret-position="272">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/Player.py">
+        <entry file="file://$PROJECT_DIR$/fixture/Authorization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -58,22 +63,24 @@
       <list>
         <option value="$PROJECT_DIR$/fixture/onlineTestSuite.py" />
         <option value="$PROJECT_DIR$/fixture/Login_to_your_account.py" />
-        <option value="$PROJECT_DIR$/fixture/Authorization.py" />
         <option value="$PROJECT_DIR$/conftest.py" />
         <option value="$PROJECT_DIR$/fixture/directoria.py" />
         <option value="$PROJECT_DIR$/fixture/Player.py" />
         <option value="$PROJECT_DIR$/fixture/OnlinePageTestSuite.py" />
         <option value="$PROJECT_DIR$/fixture/Archive.py" />
+        <option value="$PROJECT_DIR$/fixture/Camera tree change buttons.py" />
+        <option value="$PROJECT_DIR$/fixture/Top edit buttons.py" />
         <option value="$PROJECT_DIR$/fixture/Application.py" />
+        <option value="$PROJECT_DIR$/fixture/Authorization.py" />
         <option value="$PROJECT_DIR$/test/camdrive_autotest.py" />
+        <option value="$PROJECT_DIR$/fixture/TopEditButtons.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1089" />
-    <option name="height" value="722" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -222,34 +229,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 21h 39m 30s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 48m 34s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 04m 19s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 50m 02s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 06m 45s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 50m 37s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 11m 07s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 57m 04s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 35m 47s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 06m 21s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 36m 48s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 06m 37s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 37m 38s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 12m 22s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 38m 20s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 20m 50s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 38m 53s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 23m 46s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.02 at 22h 43m 18s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 24m 24s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
   </component>
@@ -257,7 +264,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21279761" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17113096" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -373,16 +380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Authorization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#1755#2214#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Archive.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -397,33 +394,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/OnlinePageTestSuite.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="40" lean-forward="true" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
+        <state relative-caret-position="336">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/OnlinePageTestSuite.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="-112">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-end-line="18" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Authorization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+        <state relative-caret-position="272">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
