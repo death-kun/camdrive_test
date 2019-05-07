@@ -6,6 +6,7 @@ from fixture.Localization_RU import Local_RU
 from fixture.Player import player_check
 from fixture.Archive import archive_check
 from fixture.TopEditButtons import top_edit_buttons
+from fixture.BottomEditButtons import bottom_edit_buttons
 
 
 class Application:
@@ -20,6 +21,8 @@ class Application:
         self.Player = player_check(self)
         self.Archive = archive_check(self)
         self.TopEditButtons = top_edit_buttons(self)
+        self.BottomEditButtons = bottom_edit_buttons(self)
+
 
     def is_valid(self):
         try:

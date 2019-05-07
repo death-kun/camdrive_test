@@ -1,0 +1,52 @@
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
+
+
+class bottom_edit_buttons:
+
+    def __init__(self, app):
+        self.app = app
+
+    def add_group(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        self.group_creation()
+        #Проверка, что добавлеена Новая группа
+        try:
+            driver.find_element_by_xpath('//*[@id="node_4191"]/a')
+            print('Проверка, что добавлеена новая группа. Проверка прошла успешно. Добавлена Новая группа')
+            self.app.logout_butten()
+        except NoSuchElementException:
+            print('Проверка, что добавлеена новая группа. Проверка провалилась. Новая группа не добавлена')
+            self.app.logout_butten()
+
+    def group_creation(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_3063"]/a').click()
+        driver.find_element_by_xpath('//*[@id="create-group"]').click()
+
+    def rename_group(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        self.group_creation()
+        driver.find_element_by_xpath('//*[contains(@title,"Новая группа")]').click()
+        driver.find_element_by_css_selector('a.jstree-clicked')
+        default_name_group = driver.find_element_by_css_selector('a.jstree-clicked').text
+        driver.find_element_by_xpath('//*[@id="rename-group"]').click()
+        time.sleep(1)
+        name_group = driver.find_element_by_css_selector('input.jstree-rename-input')
+        name_group.send_keys('test_name_group')
+        name_group.send_keys(Keys.ENTER)
+        time.sleep(1)
+        new_name_group = driver.find_element_by_css_selector('a.jstree-clicked').text
+        #Проверка, что изменилось имя Группы
+        if new_name_group != default_name_group:
+            print('Проверка, что изменилось имя группы. Проверка прошла успешно. Группа переименована')
+            driver.find_element_by_xpath('//*[@id="remove-group"]').click()
+            self.app.logout_butten()
+        else:
+            print('Проверка, что изменилось имя группы. Проверка провалилась. Группа не переименована')
+            self.app.logout_butten()

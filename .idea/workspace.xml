@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fixture/TopEditButtons.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fixture/BottomEditButtons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/camdrive_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/camdrive_test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/camdrive_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/camdrive_autotest.py" afterDir="false" />
@@ -18,17 +20,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+            <state relative-caret-position="251">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
+        <entry file="file://$PROJECT_DIR$/fixture/BottomEditButtons.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="268">
+              <caret line="47" column="93" lean-forward="true" selection-start-line="47" selection-end-line="48" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -39,8 +41,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/Authorization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+            <state relative-caret-position="102">
+              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+              <folding>
+                <element signature="e#78#92#0" />
+                <element signature="e#1015#1708#0" />
+                <element signature="e#1755#2214#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#2538#2859#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/Player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="61" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,31 +95,28 @@
       <list>
         <option value="$PROJECT_DIR$/fixture/onlineTestSuite.py" />
         <option value="$PROJECT_DIR$/fixture/Login_to_your_account.py" />
+        <option value="$PROJECT_DIR$/fixture/Authorization.py" />
         <option value="$PROJECT_DIR$/conftest.py" />
         <option value="$PROJECT_DIR$/fixture/directoria.py" />
-        <option value="$PROJECT_DIR$/fixture/Player.py" />
+        <option value="$PROJECT_DIR$/fixture/Localization_RU.py" />
         <option value="$PROJECT_DIR$/fixture/OnlinePageTestSuite.py" />
-        <option value="$PROJECT_DIR$/fixture/Archive.py" />
-        <option value="$PROJECT_DIR$/fixture/Camera tree change buttons.py" />
-        <option value="$PROJECT_DIR$/fixture/Top edit buttons.py" />
         <option value="$PROJECT_DIR$/fixture/Application.py" />
-        <option value="$PROJECT_DIR$/fixture/Authorization.py" />
         <option value="$PROJECT_DIR$/test/camdrive_autotest.py" />
-        <option value="$PROJECT_DIR$/fixture/TopEditButtons.py" />
+        <option value="$PROJECT_DIR$/fixture/BottomEditButtons.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2316" />
+    <option name="y" value="-13" />
+    <option name="width" value="1089" />
+    <option name="height" value="722" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,11 +138,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GitHub/python_training/testIPV" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fixture" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -123,6 +153,11 @@
         <option name="myModuleName" value="camdrive_test" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\python test\camdrive_test\fixture" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -229,48 +264,48 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 48m 34s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 17m 02s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 50m 02s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 17m 57s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 50m 37s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 20m 35s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 13h 57m 04s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 30m 14s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 06m 21s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 30m 43s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 06m 37s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 32m 46s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 12m 22s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 13h 48m 30s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 20m 50s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 14h 04m 45s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 23m 46s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 14h 05m 20s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.03 at 14h 24m 24s.xml">
+    <history-entry file="pytest_for_test_camdrive_autotest - 2019.05.07 at 14h 06m 48s.xml">
       <configuration name="pytest for test.camdrive_autotest" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17113096" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28490832" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7118019" visible="true" weight="0.31587562" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.39934534" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7118019" visible="true" weight="0.39165545" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.39838493" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -335,7 +370,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fixture/Login_to_your_account.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-760678065/builtins.py" />
     <entry file="file://$PROJECT_DIR$/conftest.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -373,68 +407,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1990832371/builtins.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1990832371/builtins.py" />
+    <entry file="file://$PROJECT_DIR$/fixture/OnlinePageTestSuite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="3023" column="6" selection-start-line="3023" selection-start-column="6" selection-end-line="3023" selection-end-column="6" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Archive.py">
+    <entry file="file://$PROJECT_DIR$/fixture/Localization_RU.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="61" lean-forward="true" selection-start-line="1" selection-end-line="2" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#206#905#0" />
-            <element signature="e#947#1526#0" />
-            <element signature="e#1564#2053#0" />
-            <element signature="e#2095#3317#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/OnlinePageTestSuite.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="391">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Player.py">
+    <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-end-line="18" />
+        <state relative-caret-position="183">
+          <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#2538#2859#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Authorization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" lean-forward="true" selection-start-column="11" selection-end-column="11" />
+        <state relative-caret-position="102">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#78#92#0" />
+            <element signature="e#1015#1708#0" />
+            <element signature="e#1755#2214#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/remote/errorhandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+        <state relative-caret-position="257">
+          <caret line="241" selection-start-line="241" selection-end-line="241" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/TopEditButtons.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-760678065/_lsprof.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        <state relative-caret-position="142">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="581" column="8" selection-start-line="581" selection-start-column="8" selection-end-line="581" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/BottomEditButtons.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="47" column="93" lean-forward="true" selection-start-line="47" selection-end-line="48" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

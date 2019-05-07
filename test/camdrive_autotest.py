@@ -20,14 +20,19 @@
 #     app.Player.expand_screen_button() #Проверка, что плеер открылся в формате 1х1
 #     app.Player.roll_up_screen_button() #Проверка, что плеер открылся в формате 1х4
 
-def test_Camera_Tree_Change_Buttons(app):
-    # app.TopEditButtons.add_camera_button() #Проверка, что открылась Форма добавления камеры
-    # app.TopEditButtons.remove_camera_button() #Проверка, что открылась Форма удаления камеры
-    app.TopEditButtons.camera_rename_button() #Проверка, что изменилось имя камеры
+# def test_Camera_Tree_Change_Buttons(app):
+#     app.TopEditButtons.add_camera_button() #Проверка, что открылась Форма добавления камеры
+#     app.TopEditButtons.remove_camera_button() #Проверка, что открылась Форма удаления камеры
+#     app.TopEditButtons.camera_rename_button() #Проверка, что изменилось имя камеры
+
+def test_Group_Tree_Change_Buttons(app):
+    # app.BottomEditButtons.add_group() #Проверка, что добавлеена Новая группа
+    app.BottomEditButtons.rename_group() #Проверка, что изменилось имя Группы
+
 
 # def test_Archive(app):
 #     app.Archive.archive_search() #Проверка, что появился новый день с архивом
-#     app.Archive.archive_playback() #Проверка, что открылся плеер с архивом
+#     app.Archive.archive_playback() #Проверка, что открылся плеер с архивомЫ
 #     app.Archive.download_archive() #Проверка, что скачался видеофайл архива
 
 # def test_Localization(app):
