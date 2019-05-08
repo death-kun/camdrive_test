@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 
 
+
 class bottom_edit_buttons:
 
     def __init__(self, app):
@@ -50,3 +51,23 @@ class bottom_edit_buttons:
         else:
             print('Проверка, что изменилось имя группы. Проверка провалилась. Группа не переименована')
             self.app.logout_butten()
+
+    def group_deletion(self):
+        driver = self.app.driver
+        self.app.open_home_page()
+        self.app.login_autotest()
+        self.group_creation()
+        time.sleep(3)
+        driver.find_element_by_xpath('//*[@id="remove-group"]').click()
+        time.sleep(1)
+        driver.find_element_by_xpath('//*[contains(@title,"Новая группа")]').click()
+        time.sleep(1)
+        driver.find_element_by_xpath('//*[@id="remove-group"]').click()
+        time.sleep(1)
+        #Проверка, что Новая группа удалена
+        try:
+            driver.find_element_by_xpath('//*[contains(@title,"Новая группа")]')
+            print('Проверка, что Новая группа удалена. Проверка провалилась. Новая группа не удалена.')
+        except NoSuchElementException:
+            print('Проверка, что Новая группа удалена. Проверка прошла успешно. Новая группа удалилась.')
+

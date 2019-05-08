@@ -27,8 +27,8 @@
 
 def test_Group_Tree_Change_Buttons(app):
     # app.BottomEditButtons.add_group() #Проверка, что добавлеена Новая группа
-    app.BottomEditButtons.rename_group() #Проверка, что изменилось имя Группы
-
+    # app.BottomEditButtons.rename_group() #Проверка, что изменилось имя Группы
+    app.BottomEditButtons.group_deletion() #Проверка, что Новая группа удалена
 
 # def test_Archive(app):
 #     app.Archive.archive_search() #Проверка, что появился новый день с архивом
