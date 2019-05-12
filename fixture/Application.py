@@ -7,6 +7,7 @@ from fixture.Player import player_check
 from fixture.Archive import archive_check
 from fixture.TopEditButtons import top_edit_buttons
 from fixture.BottomEditButtons import bottom_edit_buttons
+from fixture.Monitoring import monitoring
 
 
 class Application:
@@ -23,7 +24,7 @@ class Application:
         self.Archive = archive_check(self)
         self.TopEditButtons = top_edit_buttons(self)
         self.BottomEditButtons = bottom_edit_buttons(self)
-
+        self.Monitoring = monitoring(self)
 
     def is_valid(self):
         try:
@@ -70,7 +71,16 @@ class Application:
         else:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
 
-
+    def open_archive(self):
+        driver = self.driver
+        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
+        driver.find_element_by_css_selector('div.item.day.today').click()
+        time.sleep(1)
+        click_element = driver.find_element_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')
+        time.sleep(1)
+        click_element.click()
+        time.sleep(2)
 
     def destroy(self):
         self.driver.quit()

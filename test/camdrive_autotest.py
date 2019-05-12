@@ -25,10 +25,10 @@
 #     app.TopEditButtons.remove_camera_button() #Проверка, что открылась Форма удаления камеры
 #     app.TopEditButtons.camera_rename_button() #Проверка, что изменилось имя камеры
 
-def test_Group_Tree_Change_Buttons(app):
+# def test_Group_Tree_Change_Buttons(app):
     # app.BottomEditButtons.add_group() #Проверка, что добавлеена Новая группа
     # app.BottomEditButtons.rename_group() #Проверка, что изменилось имя Группы
-    app.BottomEditButtons.group_deletion() #Проверка, что Новая группа удалена
+    # app.BottomEditButtons.group_deletion() #Проверка, что Новая группа удалена
 
 # def test_Archive(app):
 #     app.Archive.archive_search() #Проверка, что появился новый день с архивом
@@ -37,3 +37,6 @@ def test_Group_Tree_Change_Buttons(app):
 
 # def test_Localization(app):
 #     app.Localization_RU.local()
+
+def test_monitoring(app):
+    app.Monitoring.archive_length_determination()
