@@ -21,16 +21,18 @@ class monitoring:
         yesterday_button = driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]')
         time.sleep(1)
         yesterday_button.click()
-        time.sleep(1)
-        for i in range(0, 119):
+        time.sleep(2)
+        for i in range(0, 120):
             time_item_button = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')[i]
             time_item_button.click()
-            time.sleep(1)
+            time.sleep(5)
+            #Проверка, что открывается каждый контейнер с архивом за Вчерашний день
             try:
                 driver.find_element_by_css_selector('div.hover-video')
-
-                print('Проверка прошла успешно' + str(i))
+                time.sleep(5)
+                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[2]')
+                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+                print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(i) + ' загрузилось')
             except NoSuchElementException:
-                print('Проверка провалилась'  + str(i))
-      
+                print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '  + str(i) + ' не загрузилось')
