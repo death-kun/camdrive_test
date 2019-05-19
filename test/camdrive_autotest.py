@@ -38,5 +38,3 @@
 # def test_Localization(app):
 #     app.Localization_RU.local()
 
-def test_monitoring(app):
-    app.Monitoring.archive_length_determination()
