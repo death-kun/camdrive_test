@@ -103,7 +103,7 @@ class monitoring:
         time.sleep(1)
         yesterday_button.click()
         time.sleep(2)
-        for i in range(0, 2):
+        for i in range(0, 120):
             time_item_button = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')[
                 i]
