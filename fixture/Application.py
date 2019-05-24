@@ -1,5 +1,6 @@
 from selenium import webdriver
 import time
+from sys import platform
 from fixture.Authorization import AuthorizationHelper
 from fixture.OnlinePageTestSuite import onlineTestSuite
 from fixture.Localization_RU import Local_RU
@@ -13,8 +14,10 @@ from fixture.Monitoring import monitoring
 class Application:
 
     def __init__(self):
-        self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
-        # self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')  # для windows
+        if platform == "linux" or platform == "linux2":
+            self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
+        elif platform == "win64":
+            self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')  # для windows
         driver = self.driver
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
