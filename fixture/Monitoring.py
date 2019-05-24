@@ -26,42 +26,42 @@ class monitoring:
         driver.find_element_by_xpath('//*[@id="node_12602"]/a').click() #камера CD630(910D)_ms6_dev
         time.sleep(2)
         self.check_camera_CD630_910D_ms6_dev()
-        # driver.find_element_by_xpath('//*[@id="node_12603"]/a').click() #камера CD320(AA06)_ms3_dev
-        # time.sleep(2)
-        # self.check_camera_CD320_AA06_ms3_dev()
-        # driver.find_element_by_xpath('//*[@id="node_11460"]/a').click() #камера CD320(AA78)_ms5_Пр_С
-        # time.sleep(2)
-        # self.check_camera_CD320_AA78_ms5()
-        # driver.find_element_by_xpath('//*[@id="node_13959"]/a').click() #камера CD310(2E51)_ms4_dev
-        # time.sleep(2)
-        # self.check_camera_CD310_2E51_ms4_dev()
-        #
-        # try:
-        #     driver.find_element_by_xpath('//*[@id="node_6830"]/a')
-        #     driver.find_element_by_xpath('//*[@id="node_14875"]/a')
-        #     driver.find_element_by_xpath('//*[@id="node_12601"]/a')
-        #     driver.find_element_by_xpath('//*[@id="node_6827"]/a')
-        #     driver.find_element_by_xpath('//*[@id="node_12597"]/a')
-        # except NoSuchElementException:
-        #     driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
-        #
-        # time.sleep(2)
-        #
-        # driver.find_element_by_xpath('//*[@id="node_6830"]/a').click() #камера CD100(E772)_ms4_ПЗ
-        # time.sleep(2)
-        # self.check_camera_CD100_E772_ms4()
-        # driver.find_element_by_xpath('//*[@id="node_14875"]/a').click() #камера N1001(3A00)_bwd
-        # time.sleep(2)
-        # self.check_camera_N1001_3A00_bwd()
-        # driver.find_element_by_xpath('//*[@id="node_12601"]/a').click() #камера CD600(EF78)_ms6_serv
-        # time.sleep(2)
-        # self.check_camera_CD600_EF78_ms6_serv()
-        # driver.find_element_by_xpath('//*[@id="node_6827"]/a').click() #камера CD100(E778)_ms5_ПЗ
-        # time.sleep(2)
-        # self.check_camera_CD100_E778_ms5()
-        # driver.find_element_by_xpath('//*[@id="node_12597"]/a').click() #камера CD100(E75A)_ms3_dev
-        # time.sleep(2)
-        # self.check_camera_CD100_E75A_ms3_dev()
+        driver.find_element_by_xpath('//*[@id="node_12603"]/a').click() #камера CD320(AA06)_ms3_dev
+        time.sleep(2)
+        self.check_camera_CD320_AA06_ms3_dev()
+        driver.find_element_by_xpath('//*[@id="node_11460"]/a').click() #камера CD320(AA78)_ms5_Пр_С
+        time.sleep(2)
+        self.check_camera_CD320_AA78_ms5()
+        driver.find_element_by_xpath('//*[@id="node_13959"]/a').click() #камера CD310(2E51)_ms4_dev
+        time.sleep(2)
+        self.check_camera_CD310_2E51_ms4_dev()
+
+        try:
+            driver.find_element_by_xpath('//*[@id="node_6830"]/a')
+            driver.find_element_by_xpath('//*[@id="node_14875"]/a')
+            driver.find_element_by_xpath('//*[@id="node_12601"]/a')
+            driver.find_element_by_xpath('//*[@id="node_6827"]/a')
+            driver.find_element_by_xpath('//*[@id="node_12597"]/a')
+        except NoSuchElementException:
+            driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
+
+        time.sleep(2)
+
+        driver.find_element_by_xpath('//*[@id="node_6830"]/a').click() #камера CD100(E772)_ms4_ПЗ
+        time.sleep(2)
+        self.check_camera_CD100_E772_ms4()
+        driver.find_element_by_xpath('//*[@id="node_14875"]/a').click() #камера N1001(3A00)_bwd
+        time.sleep(2)
+        self.check_camera_N1001_3A00_bwd()
+        driver.find_element_by_xpath('//*[@id="node_12601"]/a').click() #камера CD600(EF78)_ms6_serv
+        time.sleep(2)
+        self.check_camera_CD600_EF78_ms6_serv()
+        driver.find_element_by_xpath('//*[@id="node_6827"]/a').click() #камера CD100(E778)_ms5_ПЗ
+        time.sleep(2)
+        self.check_camera_CD100_E778_ms5()
+        driver.find_element_by_xpath('//*[@id="node_12597"]/a').click() #камера CD100(E75A)_ms3_dev
+        time.sleep(2)
+        self.check_camera_CD100_E75A_ms3_dev()
 
         self.app.logout_butten()
 
@@ -104,8 +104,8 @@ class monitoring:
         time.sleep(1)
         yesterday_button.click()
         time.sleep(2)
-        
-        for i in range(0, 1):
+
+        for i in range(0, 120):
             time_item_button = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')[
                 i]
