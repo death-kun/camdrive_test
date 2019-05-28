@@ -17,7 +17,7 @@ class Application:
         if platform == "linux" or platform == "linux2":
             self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
         elif platform == "win32":
-            self.driver = webdriver.Chrome('D:\python test\camdrive_test\chromedriver.exe')  # для windows
+            self.driver = webdriver.Chrome()  # для windows
         driver = self.driver
         driver.delete_all_cookies()
         self.Authorization = AuthorizationHelper(self)
