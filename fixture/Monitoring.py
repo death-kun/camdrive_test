@@ -128,14 +128,9 @@ class monitoring:
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                         i) + ' загрузилось. Длительность видео ' +  archive_time.strip() + ' минут.')
 
-                if platform == "linux" or platform == "linux2":
-                    f = open('/home/mikhail/PycharmProjects/camdrive_test/monitoring report.txt', 'a' )  # для ubuntu
-                elif platform == "win32":
-                    f = open('D:\python test\camdrive_test\monitoring report.txt', 'a') # для windows
-
-                f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(
-                    i) + ' загрузилось. Длительность видео ' +  archive_time.strip() + ' минут.\n')
-                f.close()
+                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(i) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
+                    f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
@@ -146,13 +141,9 @@ class monitoring:
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
                         i) + ' не загрузилось')
 
-                if platform == "linux" or platform == "linux2":
-                    f = open('/home/mikhail/PycharmProjects/camdrive_test/monitoring report.txt', 'a' )  # для ubuntu
-                elif platform == "win32":
-                    f = open('D:\python test\camdrive_test\monitoring report.txt', 'a') # для windows
-
-                f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(i) + ' не загрузилось.\n')
-                f.close()
+                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(i) + ' не загрузилось.\n')
+                    f.close()
 
     def title(self):
         driver = self.app.driver
