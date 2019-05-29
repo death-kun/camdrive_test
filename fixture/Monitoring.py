@@ -1,6 +1,10 @@
 import time
 import datetime
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class monitoring:
 
@@ -30,10 +34,10 @@ class monitoring:
         time.sleep(2)
         self.check_camera_CD320_AA06_ms3_dev()
         driver.find_element_by_xpath('//*[@id="node_11460"]/a').click() #камера CD320(AA78)_ms5_Пр_С
-        time.sleep(2)
+        time.sleep(4)
         self.check_camera_CD320_AA78_ms5()
         driver.find_element_by_xpath('//*[@id="node_13959"]/a').click() #камера CD310(2E51)_ms4_dev
-        time.sleep(2)
+        time.sleep(4)
         self.check_camera_CD310_2E51_ms4_dev()
 
         try:
@@ -103,7 +107,7 @@ class monitoring:
         yesterday_button = driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]')
         time.sleep(1)
         yesterday_button.click()
-        time.sleep(2)
+        time.sleep(4)
 
         for i in range(0, 120):
             time_item_button = driver.find_elements_by_xpath(
@@ -114,34 +118,60 @@ class monitoring:
 
             # Проверка, что открывается каждый контейнер с архивом за Вчерашний день
             try:
-                driver.find_element_by_css_selector('div.hover-video')
-                time.sleep(5)
-                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[2]')
+                WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
-                archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                archive_time = archive_duration.get_attribute('innerHTML')
 
-                camera_name = self.title()
+                try:
+                    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover")))
 
-                print(
-                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                        i) + ' загрузилось. Длительность видео ' +  archive_time.strip() + ' минут.')
+                    if driver.find_element_by_css_selector('div.seek-total-time'):
+                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
+                        archive_time = archive_duration.get_attribute('innerHTML')
 
-                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(i) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
-                    f.close()
+                        camera_name = self.title()
 
-                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+                        print(
+                            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
+                                i) + ' загрузилось. Длительность видео ' +  archive_time.strip() + ' минут.')
+
+                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                            f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(i) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
+                            f.close()
+
+                        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+                    else:
+                        camera_name = self.title()
+                        print(
+                            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
+                                i) + ' не загрузилось')
+
+                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                            f.write(
+                                '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
+                                    i) + ' не загрузилось.\n')
+                            f.close()
+
+                except TimeoutException:
+                    camera_name = self.title()
+
+                    print(
+                        'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
+                            i) + ' не отображатеся')
+
+                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                        f.write(
+                            '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
+                                i) + ' не отображатеся.\n')
+                        f.close()
 
             except NoSuchElementException:
                 camera_name = self.title()
 
                 print(
-                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                        i) + ' не загрузилось')
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(i) + ' не отобразился.')
 
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(i) + ' не загрузилось.\n')
+                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Плеер ' + str(i) + ' не отобразился.\n')
                     f.close()
 
     def title(self):
