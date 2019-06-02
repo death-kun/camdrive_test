@@ -9,6 +9,7 @@ from fixture.Archive import archive_check
 from fixture.TopEditButtons import top_edit_buttons
 from fixture.BottomEditButtons import bottom_edit_buttons
 from fixture.Monitoring import monitoring
+from fixture.Schedule import schedule
 
 
 class Application:
@@ -20,6 +21,7 @@ class Application:
             self.driver = webdriver.Chrome()  # для windows
         driver = self.driver
         driver.delete_all_cookies()
+
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
         self.Localization_RU = Local_RU(self)
@@ -28,6 +30,8 @@ class Application:
         self.TopEditButtons = top_edit_buttons(self)
         self.BottomEditButtons = bottom_edit_buttons(self)
         self.Monitoring = monitoring(self)
+        self.Schedule = schedule(self)
+
 
     def is_valid(self):
         try:
@@ -84,6 +88,22 @@ class Application:
         time.sleep(1)
         click_element.click()
         time.sleep(2)
+
+    def first_tree(self):
+        driver = self.driver
+        driver.find_element_by_xpath('//*[@id="node_12602"]/a')
+        driver.find_element_by_xpath('//*[@id="node_12603"]/a')
+        driver.find_element_by_xpath('//*[@id="node_11460"]/a')
+        driver.find_element_by_xpath('//*[@id="node_13959"]/a')
+
+
+    def second_tree(self):
+        driver = self.driver
+        driver.find_element_by_xpath('//*[@id="node_6830"]/a')
+        driver.find_element_by_xpath('//*[@id="node_14875"]/a')
+        driver.find_element_by_xpath('//*[@id="node_12601"]/a')
+        driver.find_element_by_xpath('//*[@id="node_6827"]/a')
+        driver.find_element_by_xpath('//*[@id="node_12597"]/a')
 
     def destroy(self):
         self.driver.quit()

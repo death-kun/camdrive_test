@@ -14,61 +14,109 @@ class monitoring:
     def detection_of_archive(self):
         driver = self.app.driver
         self.login_monitoring()
+        self.app.Schedule.open_schedule()
+        time.sleep(5)
+        self.app.Schedule.item_time()
+        time.sleep(5)
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         time.sleep(3)
 
-        try:
-            driver.find_element_by_xpath('//*[@id="node_12602"]/a')
-            driver.find_element_by_xpath('//*[@id="node_12603"]/a')
-            driver.find_element_by_xpath('//*[@id="node_11460"]/a')
-            driver.find_element_by_xpath('//*[@id="node_13959"]/a')
-        except NoSuchElementException:
-            driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+        self.check_first_tree()
 
         time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="node_12602"]/a').click() #камера CD630(910D)_ms6_dev
+        self.click_CD630_910D_ms6_dev()
         time.sleep(2)
         self.check_camera_CD630_910D_ms6_dev()
-        driver.find_element_by_xpath('//*[@id="node_12603"]/a').click() #камера CD320(AA06)_ms3_dev
+
+        self.click_CD320_AA06_ms3_dev()
         time.sleep(2)
         self.check_camera_CD320_AA06_ms3_dev()
-        driver.find_element_by_xpath('//*[@id="node_11460"]/a').click() #камера CD320(AA78)_ms5_Пр_С
+
+        self.click_CD320_AA78_ms5()
         time.sleep(4)
         self.check_camera_CD320_AA78_ms5()
-        driver.find_element_by_xpath('//*[@id="node_13959"]/a').click() #камера CD310(2E51)_ms4_dev
+
+        self.click_CD310_2E51_ms4_dev()
         time.sleep(4)
         self.check_camera_CD310_2E51_ms4_dev()
 
-        try:
-            driver.find_element_by_xpath('//*[@id="node_6830"]/a')
-            driver.find_element_by_xpath('//*[@id="node_14875"]/a')
-            driver.find_element_by_xpath('//*[@id="node_12601"]/a')
-            driver.find_element_by_xpath('//*[@id="node_6827"]/a')
-            driver.find_element_by_xpath('//*[@id="node_12597"]/a')
-        except NoSuchElementException:
-            driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
+
+        self.check_second_tree()
 
         time.sleep(2)
 
-        driver.find_element_by_xpath('//*[@id="node_6830"]/a').click() #камера CD100(E772)_ms4_ПЗ
+        self.click_CD100_E772_ms4()
         time.sleep(2)
         self.check_camera_CD100_E772_ms4()
-        driver.find_element_by_xpath('//*[@id="node_14875"]/a').click() #камера N1001(3A00)_bwd
+
+        self.click_N1001_3A00_bwd()
         time.sleep(2)
         self.check_camera_N1001_3A00_bwd()
-        driver.find_element_by_xpath('//*[@id="node_12601"]/a').click() #камера CD600(EF78)_ms6_serv
+
+        self.click_CD600_EF78_ms6_serv()
         time.sleep(2)
         self.check_camera_CD600_EF78_ms6_serv()
-        driver.find_element_by_xpath('//*[@id="node_6827"]/a').click() #камера CD100(E778)_ms5_ПЗ
+
+        self.click_CD100_E778_ms5()
         time.sleep(2)
         self.check_camera_CD100_E778_ms5()
-        driver.find_element_by_xpath('//*[@id="node_12597"]/a').click() #камера CD100(E75A)_ms3_dev
+
+        self.click_CD100_E75A_ms3_dev()
         time.sleep(2)
         self.check_camera_CD100_E75A_ms3_dev()
 
         self.app.logout_butten()
 
+    def click_CD100_E75A_ms3_dev(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_12597"]/a').click()  # камера CD100(E75A)_ms3_dev
+
+    def click_CD100_E778_ms5(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_6827"]/a').click()  # камера CD100(E778)_ms5_ПЗ
+
+    def click_CD600_EF78_ms6_serv(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_12601"]/a').click()  # камера CD600(EF78)_ms6_serv
+
+    def click_N1001_3A00_bwd(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_14875"]/a').click()  # камера N1001(3A00)_bwd
+
+    def click_CD100_E772_ms4(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_6830"]/a').click()  # камера CD100(E772)_ms4_ПЗ
+
+    def click_CD310_2E51_ms4_dev(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_13959"]/a').click()  # камера CD310(2E51)_ms4_dev
+
+    def click_CD320_AA78_ms5(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_11460"]/a').click()  # камера CD320(AA78)_ms5_Пр_С
+
+    def click_CD320_AA06_ms3_dev(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_12603"]/a').click()  # камера CD320(AA06)_ms3_dev
+
+    def click_CD630_910D_ms6_dev(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="node_12602"]/a').click()  # камера CD630(910D)_ms6_dev
+
+    def check_second_tree(self):
+        driver = self.app.driver
+        try:
+            self.app.second_tree()
+        except NoSuchElementException:
+            driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
+
+    def check_first_tree(self):
+        driver = self.app.driver
+        try:
+            self.app.first_tree()
+        except NoSuchElementException:
+            driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
 
     def check_camera_CD630_910D_ms6_dev(self):
         self.archive_check()
@@ -104,17 +152,31 @@ class monitoring:
         cur_day = now.day
         strg_today = now.strftime('%B %d, %Y')
         yesterday = str(cur_day - 1)
-        yesterday_button = driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]')
-        time.sleep(1)
-        yesterday_button.click()
+        driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]').click()
         time.sleep(4)
 
-        for i in range(0, 120):
-            time_item_button = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')[
-                i]
+        self.item_time_0 = driver.find_element_by_xpath('//*[@id="1"]')
+        for i in range(0, 5, 1):
+            time_item_button = self.item_time_0.find_elements_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
+            element_item_time_0 = self.element_0()
+
+            assert element_item_time_0 == self.app.Schedule.element_time_0, 'Расписание не совпадает'
+
             time_item_button.click()
-            time.sleep(5)
+        #
+        # item_time_1 = driver.find_element_by_xpath('//*[@id="2"]')
+        # for i in range(0, 5, 1):
+        #     item_time_1_button = item_time_1.find_elements_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
+        #     item_time_1_button.click()
+
+        # for i in range(0, 120, 1):
+        #     time_item_button = driver.find_elements_by_xpath(
+        #         '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+        #         i]
+        #     try:
+        #         time_item_button.click()
+        #     except:
+        #         print('Нет архива')
 
             # Проверка, что открывается каждый контейнер с архивом за Вчерашний день
             try:
@@ -151,18 +213,23 @@ class monitoring:
                                     i) + ' не загрузилось.\n')
                             f.close()
 
+                        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+
                 except TimeoutException:
                     camera_name = self.title()
 
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                            i) + ' не отображатеся')
+                            i) + ' не отображается')
 
                     with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                         f.write(
                             '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
-                                i) + ' не отображатеся.\n')
+                                i) + ' не отображается.\n')
                         f.close()
+
+                    driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+
 
             except NoSuchElementException:
                 camera_name = self.title()
@@ -173,6 +240,18 @@ class monitoring:
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Плеер ' + str(i) + ' не отобразился.\n')
                     f.close()
+
+    def element_0(self):
+        item_time_0 = self.item_time_0
+        if item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.constant'):
+            self.element_item_time_0 = 1
+        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.button'):
+            self.element_item_time_0 = 2
+        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.detection'):
+            self.element_item_time_0 = 3
+        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.item.empty'):
+            self.element_item_time_0 = 4
+        return self.element_item_time_0
 
     def title(self):
         driver = self.app.driver
