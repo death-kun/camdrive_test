@@ -21,25 +21,25 @@ class monitoring:
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         time.sleep(3)
 
-        self.check_first_tree()
-
-        time.sleep(2)
-
-        self.click_CD630_910D_ms6_dev()
-        time.sleep(2)
-        self.check_camera_CD630_910D_ms6_dev()
-
-        self.click_CD320_AA06_ms3_dev()
-        time.sleep(2)
-        self.check_camera_CD320_AA06_ms3_dev()
-
-        self.click_CD320_AA78_ms5()
-        time.sleep(4)
-        self.check_camera_CD320_AA78_ms5()
-
-        self.click_CD310_2E51_ms4_dev()
-        time.sleep(4)
-        self.check_camera_CD310_2E51_ms4_dev()
+        # self.check_first_tree()
+        #
+        # time.sleep(2)
+        #
+        # self.click_CD630_910D_ms6_dev()
+        # time.sleep(2)
+        # self.check_camera_CD630_910D_ms6_dev()
+        #
+        # self.click_CD320_AA06_ms3_dev()
+        # time.sleep(2)
+        # self.check_camera_CD320_AA06_ms3_dev()
+        #
+        # self.click_CD320_AA78_ms5()
+        # time.sleep(4)
+        # self.check_camera_CD320_AA78_ms5()
+        #
+        # self.click_CD310_2E51_ms4_dev()
+        # time.sleep(4)
+        # self.check_camera_CD310_2E51_ms4_dev()
 
 
         self.check_second_tree()
@@ -155,101 +155,88 @@ class monitoring:
         driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]').click()
         time.sleep(4)
 
-        self.item_time_0 = driver.find_element_by_xpath('//*[@id="1"]')
-        for i in range(0, 5, 1):
-            time_item_button = self.item_time_0.find_elements_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
-            element_item_time_0 = self.element_0()
+        for y in range(1, 25, 1):
+            self.item_element_y = driver.find_element_by_xpath('//*[@id="'+ str(y) +'"]')
+            for i in range(0, 120, 1):
+                self.time_item_button = driver.find_elements_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
+                element_item_time_0 = self.element_0()
 
-            assert element_item_time_0 == self.app.Schedule.element_time_0, 'Расписание не совпадает'
+                assert element_item_time_0 == self.app.Schedule.element_time_0, 'Расписание не совпадает'
 
-            time_item_button.click()
-        #
-        # item_time_1 = driver.find_element_by_xpath('//*[@id="2"]')
-        # for i in range(0, 5, 1):
-        #     item_time_1_button = item_time_1.find_elements_by_xpath('//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
-        #     item_time_1_button.click()
-
-        # for i in range(0, 120, 1):
-        #     time_item_button = driver.find_elements_by_xpath(
-        #         '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
-        #         i]
-        #     try:
-        #         time_item_button.click()
-        #     except:
-        #         print('Нет архива')
+                self.time_item_button.click()
 
             # Проверка, что открывается каждый контейнер с архивом за Вчерашний день
-            try:
-                WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
-
-
                 try:
-                    WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover")))
+                    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
-                    if driver.find_element_by_css_selector('div.seek-total-time'):
-                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                        archive_time = archive_duration.get_attribute('innerHTML')
 
-                        camera_name = self.title()
+                    try:
+                        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover")))
 
-                        print(
+                        if driver.find_element_by_css_selector('div.seek-total-time'):
+                            archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
+                            archive_time = archive_duration.get_attribute('innerHTML')
+
+                            camera_name = self.title()
+
+                            print(
                             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                                 i) + ' загрузилось. Длительность видео ' +  archive_time.strip() + ' минут.')
 
-                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                            f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(i) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
-                            f.close()
+                            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                                f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(i) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
+                                f.close()
 
-                        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-                    else:
-                        camera_name = self.title()
-                        print(
+                            driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+                        else:
+                            camera_name = self.title()
+                            print(
                             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
                                 i) + ' не загрузилось')
 
-                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                            f.write(
+                            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                                f.write(
                                 '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
                                     i) + ' не загрузилось.\n')
+                                f.close()
+
+                            driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+
+                    except TimeoutException:
+                        camera_name = self.title()
+
+                        print(
+                        'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
+                            i) + ' не отображается')
+
+                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                            f.write(
+                            '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
+                                i) + ' не отображается.\n')
                             f.close()
 
                         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
-                except TimeoutException:
+
+                except NoSuchElementException:
                     camera_name = self.title()
 
                     print(
-                        'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                            i) + ' не отображается')
-
-                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                            '"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
-                                i) + ' не отображается.\n')
-                        f.close()
-
-                    driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-
-
-            except NoSuchElementException:
-                camera_name = self.title()
-
-                print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(i) + ' не отобразился.')
 
-                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                    f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Плеер ' + str(i) + ' не отобразился.\n')
-                    f.close()
+                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                        f.write('"' + strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Плеер ' + str(i) + ' не отобразился.\n')
+                        f.close()
 
     def element_0(self):
-        item_time_0 = self.item_time_0
-        if item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.constant'):
+        item_time_0 = self.item_element_y
+        if item_time_0.find_element_by_css_selector('div.time.item.constant'):
             self.element_item_time_0 = 1
-        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.button'):
+        elif item_time_0.find_element_by_css_selector('div.time.item.button'):
             self.element_item_time_0 = 2
-        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.time.item.detection'):
+        elif item_time_0.find_element_by_css_selector('div.time.item.detection'):
             self.element_item_time_0 = 3
-        elif item_time_0.find_element(By.CSS_SELECTOR, 'div.item.empty'):
+        elif item_time_0.find_element_by_css_selector('div.item.empty'):
             self.element_item_time_0 = 4
         return self.element_item_time_0
 

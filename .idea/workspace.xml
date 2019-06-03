@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fixture/Schedule.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/Monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/monitoring report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/monitoring report.txt" afterDir="false" />
     </list>
@@ -25,22 +22,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fixture/Monitoring.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="150" column="37" lean-forward="true" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/Schedule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
+            <state relative-caret-position="335">
               <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -49,13 +34,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/Application.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fixture/Monitoring.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="359">
+              <caret line="166" selection-start-line="166" selection-end-line="166" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,11 +84,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="197" />
-    <option name="y" value="183" />
-    <option name="width" value="1089" />
-    <option name="height" value="722" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -278,34 +263,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 22h 54m 44s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 10h 38m 46s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 22h 55m 35s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 10h 47m 14s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 22h 58m 26s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 10h 57m 38s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 22h 59m 02s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 11h 10m 24s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 22h 59m 38s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 12h 58m 19s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 23h 01m 06s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 17h 42m 31s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 23h 02m 20s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 17h 45m 20s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 23h 02m 51s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 17h 48m 31s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 23h 06m 31s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 17h 51m 44s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.02 at 23h 08m 35s.xml">
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.03 at 17h 56m 06s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
   </component>
@@ -525,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/OnlinePageTestSuite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -572,10 +550,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="104">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
@@ -584,7 +569,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Schedule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
+        <state relative-caret-position="335">
           <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -594,8 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Monitoring.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="150" column="37" lean-forward="true" selection-start-line="150" selection-start-column="37" selection-end-line="150" selection-end-column="37" />
+        <state relative-caret-position="359">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
