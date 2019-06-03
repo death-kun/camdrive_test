@@ -21,25 +21,25 @@ class monitoring:
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         time.sleep(3)
 
-        # self.check_first_tree()
-        #
-        # time.sleep(2)
-        #
-        # self.click_CD630_910D_ms6_dev()
-        # time.sleep(2)
-        # self.check_camera_CD630_910D_ms6_dev()
-        #
-        # self.click_CD320_AA06_ms3_dev()
-        # time.sleep(2)
-        # self.check_camera_CD320_AA06_ms3_dev()
-        #
-        # self.click_CD320_AA78_ms5()
-        # time.sleep(4)
-        # self.check_camera_CD320_AA78_ms5()
-        #
-        # self.click_CD310_2E51_ms4_dev()
-        # time.sleep(4)
-        # self.check_camera_CD310_2E51_ms4_dev()
+        self.check_first_tree()
+
+        time.sleep(2)
+
+        self.click_CD630_910D_ms6_dev()
+        time.sleep(2)
+        self.check_camera_CD630_910D_ms6_dev()
+
+        self.click_CD320_AA06_ms3_dev()
+        time.sleep(2)
+        self.check_camera_CD320_AA06_ms3_dev()
+
+        self.click_CD320_AA78_ms5()
+        time.sleep(4)
+        self.check_camera_CD320_AA78_ms5()
+
+        self.click_CD310_2E51_ms4_dev()
+        time.sleep(4)
+        self.check_camera_CD310_2E51_ms4_dev()
 
 
         self.check_second_tree()
