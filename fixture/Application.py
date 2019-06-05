@@ -10,6 +10,7 @@ from fixture.TopEditButtons import top_edit_buttons
 from fixture.BottomEditButtons import bottom_edit_buttons
 from fixture.Monitoring import monitoring
 from fixture.Schedule import schedule
+from fixture.LineHours import hours
 
 
 class Application:
@@ -31,6 +32,7 @@ class Application:
         self.BottomEditButtons = bottom_edit_buttons(self)
         self.Monitoring = monitoring(self)
         self.Schedule = schedule(self)
+        self.LineHours = hours(self)
 
 
     def is_valid(self):

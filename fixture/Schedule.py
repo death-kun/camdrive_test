@@ -32,6 +32,35 @@ class schedule:
         Monday.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
 
+
+    def items_schedule(self):
+        driver = self.app.driver
+        self.item1 = 1
+        self.item2 = 1    # 1 = постоянная запись
+        self.item3 = 1
+        self.item4 = 1
+        self.item5 = 1
+        self.item6 = 1
+        self.item7 = 1
+        self.item8 = 1
+        self.item9 = 1
+        self.item10 = 1
+        self.item11 = 1
+        self.item12 = 1
+        self.item13 = 1
+        self.item14 = 1
+        self.item15 = 1
+        self.item16 = 1
+        self.item17 = 1
+        self.item18 = 1
+        self.item19 = 1
+        self.item20 = 1
+        self.item21 = 1
+        self.item22 = 1
+        self.item23 = 1
+        self.item24 = 1
+
+
     def item_time(self):
         driver = self.app.driver
 
@@ -44,7 +73,7 @@ class schedule:
         elif driver.find_element(By.CSS_SELECTOR, 'td.item.detection'):
             self.element_time_0 = 3
         elif driver.find_element(By.CSS_SELECTOR, 'td.item.empty'):
-            self.element_time_0 = 4
+            self.element_time_0 = 0
         return self.element_time_0
 
         # time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[2]')
