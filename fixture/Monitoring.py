@@ -20,11 +20,11 @@ class monitoring:
         time.sleep(4)
         # Камеры для проверки на тестовом сервере
 
-        self.click_CD120_D521()
+        # self.click_CD120_D521()
+        # # time.sleep(2)
+        # # self.schedule_camera()
         # time.sleep(2)
-        # self.schedule_camera()
-        time.sleep(2)
-        self.check_camera_CD120_D521()
+        # self.check_camera_CD120_D521()
 
         self.click_CD_120()
         # time.sleep(2)
@@ -215,8 +215,7 @@ class monitoring:
         cur_day = now.day
         self.strg_today = now.strftime('%B %d, %Y')
         yesterday = str(cur_day - 1)
-        yesterday_button = driver.find_element_by_xpath('//div[contains(text(), "' + yesterday + '")]')
-        yesterday_button.click()
+        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
         time.sleep(4)
 
         self.app.LineHours.check_time_0()
@@ -245,87 +244,77 @@ class monitoring:
         self.app.LineHours.check_time_23()
 
 
-
-    def check_for_correct_a_record(self):
-        driver = self.app.driver
-        assert self.element_item_T == self.app.Schedule.item1, "Нет архива"
-        self.T.click()
-            # Проверка, что открывается каждый контейнер с архивом за Вчерашний день
-        self.check_player()
-
-
-
     def check_player(self):
         driver = self.app.driver
-        y = self.app.LineHours.ii
-        try:
+        # y = self.app.ii
+        try:   #Проверка появления плеера
             WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
-            try:
+            try:   #Проверка появления таймлайна
                 WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
-                    (By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover")))
+                    (By.CSS_SELECTOR, "div.player-bottom-controlbar" or "div.player-main-controlbar-seek-hover")))
 
-                try:
+                try:   #Проверка появления длительности видеоархива
                     WebDriverWait(driver, 5).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
                     archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                    archive_time = archive_duration.get_attribute('innerHTML')
+                    self.archive_time = archive_duration.get_attribute('textContent')
 
-                    camera_name = self.title()
+                    self.camera_name = self.title()
 
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                            y) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.')
+                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.')
 
                     with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                         f.write(
-                            '"' + self.strg_today + '" Проверка для камеры "' + camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                y) + ' загрузилось. Длительность видео ' + archive_time.strip() + ' минут.\n')
+                            '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
+                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.\n')
                         f.close()
 
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
                 except TimeoutException:
-                    camera_name = self.title()
+                    self.camera_name = self.title()
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                            y) + ' не загрузилось')
+                            self.app.LineHours.ii) + ' не загрузилось')
 
                     with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                         f.write(
-                            '"' + self.strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
-                                y) + ' не загрузилось.\n')
+                            '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
+                                self.app.LineHours.ii) + ' не загрузилось.\n')
                         f.close()
 
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
             except TimeoutException:
-                camera_name = self.title()
+                self.camera_name = self.title()
 
                 print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                        y) + ' не отображается')
+                        self.app.LineHours.ii) + ' не отображается')
 
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                        '"' + self.strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Видео ' + str(
-                            y) + ' не отображается.\n')
+                        '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
+                            self.app.LineHours.ii) + ' не отображается.\n')
                     f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
 
         except NoSuchElementException:
-            camera_name = self.title()
+            self.camera_name = self.title()
 
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
-                    y) + ' не отобразился.')
+                    self.app.ii) + ' не отобразился.')
 
             with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" Проверка для камеры "' + camera_name.strip() + '" провалилась. Плеер ' + str(
-                        y) + ' не отобразился.\n')
+                    '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
+                        self.app.ii) + ' не отобразился.\n')
                 f.close()
 
     def element_0(self):

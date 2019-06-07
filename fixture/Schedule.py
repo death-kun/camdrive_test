@@ -18,62 +18,108 @@ class schedule:
     def schedule_second_tree(self):
         self.app.check_second_tree()
 
-    def date(self):
+    def yesterday_day_of_the_week(self):
         driver = self.app.driver
+        now = datetime.datetime.today().weekday()
+        yesterday_weekday = now - 1
 
-        now = datetime.datetime.today()
-        cur_day = now.weekday()
-        yesterday_weekday = cur_day - 1
+        #Циферное обозначение дней недели
+        Mon = 0
+        W = 1
+        Wed = 2
+        Th = 3
+        Fri = 4
+        Sat = 5
+        Sun = 6
 
-        td_weekday = driver.find_elements_by_css_selector('td.weekday')
+        if yesterday_weekday == Mon:
+            self.monday()
+        elif yesterday_weekday == W:
+            self.tuesday()
+        elif yesterday_weekday == Wed:
+            self.wednesday()
+        elif yesterday_weekday == Th:
+            self.thursday()
+        elif yesterday_weekday == Fri:
+            self.friday()
+        elif yesterday_weekday == Sat:
+            self.saturday()
+        elif yesterday_weekday == Sun:
+            self.sunday()
 
+    def sunday(self):
+        driver = self.app.driver
+        # Воскресенье
+        Sunday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]')
+        Sunday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
 
+    def saturday(self):
+        driver = self.app.driver
+        # Суббота
+        Saturday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]')
+        Saturday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+
+    def friday(self):
+        driver = self.app.driver
+        # Пятница
+        Friday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]')
+        Friday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+
+    def thursday(self):
+        driver = self.app.driver
+        # Четверг
+        Thursday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]')
+        Thursday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+
+    def wednesday(self):
+        driver = self.app.driver
+        # Среда
+        Wednesday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]')
+        Wednesday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+
+    def tuesday(self):
+        driver = self.app.driver
+        # Вторник
+        Tuesday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]')
+        Tuesday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+
+    def monday(self):
+        driver = self.app.driver
+        # Понедельник
         Monday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]')
-        Monday.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        massiv = []
+        for i in range(1, 25, 1):
+            self.item_T = Monday.find_elements_by_xpath(
+            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')[i]
+            massiv.append(i)
+            self.item_time()
 
 
     def items_schedule(self):
         driver = self.app.driver
-        self.item1 = 1
-        self.item2 = 1    # 1 = постоянная запись
-        self.item3 = 1
-        self.item4 = 1
-        self.item5 = 1
-        self.item6 = 1
-        self.item7 = 1
-        self.item8 = 1
-        self.item9 = 1
-        self.item10 = 1
-        self.item11 = 1
-        self.item12 = 1
-        self.item13 = 1
-        self.item14 = 1
-        self.item15 = 1
-        self.item16 = 1
-        self.item17 = 1
-        self.item18 = 1
-        self.item19 = 1
-        self.item20 = 1
-        self.item21 = 1
-        self.item22 = 1
-        self.item23 = 1
-        self.item24 = 1
+        self.item1 = 1 # 1 = постоянная запись
+        self.item2 = 2 # 2 = по нажатию
+        self.item3 = 3 # 3 = по детекции
+        self.item4 = 0 # 0 = нет записи
 
 
     def item_time(self):
         driver = self.app.driver
 
-        # time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[1]')
-        item_time_0 = driver.find_element(By.XPATH, '//*[@id="schedule"]/table[1]/tbody/tr[1]/td[2]')
-        if driver.find_element(By.CSS_SELECTOR, 'td.item.constant'):
-            self.element_time_0 = 1
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.button'):
-            self.element_time_0 = 2
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.detection'):
-            self.element_time_0 = 3
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.empty'):
-            self.element_time_0 = 0
+        if self.item_T.find_element(By.CSS_SELECTOR, 'td.item.constant'):
+            self.element_time_0 = 1                                                         # 1 = постоянная запись
+        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.button'):
+            self.element_time_0 = 2                                                         # 2 = по нажатию
+        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.detection'):
+            self.element_time_0 = 3                                                         # 3 = по детекции
+        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.empty'):
+            self.element_time_0 = 0                                                         # 0 = нет записи
         return self.element_time_0
 
         # time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[2]')
