@@ -5,7 +5,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support import ui
 
 class monitoring:
 
@@ -15,16 +14,18 @@ class monitoring:
     def detection_of_archive(self):
         driver = self.app.driver
         self.app.login_autotest()
-        self.app.Schedule.items_schedule()
+        # self.app.Schedule.open_schedule()
+        # self.app.Schedule.yesterday_day_of_the_week()
+        time.sleep(5)
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
         time.sleep(4)
         # Камеры для проверки на тестовом сервере
 
-        # self.click_CD120_D521()
-        # # time.sleep(2)
-        # # self.schedule_camera()
+        self.click_CD120_D521()
         # time.sleep(2)
-        # self.check_camera_CD120_D521()
+        # self.schedule_camera()
+        time.sleep(2)
+        self.check_camera_CD120_D521()
 
         self.click_CD_120()
         # time.sleep(2)
@@ -102,7 +103,6 @@ class monitoring:
     def schedule_camera(self):
         driver = self.app.driver
         self.app.Schedule.open_schedule()
-        # WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "//*[@id='contents']")))
         time.sleep(5)
         self.app.Schedule.item_time()
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
@@ -248,7 +248,7 @@ class monitoring:
         driver = self.app.driver
         # y = self.app.ii
         try:   #Проверка появления плеера
-            WebDriverWait(driver, 10).until(
+            WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
             try:   #Проверка появления таймлайна
@@ -263,15 +263,27 @@ class monitoring:
 
                     self.camera_name = self.title()
 
-                    print(
+                    #Проверка длительности записи Архива
+                    if str(self.archive_time) > '11:40':
+                        print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                             self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.')
 
-                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                            '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
+                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                            f.write(
+                            '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
                                 self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.\n')
-                        f.close()
+                            f.close()
+                    else:
+                        print(
+                            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
+                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут. !Длительность Архива меньше допустимой!')
+
+                        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                            f.write(
+                                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
+                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут. !Длительность Архива меньше допустимой!\n')
+                            f.close()
 
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
                 except TimeoutException:
@@ -280,9 +292,9 @@ class monitoring:
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
                             self.app.LineHours.ii) + ' не загрузилось')
 
-                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                    with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                         f.write(
-                            '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
+                            '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
                                 self.app.LineHours.ii) + ' не загрузилось.\n')
                         f.close()
 
@@ -295,9 +307,9 @@ class monitoring:
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
                         self.app.LineHours.ii) + ' не отображается')
 
-                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                        '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
+                        '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
                             self.app.LineHours.ii) + ' не отображается.\n')
                     f.close()
 
@@ -311,9 +323,9 @@ class monitoring:
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
                     self.app.ii) + ' не отобразился.')
 
-            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+            with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
+                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
                         self.app.ii) + ' не отобразился.\n')
                 f.close()
 

@@ -21,8 +21,10 @@ class schedule:
     def yesterday_day_of_the_week(self):
         driver = self.app.driver
         now = datetime.datetime.today().weekday()
-        yesterday_weekday = now - 1
-
+        if now > 0:
+            yesterday_weekday = now - 1
+        else:
+            yesterday_weekday = now
         #Циферное обозначение дней недели
         Mon = 0
         W = 1
@@ -94,12 +96,11 @@ class schedule:
         # Понедельник
         Monday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]')
         massiv = []
-        for i in range(1, 25, 1):
+        for i in range(0, 24, 1):
             self.item_T = Monday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')[i]
+            '//div[@id="time-intervals"]//td//div[@class="item  button" or @class="item  detection" or @class="item  constant" or @class="item"]')[i]
             massiv.append(i)
-            self.item_time()
-
+        print(massiv)
 
     def items_schedule(self):
         driver = self.app.driver
@@ -109,16 +110,17 @@ class schedule:
         self.item4 = 0 # 0 = нет записи
 
 
-    def item_time(self):
+    def item_time0(self):
         driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[2]')
 
-        if self.item_T.find_element(By.CSS_SELECTOR, 'td.item.constant'):
+        if driver.find_element(By.CSS_SELECTOR, 'td.item.constant'):
             self.element_time_0 = 1                                                         # 1 = постоянная запись
-        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.button'):
+        elif driver.find_element(By.CSS_SELECTOR, 'td.item.button'):
             self.element_time_0 = 2                                                         # 2 = по нажатию
-        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.detection'):
+        elif driver.find_element(By.CSS_SELECTOR, 'td.item.detection'):
             self.element_time_0 = 3                                                         # 3 = по детекции
-        elif self.item_T.find_element(By.CSS_SELECTOR, 'td.item.empty'):
+        elif driver.find_element(By.CSS_SELECTOR, 'td.item.empty'):
             self.element_time_0 = 0                                                         # 0 = нет записи
         return self.element_time_0
 

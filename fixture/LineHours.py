@@ -10,7 +10,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -21,7 +20,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -32,7 +30,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -43,7 +40,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -54,7 +50,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -65,7 +60,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -75,7 +69,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -97,7 +90,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -108,7 +100,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -119,7 +110,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -130,7 +120,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -141,7 +130,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -152,7 +140,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -163,7 +150,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -174,7 +160,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -185,7 +170,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -196,7 +180,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -207,7 +190,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -219,7 +201,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -230,7 +211,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -241,7 +221,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -252,7 +231,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -264,7 +242,6 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
                 i]
             self.check_schedule()
-            self.T.click()
             self.ii = i
             self.app.Monitoring.check_player()
 
@@ -274,9 +251,9 @@ class hours:
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день.  Архива ' + str(self.ii) + ' нет.')
 
-            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+            with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.app.strg_today + '" Проверка для камеры "' + self.app.camera_name.strip() + '". Архива ' + str(self.ii) + ' нет.\n')
+                    '"' + self.app.strg_today + '" WARNING: Проверка для камеры "' + self.app.camera_name.strip() + '". Архива ' + str(self.ii) + ' нет.\n')
                 f.close()
         else:
             self.T.click()
