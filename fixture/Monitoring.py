@@ -218,30 +218,30 @@ class monitoring:
         driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
         time.sleep(4)
 
-        self.app.LineHours.check_time_0()
-        self.app.LineHours.check_time_1()
-        self.app.LineHours.check_time_2()
-        self.app.LineHours.check_time_3()
-        self.app.LineHours.check_time_4()
-        self.app.LineHours.check_time_5()
-        self.app.LineHours.check_time_6()
+        # self.app.LineHours.check_time_0()
+        # self.app.LineHours.check_time_1()
+        # self.app.LineHours.check_time_2()
+        # self.app.LineHours.check_time_3()
+        # self.app.LineHours.check_time_4()
+        # self.app.LineHours.check_time_5()
+        # self.app.LineHours.check_time_6()
         self.app.LineHours.check_time_7()
         self.app.LineHours.check_time_8()
         self.app.LineHours.check_time_9()
         self.app.LineHours.check_time_10()
-        self.app.LineHours.check_time_11()
-        self.app.LineHours.check_time_12()
-        self.app.LineHours.check_time_13()
-        self.app.LineHours.check_time_14()
-        self.app.LineHours.check_time_15()
-        self.app.LineHours.check_time_16()
-        self.app.LineHours.check_time_17()
-        self.app.LineHours.check_time_18()
-        self.app.LineHours.check_time_19()
-        self.app.LineHours.check_time_20()
-        self.app.LineHours.check_time_21()
-        self.app.LineHours.check_time_22()
-        self.app.LineHours.check_time_23()
+        # self.app.LineHours.check_time_11()
+        # self.app.LineHours.check_time_12()
+        # self.app.LineHours.check_time_13()
+        # self.app.LineHours.check_time_14()
+        # self.app.LineHours.check_time_15()
+        # self.app.LineHours.check_time_16()
+        # self.app.LineHours.check_time_17()
+        # self.app.LineHours.check_time_18()
+        # self.app.LineHours.check_time_19()
+        # self.app.LineHours.check_time_20()
+        # self.app.LineHours.check_time_21()
+        # self.app.LineHours.check_time_22()
+        # self.app.LineHours.check_time_23()
 
 
     def check_player(self):
@@ -257,7 +257,7 @@ class monitoring:
 
                 try:   #Проверка появления длительности видеоархива
                     WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
+                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
                     archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
                     self.archive_time = archive_duration.get_attribute('textContent')
 
@@ -316,34 +316,24 @@ class monitoring:
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
 
-        except NoSuchElementException:
+        except TimeoutException:
             self.camera_name = self.title()
 
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
-                    self.app.ii) + ' не отобразился.')
+                    self.app.LineHours.ii) + ' не отобразился.')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
-                        self.app.ii) + ' не отобразился.\n')
+                        self.app.LineHours.ii) + ' не отобразился.\n')
                 f.close()
 
-    def element_0(self):
-        item_time_0 = self.item_element_y
-        if item_time_0.find_element_by_css_selector('div.time.item.constant'):
-            self.element_item_time_0 = 1
-        elif item_time_0.find_element_by_css_selector('div.time.item.button'):
-            self.element_item_time_0 = 2
-        elif item_time_0.find_element_by_css_selector('div.time.item.detection'):
-            self.element_item_time_0 = 3
-        elif item_time_0.find_element_by_css_selector('div.item.empty'):
-            self.element_item_time_0 = 4
-        return self.element_item_time_0
+
 
     def title(self):
         driver = self.app.driver
-        camera_title = driver.find_element_by_css_selector('div.title')
+        camera_title = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/div')
         camera_name = camera_title.get_attribute('innerHTML')
         return camera_name
 

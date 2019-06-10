@@ -8,7 +8,7 @@ class hours:
         driver = self.app.driver
         for i in range(0, 5, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.check_schedule()
             self.ii = i
             self.app.Monitoring.check_player()
@@ -17,7 +17,7 @@ class hours:
         driver = self.app.driver
         for i in range(5, 10, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -27,7 +27,7 @@ class hours:
         driver = self.app.driver
         for i in range(10, 15, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -37,7 +37,7 @@ class hours:
         driver = self.app.driver
         for i in range(15, 20, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -47,7 +47,7 @@ class hours:
         driver = self.app.driver
         for i in range(20, 25, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -57,7 +57,7 @@ class hours:
         driver = self.app.driver
         for i in range(25, 30, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -67,7 +67,7 @@ class hours:
         driver = self.app.driver
         for i in range(30, 35, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[i]
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.check_schedule()
             self.ii = i
             self.app.Monitoring.check_player()
@@ -76,38 +76,34 @@ class hours:
         driver = self.app.driver
         for i in range(35, 40, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.check_schedule()
-            self.T.click()
             self.ii = i
-            self.app.Monitoring.check_player()
+            self.check_schedule()
 
     def check_time_8(self):
         driver = self.app.driver
         for i in range(40, 45, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.check_schedule()
             self.ii = i
-            self.app.Monitoring.check_player()
+            self.check_schedule()
 
     def check_time_9(self):
         driver = self.app.driver
         for i in range(45, 50, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.check_schedule()
             self.ii = i
-            self.app.Monitoring.check_player()
+            self.check_schedule()
 
     def check_time_10(self):
         driver = self.app.driver
         for i in range(50, 55, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -117,7 +113,7 @@ class hours:
         driver = self.app.driver
         for i in range(55, 60, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -127,7 +123,7 @@ class hours:
         driver = self.app.driver
         for i in range(60, 65, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -137,7 +133,7 @@ class hours:
         driver = self.app.driver
         for i in range(65, 70, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -147,7 +143,7 @@ class hours:
         driver = self.app.driver
         for i in range(70, 75, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -157,7 +153,7 @@ class hours:
         driver = self.app.driver
         for i in range(75, 80, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -167,7 +163,7 @@ class hours:
         driver = self.app.driver
         for i in range(80, 85, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -177,7 +173,7 @@ class hours:
         driver = self.app.driver
         for i in range(85, 90, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -187,7 +183,7 @@ class hours:
         driver = self.app.driver
         for i in range(90, 95, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -198,7 +194,7 @@ class hours:
         line_19 = driver.find_element_by_xpath('//*[@id="20"]')
         for i in range(95, 100, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -208,7 +204,7 @@ class hours:
         driver = self.app.driver
         for i in range(100, 105, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -218,7 +214,7 @@ class hours:
         driver = self.app.driver
         for i in range(105, 110, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -228,7 +224,7 @@ class hours:
         driver = self.app.driver
         for i in range(110, 115, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.check_schedule()
             self.ii = i
@@ -239,17 +235,16 @@ class hours:
         driver = self.app.driver
         for i in range(115, 120, 1):
             self.T = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty"]')[
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.check_schedule()
             self.ii = i
-            self.app.Monitoring.check_player()
+            self.check_schedule()
 
     def check_schedule(self):
-
-        if self.T.find_elements_by_css_selector('item empty'):
+        driver = self.app.driver
+        if self.T.find_elements_by_css_selector('div.item.empty')[self.ii]:
             print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день.  Архива ' + str(self.ii) + ' нет.')
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(self.ii) + ' нет.')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
@@ -257,4 +252,5 @@ class hours:
                 f.close()
         else:
             self.T.click()
+            self.app.Monitoring.check_player()
 
