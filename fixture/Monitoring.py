@@ -152,11 +152,12 @@ class monitoring:
     def click_CD_120(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_4343"]/a').click()
+        self.camera_name = self.title()
 
     def click_CD120_D521(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_4184"]/a').click()
-
+        self.camera_name = self.title()
 
     def check_second_tree(self):
         driver = self.app.driver
@@ -224,11 +225,11 @@ class monitoring:
         # self.app.LineHours.check_time_3()
         # self.app.LineHours.check_time_4()
         # self.app.LineHours.check_time_5()
-        # self.app.LineHours.check_time_6()
+        self.app.LineHours.check_time_6()
         self.app.LineHours.check_time_7()
         self.app.LineHours.check_time_8()
-        self.app.LineHours.check_time_9()
-        self.app.LineHours.check_time_10()
+        # self.app.LineHours.check_time_9()
+        # self.app.LineHours.check_time_10()
         # self.app.LineHours.check_time_11()
         # self.app.LineHours.check_time_12()
         # self.app.LineHours.check_time_13()
@@ -261,7 +262,7 @@ class monitoring:
                     archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
                     self.archive_time = archive_duration.get_attribute('textContent')
 
-                    self.camera_name = self.title()
+                    # self.camera_name = self.title()
 
                     #Проверка длительности записи Архива
                     if str(self.archive_time) > '11:40':
@@ -287,7 +288,7 @@ class monitoring:
 
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
                 except TimeoutException:
-                    self.camera_name = self.title()
+                    # self.camera_name = self.title()
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
                             self.app.LineHours.ii) + ' не загрузилось')
@@ -301,7 +302,7 @@ class monitoring:
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
             except TimeoutException:
-                self.camera_name = self.title()
+                # self.camera_name = self.title()
 
                 print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
@@ -317,7 +318,6 @@ class monitoring:
 
 
         except TimeoutException:
-            self.camera_name = self.title()
 
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
@@ -333,8 +333,8 @@ class monitoring:
 
     def title(self):
         driver = self.app.driver
-        camera_title = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/div')
-        camera_name = camera_title.get_attribute('innerHTML')
+        camera_title = driver.find_element_by_css_selector('a.jstree-clicked')
+        camera_name = camera_title.get_attribute('textContent')
         return camera_name
 
     def opem_LK_monitoring(self):

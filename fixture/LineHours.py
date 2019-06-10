@@ -68,9 +68,20 @@ class hours:
         for i in range(30, 35, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
-            self.check_schedule()
             self.ii = i
-            self.app.Monitoring.check_player()
+            if self.T.is_enabled():
+                self.T.click()
+                self.app.Monitoring.check_player()
+            else:
+                print(
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+                        self.ii) + ' нет.')
+
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
+                        '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
+                            self.ii) + ' нет.\n')
+                    f.close()
 
     def check_time_7(self):
         driver = self.app.driver
@@ -79,7 +90,19 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.ii = i
-            self.check_schedule()
+            if self.T.is_enabled():
+                self.T.click()
+                self.app.Monitoring.check_player()
+            else:
+                print(
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+                        self.ii) + ' нет.')
+
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
+                        '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
+                            self.ii) + ' нет.\n')
+                    f.close()
 
     def check_time_8(self):
         driver = self.app.driver
@@ -88,7 +111,19 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
             self.ii = i
-            self.check_schedule()
+            if self.T.is_enabled():
+                self.T.click()
+                self.app.Monitoring.check_player()
+            else:
+                print(
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+                        self.ii) + ' нет.')
+
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
+                        '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
+                            self.ii) + ' нет.\n')
+                    f.close()
 
     def check_time_9(self):
         driver = self.app.driver
@@ -107,7 +142,6 @@ class hours:
                 i]
             self.check_schedule()
             self.ii = i
-            self.app.Monitoring.check_player()
 
     def check_time_11(self):
         driver = self.app.driver
@@ -240,15 +274,16 @@ class hours:
             self.ii = i
             self.check_schedule()
 
+
     def check_schedule(self):
         driver = self.app.driver
-        if self.T.find_elements_by_css_selector('div.item.empty')[self.ii]:
+        if self.T.find_element_by_xpath('//div[@id="time-intervals"]//td//div[@class="item empty "]'):
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(self.ii) + ' нет.')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.app.strg_today + '" WARNING: Проверка для камеры "' + self.app.camera_name.strip() + '". Архива ' + str(self.ii) + ' нет.\n')
+                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(self.ii) + ' нет.\n')
                 f.close()
         else:
             self.T.click()
