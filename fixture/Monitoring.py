@@ -259,7 +259,7 @@ class monitoring:
 
                 try:   #Проверка появления длительности видеоархива
                     WebDriverWait(driver, 5).until(
-                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
+                EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
                     archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
                     self.archive_time = archive_duration.get_attribute('textContent')
 
