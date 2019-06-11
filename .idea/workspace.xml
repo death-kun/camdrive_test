@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/Monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/monitoring report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/monitoring report.txt" afterDir="false" />
     </list>
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fixture/Monitoring.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="268" column="56" lean-forward="true" selection-start-line="268" selection-start-column="56" selection-end-line="268" selection-end-column="56" />
+            <state relative-caret-position="357">
+              <caret line="263" column="89" lean-forward="true" selection-start-line="263" selection-start-column="89" selection-end-line="263" selection-end-column="89" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#1050#1090#0" />
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/LineHours.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="251" column="38" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
+            <state relative-caret-position="415">
+              <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
             </state>
           </provider>
         </entry>
@@ -101,8 +100,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2358" />
-    <option name="y" value="-8" />
+    <option name="x" value="588" />
+    <option name="y" value="-15" />
     <option name="width" value="1089" />
     <option name="height" value="722" />
   </component>
@@ -279,24 +278,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.10 at 16h 28m 00s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.10 at 16h 36m 02s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.10 at 20h 35m 46s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 09h 07m 00s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 10h 48m 24s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 10h 50m 58s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 10h 57m 05s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
@@ -309,9 +290,27 @@
     <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 11h 22m 22s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 11h 52m 07s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 12h 00m 33s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 12h 02m 55s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 12h 06m 15s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 12h 39m 17s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.06.11 at 12h 44m 20s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49922958" weight="0.105374075" />
@@ -319,7 +318,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7118019" visible="true" weight="0.28936744" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7118019" visible="true" weight="0.44745395" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.39761648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -609,15 +608,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/LineHours.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="251" column="38" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
+        <state relative-caret-position="415">
+          <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Monitoring.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="268" column="56" lean-forward="true" selection-start-line="268" selection-start-column="56" selection-end-line="268" selection-end-column="56" />
+        <state relative-caret-position="357">
+          <caret line="263" column="89" lean-forward="true" selection-start-line="263" selection-start-column="89" selection-end-line="263" selection-end-column="89" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#1050#1090#0" />

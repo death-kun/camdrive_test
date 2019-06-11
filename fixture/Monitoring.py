@@ -258,10 +258,15 @@ class monitoring:
                     (By.CSS_SELECTOR, "div.player-bottom-controlbar" or "div.player-main-controlbar-seek-hover")))
 
                 try:   #Проверка появления длительности видеоархива
-                    WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
-                    archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                    self.archive_time = archive_duration.get_attribute('textContent')
+                    if WebDriverWait(driver, 5).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.seek-total-time"))):
+                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
+                        self.archive_time = archive_duration.get_attribute('textContent')
+                    else:
+                        WebDriverWait(driver, 5).until(
+                            EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
+                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
+                        self.archive_time = archive_duration.get_attribute('textContent')
 
                     # self.camera_name = self.title()
 
@@ -269,22 +274,22 @@ class monitoring:
                     if str(self.archive_time) > '11:40':
                         print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.')
+                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.')
 
                         with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                             f.write(
                             '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут.\n')
+                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.\n')
                             f.close()
                     else:
                         print(
                             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут. !Длительность Архива меньше допустимой!')
+                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
                         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                             f.write(
                                 '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + self.archive_time.strip() + ' минут. !Длительность Архива меньше допустимой!\n')
+                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
                             f.close()
 
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
