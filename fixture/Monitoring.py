@@ -28,15 +28,13 @@ class monitoring:
         # Камеры для проверки на тестовом сервере
 
         self.click_CD120_D521()
-        # time.sleep(2)
         # self.schedule_camera()
-        time.sleep(2)
+        time.sleep(4)
         self.check_camera_CD120_D521()
 
         self.click_CD_120()
-        # time.sleep(2)
         # self.schedule_camera()
-        time.sleep(2)
+        time.sleep(4)
         self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
@@ -271,7 +269,7 @@ class monitoring:
                     # self.camera_name = self.title()
 
                     #Проверка длительности записи Архива
-                    if str(self.archive_time) > '11:40':
+                    if str(self.archive_time) > '11:50':
                         print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                             self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.')
