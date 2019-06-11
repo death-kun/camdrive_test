@@ -19,6 +19,12 @@ class monitoring:
         time.sleep(5)
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
         time.sleep(4)
+        now = datetime.datetime.now()
+        cur_day = now.day
+        self.strg_today = now.strftime('%B %d, %Y')
+        yesterday = str(cur_day - 1)
+        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
+        time.sleep(4)
         # Камеры для проверки на тестовом сервере
 
         self.click_CD120_D521()
@@ -212,12 +218,7 @@ class monitoring:
 
     def archive_check(self):
         driver = self.app.driver
-        now = datetime.datetime.now()
-        cur_day = now.day
-        self.strg_today = now.strftime('%B %d, %Y')
-        yesterday = str(cur_day - 1)
-        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
-        time.sleep(4)
+
 
         # self.app.LineHours.check_time_0()
         # self.app.LineHours.check_time_1()
