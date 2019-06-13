@@ -52,100 +52,1031 @@ class schedule:
     def sunday(self):
         driver = self.app.driver
         # Воскресенье
-        Sunday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]')
-        Sunday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def saturday(self):
         driver = self.app.driver
         # Суббота
-        Saturday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]')
-        Saturday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def friday(self):
         driver = self.app.driver
         # Пятница
-        Friday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]')
-        Friday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def thursday(self):
         driver = self.app.driver
         # Четверг
-        Thursday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]')
-        Thursday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def wednesday(self):
         driver = self.app.driver
         # Среда
-        Wednesday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]')
-        Wednesday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def tuesday(self):
         driver = self.app.driver
         # Вторник
-        Tuesday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]')
-        Tuesday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item"]')
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
+
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
+
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
+
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
+
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
+
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
 
     def monday(self):
         driver = self.app.driver
         # Понедельник
-        Monday = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]')
-        massiv = []
-        for i in range(0, 24, 1):
-            self.item_T = Monday.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="item  button" or @class="item  detection" or @class="item  constant" or @class="item"]')[i]
-            massiv.append(i)
-        print(massiv)
+        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[2]')
+        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_0 = 0  # 0 = нет записи
+        else:
+            self.element_time_0 = 1  # 1 = запись есть
 
-    def items_schedule(self):
-        driver = self.app.driver
-        self.item1 = 1 # 1 = постоянная запись
-        self.item2 = 2 # 2 = по нажатию
-        self.item3 = 3 # 3 = по детекции
-        self.item4 = 0 # 0 = нет записи
+        time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[3]')
+        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_1 = 0  # 0 = нет записи
+        else:
+            self.element_time_1 = 1  # 1 = запись есть
 
+        time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[4]')
+        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_2 = 0  # 0 = нет записи
+        else:
+            self.element_time_2 = 1  # 1 = запись есть
 
-    def item_time0(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[2]')
+        time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[5]')
+        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_3 = 0  # 0 = нет записи
+        else:
+            self.element_time_3 = 1  # 1 = запись есть
 
-        if driver.find_element(By.CSS_SELECTOR, 'td.item.constant'):
-            self.element_time_0 = 1                                                         # 1 = постоянная запись
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.button'):
-            self.element_time_0 = 2                                                         # 2 = по нажатию
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.detection'):
-            self.element_time_0 = 3                                                         # 3 = по детекции
-        elif driver.find_element(By.CSS_SELECTOR, 'td.item.empty'):
-            self.element_time_0 = 0                                                         # 0 = нет записи
-        return self.element_time_0
+        time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[6]')
+        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_4 = 0  # 0 = нет записи
+        else:
+            self.element_time_4 = 1  # 1 = запись есть
 
-        # time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[2]')
-        # time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[3]')
-        # time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[4]')
-        # time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[5]')
-        # time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[6]')
-        # time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[7]')
-        # time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[8]')
-        # time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[9]')
-        # time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[10]')
-        # time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[11]')
-        # time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[12]')
-        # time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[13]')
-        # time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[14]')
-        # time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[15]')
-        # time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[16]')
-        # time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[17]')
-        # time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[18]')
-        # time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[19]')
-        # time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[20]')
-        # time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[21]')
-        # time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[22]')
-        # time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[23]')
-        # time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/div[1]/div[24]')
+        time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[7]')
+        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_5 = 0  # 0 = нет записи
+        else:
+            self.element_time_5 = 1  # 1 = запись есть
+
+        time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[8]')
+        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_6 = 0  # 0 = нет записи
+        else:
+            self.element_time_6 = 1  # 1 = запись есть
+
+        time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[9]')
+        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_7 = 0  # 0 = нет записи
+        else:
+            self.element_time_7 = 1  # 1 = запись есть
+
+        time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[10]')
+        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_8 = 0  # 0 = нет записи
+        else:
+            self.element_time_8 = 1  # 1 = запись есть
+
+        time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[11]')
+        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_9 = 0  # 0 = нет записи
+        else:
+            self.element_time_9 = 1  # 1 = запись есть
+
+        time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[12]')
+        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_10 = 0  # 0 = нет записи
+        else:
+            self.element_time_10 = 1  # 1 = запись есть
+
+        time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[13]')
+        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_11 = 0  # 0 = нет записи
+        else:
+            self.element_time_11 = 1  # 1 = запись есть
+
+        time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[14]')
+        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_12 = 0  # 0 = нет записи
+        else:
+            self.element_time_12 = 1  # 1 = запись есть
+
+        time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[15]')
+        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_13 = 0  # 0 = нет записи
+        else:
+            self.element_time_13 = 1  # 1 = запись есть
+
+        time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[16]')
+        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_14 = 0  # 0 = нет записи
+        else:
+            self.element_time_14 = 1  # 1 = запись есть
+
+        time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[17]')
+        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_15 = 0  # 0 = нет записи
+        else:
+            self.element_time_15 = 1  # 1 = запись есть
+
+        time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[18]')
+        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_16 = 0  # 0 = нет записи
+        else:
+            self.element_time_16 = 1  # 1 = запись есть
+
+        time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[19]')
+        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_17 = 0  # 0 = нет записи
+        else:
+            self.element_time_17 = 1  # 1 = запись есть
+
+        time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[20]')
+        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_18 = 0  # 0 = нет записи
+        else:
+            self.element_time_18 = 1  # 1 = запись есть
+
+        time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[21]')
+        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_19 = 0  # 0 = нет записи
+        else:
+            self.element_time_19 = 1  # 1 = запись есть
+
+        time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[22]')
+        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_20 = 0  # 0 = нет записи
+        else:
+            self.element_time_20 = 1  # 1 = запись есть
+
+        time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[23]')
+        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_21 = 0  # 0 = нет записи
+        else:
+            self.element_time_21 = 1  # 1 = запись есть
+
+        time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[24]')
+        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_22 = 0  # 0 = нет записи
+        else:
+            self.element_time_22 = 1  # 1 = запись есть
+
+        time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[25]')
+        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+            self.element_time_23 = 0  # 0 = нет записи
+        else:
+            self.element_time_23 = 1  # 1 = запись есть
+
 
 
