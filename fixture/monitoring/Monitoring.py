@@ -14,30 +14,19 @@ class monitoring:
     def detection_of_archive(self):
         driver = self.app.driver
         self.app.login_autotest()
-        self.app.Schedule.open_schedule()
-        time.sleep(3)
-        self.app.Schedule.yesterday_day_of_the_week()
-        time.sleep(5)
-        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
         time.sleep(4)
-        now = datetime.datetime.now()
-        cur_day = now.day
-        self.strg_today = now.strftime('%B %d, %Y')
-        yesterday = str(cur_day - 1)
 
-        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
-        time.sleep(4)
         # Камеры для проверки на тестовом сервере
-
         self.click_CD120_D521()
-        # self.schedule_camera()
+        self.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_CD120_D521()
 
-        # self.click_CD_120()
-        # # self.schedule_camera()
-        # time.sleep(4)
-        # self.check_camera_CD_120()
+        self.click_CD_120()
+        self.open_schedule_open_archive()
+
+        time.sleep(4)
+        self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
 
@@ -105,6 +94,25 @@ class monitoring:
         # self.check_camera_CD100_E75A_ms3_dev()
 
         self.app.logout_butten()
+
+    def click_yesterday(self):
+        driver = self.app.driver
+        now = datetime.datetime.now()
+        cur_day = now.day
+        self.strg_today = now.strftime('%B %d, %Y')
+        yesterday = str(cur_day - 1)
+        time.sleep(4)
+        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
+
+    def open_schedule_open_archive(self):
+        driver = self.app.driver
+        self.app.Schedule.open_schedule()
+        time.sleep(3)
+        self.app.Schedule.yesterday_day_of_the_week()
+        time.sleep(5)
+        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
+        self.click_yesterday()
+
 
     def schedule_camera(self):
         driver = self.app.driver
