@@ -1,16 +1,16 @@
 from selenium import webdriver
 import time
 from sys import platform
-from fixture.Authorization import AuthorizationHelper
-from fixture.OnlinePageTestSuite import onlineTestSuite
-from fixture.Localization_RU import Local_RU
-from fixture.Player import player_check
-from fixture.Archive import archive_check
-from fixture.TopEditButtons import top_edit_buttons
-from fixture.BottomEditButtons import bottom_edit_buttons
-from fixture.Monitoring import monitoring
-from fixture.Schedule import schedule
-from fixture.LineHours import hours
+from fixture.regress.Authorization import AuthorizationHelper
+from fixture.regress.OnlinePageTestSuite import onlineTestSuite
+from fixture.regress.Localization_RU import Local_RU
+from fixture.regress.Player import player_check
+from fixture.regress.Archive import archive_check
+from fixture.regress.TopEditButtons import top_edit_buttons
+from fixture.regress.BottomEditButtons import bottom_edit_buttons
+from fixture.monitoring.Monitoring import monitoring
+from fixture.monitoring.Schedule import schedule
+from fixture.monitoring.LineHours import hours
 
 
 class Application:

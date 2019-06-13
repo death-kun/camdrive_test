@@ -23,6 +23,7 @@ class monitoring:
         cur_day = now.day
         self.strg_today = now.strftime('%B %d, %Y')
         yesterday = str(cur_day - 1)
+
         driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
         time.sleep(4)
         # Камеры для проверки на тестовом сервере
