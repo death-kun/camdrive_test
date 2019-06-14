@@ -13,84 +13,74 @@ class monitoring:
 
     def detection_of_archive(self):
         driver = self.app.driver
-        self.app.login_autotest()
+        # self.app.login_autotest()
+        self.login_monitoring()
         time.sleep(4)
 
         # Камеры для проверки на тестовом сервере
-        self.click_CD120_D521()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD120_D521()
-
-        self.click_CD_120()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD_120()
+        # self.click_CD120_D521()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD120_D521()
+        #
+        # self.click_CD_120()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
+        self.check_first_tree()
 
-        # self.check_first_tree()
-        #
-        # time.sleep(2)
-        #
-        # self.click_CD630_910D_ms6_dev()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD630_910D_ms6_dev()
-        #
-        # self.click_CD320_AA06_ms3_dev()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD320_AA06_ms3_dev()
-        #
-        # self.click_CD320_AA78_ms5()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(4)
-        # self.check_camera_CD320_AA78_ms5()
-        #
-        # self.click_CD310_2E51_ms4_dev()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(4)
-        # self.check_camera_CD310_2E51_ms4_dev()
-        #
-        #
-        # self.check_second_tree()
-        #
-        # time.sleep(2)
-        #
-        # self.click_CD100_E772_ms4()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD100_E772_ms4()
-        #
-        # self.click_N1001_3A00_bwd()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_N1001_3A00_bwd()
-        #
-        # self.click_CD600_EF78_ms6_serv()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD600_EF78_ms6_serv()
-        #
-        # self.click_CD100_E778_ms5()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD100_E778_ms5()
-        #
-        # self.click_CD100_E75A_ms3_dev()
-        # time.sleep(2)
-        # self.schedule_camera()
-        # time.sleep(2)
-        # self.check_camera_CD100_E75A_ms3_dev()
+        time.sleep(2)
+
+        self.click_CD630_910D_ms6_dev()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD630_910D_ms6_dev()
+
+        self.click_CD320_AA06_ms3_dev()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD320_AA06_ms3_dev()
+
+        self.click_CD320_AA78_ms5()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD320_AA78_ms5()
+
+        self.click_CD310_2E51_ms4_dev()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD310_2E51_ms4_dev()
+
+        self.check_second_tree()
+
+        time.sleep(2)
+
+        self.click_CD100_E772_ms4()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD100_E772_ms4()
+
+        self.click_N1001_3A00_bwd()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_N1001_3A00_bwd()
+
+        self.click_CD600_EF78_ms6_serv()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD600_EF78_ms6_serv()
+
+        self.click_CD100_E778_ms5()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD100_E778_ms5()
+
+        self.click_CD100_E75A_ms3_dev()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD100_E75A_ms3_dev()
 
         self.app.logout_butten()
 
