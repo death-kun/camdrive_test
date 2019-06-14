@@ -12,75 +12,74 @@ class monitoring:
         self.app = app
 
     def detection_of_archive(self):
-        driver = self.app.driver
-        # self.app.login_autotest()
-        self.login_monitoring()
+        self.app.login_autotest()
+        # self.login_monitoring()
         time.sleep(4)
 
         # Камеры для проверки на тестовом сервере
-        # self.click_CD120_D521()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD120_D521()
-        #
-        # self.click_CD_120()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD_120()
+        self.click_CD120_D521()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD120_D521()
+
+        self.click_CD_120()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
-        self.check_first_tree()
-
-        time.sleep(2)
-
-        self.click_CD630_910D_ms6_dev()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD630_910D_ms6_dev()
-
-        self.click_CD320_AA06_ms3_dev()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD320_AA06_ms3_dev()
-
-        self.click_CD320_AA78_ms5()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD320_AA78_ms5()
-
-        self.click_CD310_2E51_ms4_dev()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD310_2E51_ms4_dev()
-
-        self.check_second_tree()
-
-        time.sleep(2)
-
-        self.click_CD100_E772_ms4()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD100_E772_ms4()
-
-        self.click_N1001_3A00_bwd()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_N1001_3A00_bwd()
-
-        self.click_CD600_EF78_ms6_serv()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD600_EF78_ms6_serv()
-
-        self.click_CD100_E778_ms5()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD100_E778_ms5()
-
-        self.click_CD100_E75A_ms3_dev()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD100_E75A_ms3_dev()
+        # self.check_first_tree()
+        #
+        # time.sleep(2)
+        #
+        # self.click_CD630_910D_ms6_dev()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD630_910D_ms6_dev()
+        #
+        # self.click_CD320_AA06_ms3_dev()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD320_AA06_ms3_dev()
+        #
+        # self.click_CD320_AA78_ms5()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD320_AA78_ms5()
+        #
+        # self.click_CD310_2E51_ms4_dev()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD310_2E51_ms4_dev()
+        #
+        # self.check_second_tree()
+        #
+        # time.sleep(2)
+        #
+        # self.click_CD100_E772_ms4()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD100_E772_ms4()
+        #
+        # self.click_N1001_3A00_bwd()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_N1001_3A00_bwd()
+        #
+        # self.click_CD600_EF78_ms6_serv()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD600_EF78_ms6_serv()
+        #
+        # self.click_CD100_E778_ms5()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD100_E778_ms5()
+        #
+        # self.click_CD100_E75A_ms3_dev()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD100_E75A_ms3_dev()
 
         self.app.logout_butten()
 
@@ -102,7 +101,6 @@ class monitoring:
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
         self.click_yesterday()
 
-
     def schedule_camera(self):
         driver = self.app.driver
         self.app.Schedule.open_schedule()
@@ -111,9 +109,7 @@ class monitoring:
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[4]/div[3]/div[2]/ul/li/ul")))
 
-
     #Камеры для проверке на рабочем сервере
-
     def click_CD100_E75A_ms3_dev(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12597"]/a').click()  # камера CD100(E75A)_ms3_dev
@@ -158,7 +154,6 @@ class monitoring:
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12602"]/a').click()  # камера CD630(910D)_ms6_dev
         self.camera_name = self.title()
-
 
     #Камеры для проверки на тестовом сервере
     def click_CD_120(self):
@@ -213,7 +208,6 @@ class monitoring:
     def check_camera_CD100_E75A_ms3_dev(self):
         self.archive_check()
 
-
     #Камеры для проверки на тестовом сервере
     def check_camera_CD_120(self):
         self.archive_check()
@@ -221,35 +215,31 @@ class monitoring:
     def check_camera_CD120_D521(self):
         self.archive_check()
 
-
     def archive_check(self):
-        driver = self.app.driver
-
-
         self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
-        self.app.LineHours.check_time_2()
-        self.app.LineHours.check_time_3()
-        self.app.LineHours.check_time_4()
-        self.app.LineHours.check_time_5()
-        self.app.LineHours.check_time_6()
-        self.app.LineHours.check_time_7()
-        self.app.LineHours.check_time_8()
-        self.app.LineHours.check_time_9()
-        self.app.LineHours.check_time_10()
-        self.app.LineHours.check_time_11()
-        self.app.LineHours.check_time_12()
-        self.app.LineHours.check_time_13()
-        self.app.LineHours.check_time_14()
-        self.app.LineHours.check_time_15()
-        self.app.LineHours.check_time_16()
-        self.app.LineHours.check_time_17()
-        self.app.LineHours.check_time_18()
-        self.app.LineHours.check_time_19()
-        self.app.LineHours.check_time_20()
-        self.app.LineHours.check_time_21()
-        self.app.LineHours.check_time_22()
-        self.app.LineHours.check_time_23()
+        # self.app.LineHours.check_time_2()
+        # self.app.LineHours.check_time_3()
+        # self.app.LineHours.check_time_4()
+        # self.app.LineHours.check_time_5()
+        # self.app.LineHours.check_time_6()
+        # self.app.LineHours.check_time_7()
+        # self.app.LineHours.check_time_8()
+        # self.app.LineHours.check_time_9()
+        # self.app.LineHours.check_time_10()
+        # self.app.LineHours.check_time_11()
+        # self.app.LineHours.check_time_12()
+        # self.app.LineHours.check_time_13()
+        # self.app.LineHours.check_time_14()
+        # self.app.LineHours.check_time_15()
+        # self.app.LineHours.check_time_16()
+        # self.app.LineHours.check_time_17()
+        # self.app.LineHours.check_time_18()
+        # self.app.LineHours.check_time_19()
+        # self.app.LineHours.check_time_20()
+        # self.app.LineHours.check_time_21()
+        # self.app.LineHours.check_time_22()
+        # self.app.LineHours.check_time_23()
 
 
     def check_player(self):
@@ -260,74 +250,49 @@ class monitoring:
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
             try:   #Проверка появления таймлайна
-                WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
+                WebDriverWait(driver, 15).until(EC.presence_of_element_located(
                     (By.CSS_SELECTOR, "div.player-bottom-controlbar" or "div.player-main-controlbar-seek-hover")))
 
-                try:   #Проверка появления длительности видеоархива
-                    if WebDriverWait(driver, 5).until(
-                EC.visibility_of_element_located((By.CSS_SELECTOR, "div.seek-total-time"))):
-                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                        self.archive_time = archive_duration.get_attribute('textContent')
-                    else:
-                        WebDriverWait(driver, 5).until(
-                            EC.presence_of_element_located((By.CSS_SELECTOR, "div.seek-total-time")))
-                        archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                        self.archive_time = archive_duration.get_attribute('textContent')
+                archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
+                self.archive_time = archive_duration.get_attribute('textContent')
 
-                    # self.camera_name = self.title()
-
-                    #Проверка длительности записи Архива
-                    if str(self.archive_time) > '11:50':
-                        print(
+                #Проверка длительности записи Архива
+                if str(self.archive_time) > '11:50':
+                    print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                             self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.')
 
-                        with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                            f.write(
+                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                        f.write(
                             '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
                                 self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.\n')
-                            f.close()
-                    else:
-                        print(
+                        f.close()
+                else:
+                    print(
                             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                                 self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
-                        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
-                            f.write(
-                                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
-                            f.close()
-
-                    driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-                except TimeoutException:
-                    # self.camera_name = self.title()
-                    print(
-                        'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                            self.app.LineHours.ii) + ' не загрузилось')
-
                     with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                         f.write(
-                            '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
-                                self.app.LineHours.ii) + ' не загрузилось.\n')
+                                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
+                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
                         f.close()
 
-                    driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
+                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
             except TimeoutException:
-                # self.camera_name = self.title()
 
                 print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                        self.app.LineHours.ii) + ' не отображается')
+                        self.app.LineHours.ii) + ' не загрузилось')
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
-                            self.app.LineHours.ii) + ' не отображается.\n')
+                            self.app.LineHours.ii) + ' не загрузилось.\n')
                     f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-
 
         except TimeoutException:
 
@@ -340,8 +305,6 @@ class monitoring:
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
                         self.app.LineHours.ii) + ' не отобразился.\n')
                 f.close()
-
-
 
     def title(self):
         driver = self.app.driver
