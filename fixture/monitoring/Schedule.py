@@ -493,146 +493,146 @@ class schedule:
     def thursday(self):
         driver = self.app.driver
         # Четверг
-        item_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[2]')
-        if item_0.find_element(By.CSS_SELECTOR, 'td.item'):
+        time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[2]')
+        if "item " in time_0.get_attribute("class"):
             self.element_time_0 = 0  # 0 = нет записи
         else:
             self.element_time_0 = 1  # 1 = запись есть
 
         time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[3]')
-        if time_1.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_1.get_attribute("class"):
             self.element_time_1 = 0  # 0 = нет записи
         else:
             self.element_time_1 = 1  # 1 = запись есть
 
         time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[4]')
-        if time_2.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_2.get_attribute("class"):
             self.element_time_2 = 0  # 0 = нет записи
         else:
             self.element_time_2 = 1  # 1 = запись есть
 
         time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[5]')
-        if time_3.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_3.get_attribute("class"):
             self.element_time_3 = 0  # 0 = нет записи
         else:
             self.element_time_3 = 1  # 1 = запись есть
 
         time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[6]')
-        if time_4.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_4.get_attribute("class"):
             self.element_time_4 = 0  # 0 = нет записи
         else:
             self.element_time_4 = 1  # 1 = запись есть
 
         time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[7]')
-        if time_5.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_5.get_attribute("class"):
             self.element_time_5 = 0  # 0 = нет записи
         else:
             self.element_time_5 = 1  # 1 = запись есть
 
         time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[8]')
-        if time_6.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_6.get_attribute("class"):
             self.element_time_6 = 0  # 0 = нет записи
         else:
             self.element_time_6 = 1  # 1 = запись есть
 
         time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[9]')
-        if time_7.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_7.get_attribute("class"):
             self.element_time_7 = 0  # 0 = нет записи
         else:
             self.element_time_7 = 1  # 1 = запись есть
 
         time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[10]')
-        if time_8.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_8.get_attribute("class"):
             self.element_time_8 = 0  # 0 = нет записи
         else:
             self.element_time_8 = 1  # 1 = запись есть
 
         time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[11]')
-        if time_9.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_9.get_attribute("class"):
             self.element_time_9 = 0  # 0 = нет записи
         else:
             self.element_time_9 = 1  # 1 = запись есть
 
         time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[12]')
-        if time_10.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_10.get_attribute("class"):
             self.element_time_10 = 0  # 0 = нет записи
         else:
             self.element_time_10 = 1  # 1 = запись есть
 
         time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[13]')
-        if time_11.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_11.get_attribute("class"):
             self.element_time_11 = 0  # 0 = нет записи
         else:
             self.element_time_11 = 1  # 1 = запись есть
 
         time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[14]')
-        if time_12.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_12.get_attribute("class"):
             self.element_time_12 = 0  # 0 = нет записи
         else:
             self.element_time_12 = 1  # 1 = запись есть
 
         time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[15]')
-        if time_13.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_13.get_attribute("class"):
             self.element_time_13 = 0  # 0 = нет записи
         else:
             self.element_time_13 = 1  # 1 = запись есть
 
         time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[16]')
-        if time_14.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_14.get_attribute("class"):
             self.element_time_14 = 0  # 0 = нет записи
         else:
             self.element_time_14 = 1  # 1 = запись есть
 
         time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[17]')
-        if time_15.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_15.get_attribute("class"):
             self.element_time_15 = 0  # 0 = нет записи
         else:
             self.element_time_15 = 1  # 1 = запись есть
 
         time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[18]')
-        if time_16.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_16.get_attribute("class"):
             self.element_time_16 = 0  # 0 = нет записи
         else:
             self.element_time_16 = 1  # 1 = запись есть
 
         time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[19]')
-        if time_17.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_17.get_attribute("class"):
             self.element_time_17 = 0  # 0 = нет записи
         else:
             self.element_time_17 = 1  # 1 = запись есть
 
         time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[20]')
-        if time_18.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_18.get_attribute("class"):
             self.element_time_18 = 0  # 0 = нет записи
         else:
             self.element_time_18 = 1  # 1 = запись есть
 
         time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[21]')
-        if time_19.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_19.get_attribute("class"):
             self.element_time_19 = 0  # 0 = нет записи
         else:
             self.element_time_19 = 1  # 1 = запись есть
 
         time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[22]')
-        if time_20.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_20.get_attribute("class"):
             self.element_time_20 = 0  # 0 = нет записи
         else:
             self.element_time_20 = 1  # 1 = запись есть
 
         time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[23]')
-        if time_21.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_21.get_attribute("class"):
             self.element_time_21 = 0  # 0 = нет записи
         else:
             self.element_time_21 = 1  # 1 = запись есть
 
         time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[24]')
-        if time_22.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_22.get_attribute("class"):
             self.element_time_22 = 0  # 0 = нет записи
         else:
             self.element_time_22 = 1  # 1 = запись есть
 
         time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[25]')
-        if time_23.find_element(By.CSS_SELECTOR, 'td.item'):
+        if "item " in time_23.get_attribute("class"):
             self.element_time_23 = 0  # 0 = нет записи
         else:
             self.element_time_23 = 1  # 1 = запись есть
