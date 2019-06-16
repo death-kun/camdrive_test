@@ -218,8 +218,8 @@ class monitoring:
     def archive_check(self):
         self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
-        # self.app.LineHours.check_time_2()
-        # self.app.LineHours.check_time_3()
+        self.app.LineHours.check_time_2()
+        self.app.LineHours.check_time_3()
         # self.app.LineHours.check_time_4()
         # self.app.LineHours.check_time_5()
         # self.app.LineHours.check_time_6()
@@ -250,11 +250,11 @@ class monitoring:
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
             try:   #Проверка появления таймлайна
-                WebDriverWait(driver, 15).until(EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, "div.player-bottom-controlbar" or "div.player-main-controlbar-seek-hover")))
-
-                archive_duration = driver.find_element_by_css_selector('div.seek-total-time')
-                self.archive_time = archive_duration.get_attribute('textContent')
+                if WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
+                    (By.CSS_SELECTOR, "div.player-bottom-controlbar"))):
+                    self.seek_total_time()
+                elif WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-wrap"))):
+                    self.seek_total_time()
 
                 #Проверка длительности записи Архива
                 if str(self.archive_time) > '11:50':
@@ -305,6 +305,12 @@ class monitoring:
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
                         self.app.LineHours.ii) + ' не отобразился.\n')
                 f.close()
+
+    def seek_total_time(self):
+        driver = self.app.driver
+        archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
+        self.archive_time = archive_duration.get_attribute('innerHTML')
+        return self.archive_time
 
     def title(self):
         driver = self.app.driver
