@@ -218,8 +218,8 @@ class monitoring:
     def archive_check(self):
         self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
-        self.app.LineHours.check_time_2()
-        self.app.LineHours.check_time_3()
+        # self.app.LineHours.check_time_2()
+        # self.app.LineHours.check_time_3()
         # self.app.LineHours.check_time_4()
         # self.app.LineHours.check_time_5()
         # self.app.LineHours.check_time_6()
@@ -248,24 +248,25 @@ class monitoring:
         try:   #Проверка появления плеера
             WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
-
+            
+#TODO : Переделать проверку загрузки видео
             try:   #Проверка появления таймлайна
-                if WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
+                if WebDriverWait(driver, 30).until(EC.visibility_of_element_located(
                     (By.CSS_SELECTOR, "div.player-bottom-controlbar"))):
                     self.seek_total_time()
-                elif WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-wrap"))):
+                elif WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-wrap"))):
                     self.seek_total_time()
 
                 #Проверка длительности записи Архива
                 if str(self.archive_time) > '11:50':
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.')
+                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.')
 
                     with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                         f.write(
                             '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут.\n')
+                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.\n')
                         f.close()
                 else:
                     print(
@@ -275,7 +276,7 @@ class monitoring:
                     with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                         f.write(
                                 '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
+                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
                         f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
@@ -309,8 +310,9 @@ class monitoring:
     def seek_total_time(self):
         driver = self.app.driver
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
-        self.archive_time = archive_duration.get_attribute('innerHTML')
+        self.archive_time = archive_duration.get_attribute('textContent')
         return self.archive_time
+        # self.archive_time = driver.execute_script("document.getElementsByClassName('seek-total-time')[0].textContent;")
 
     def title(self):
         driver = self.app.driver
