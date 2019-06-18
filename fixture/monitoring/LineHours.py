@@ -11,6 +11,8 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_0
+            item = driver.find_element_by_xpath('//*[@id="1"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_1(self):
@@ -21,6 +23,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_1
+            item = driver.find_element_by_xpath('//*[@id="2"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_2(self):
@@ -31,6 +35,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_2
+            item = driver.find_element_by_xpath('//*[@id="3"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_3(self):
@@ -41,6 +47,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_3
+            item = driver.find_element_by_xpath('//*[@id="4"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_4(self):
@@ -51,6 +59,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_4
+            item = driver.find_element_by_xpath('//*[@id="5"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_5(self):
@@ -61,6 +71,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_5
+            item = driver.find_element_by_xpath('//*[@id="6"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_6(self):
@@ -70,6 +82,8 @@ class hours:
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_6
+            item = driver.find_element_by_xpath('//*[@id="7"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_7(self):
@@ -80,6 +94,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_7
+            item = driver.find_element_by_xpath('//*[@id="8"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
 
@@ -92,6 +108,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_8
+            item = driver.find_element_by_xpath('//*[@id="9"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_9(self):
@@ -102,6 +120,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_9
+            item = driver.find_element_by_xpath('//*[@id="10"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_10(self):
@@ -112,6 +132,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_10
+            item = driver.find_element_by_xpath('//*[@id="11"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_11(self):
@@ -122,6 +144,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_11
+            item = driver.find_element_by_xpath('//*[@id="12"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_12(self):
@@ -132,6 +156,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_12
+            item = driver.find_element_by_xpath('//*[@id="13"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_13(self):
@@ -142,6 +168,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_13
+            item = driver.find_element_by_xpath('//*[@id="14"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_14(self):
@@ -152,6 +180,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_14
+            item = driver.find_element_by_xpath('//*[@id="15"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_15(self):
@@ -162,6 +192,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_15
+            item = driver.find_element_by_xpath('//*[@id="16"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_16(self):
@@ -172,6 +204,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_16
+            item = driver.find_element_by_xpath('//*[@id="17"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_17(self):
@@ -182,6 +216,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_17
+            item = driver.find_element_by_xpath('//*[@id="18"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_18(self):
@@ -192,6 +228,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_18
+            item = driver.find_element_by_xpath('//*[@id="19"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_19(self):
@@ -202,6 +240,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_19
+            item = driver.find_element_by_xpath('//*[@id="20"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_20(self):
@@ -212,6 +252,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_20
+            item = driver.find_element_by_xpath('//*[@id="21"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_21(self):
@@ -222,6 +264,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_21
+            item = driver.find_element_by_xpath('//*[@id="22"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_time_22(self):
@@ -232,6 +276,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_22
+            item = driver.find_element_by_xpath('//*[@id="23"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
 
@@ -243,6 +289,8 @@ class hours:
                 i]
             self.ii = i
             self.item_time = self.app.Schedule.element_time_23
+            item = driver.find_element_by_xpath('//*[@id="24"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
     def check_for_emptiness(self):
@@ -250,21 +298,21 @@ class hours:
             item = 0
             if item == self.item_time:
                 print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
-                    self.ii) + ' нет по расписанию.')
+                    self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.')
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
                     '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
-                        self.ii) + ' нет по расписанию.\n')
+                        self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.\n')
                     f.close()
             else:
                 print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
-                    self.ii) + ' нет.')
+                    self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.')
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
                     '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
-                        self.ii) + ' нет.\n')
+                        self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.\n')
                     f.close()
         else:
             self.T.click()

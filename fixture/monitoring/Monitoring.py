@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+from selenium.webdriver.common.action_chains import ActionChains
 class monitoring:
 
     def __init__(self, app):
@@ -218,65 +218,66 @@ class monitoring:
     def archive_check(self):
         self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
-        # self.app.LineHours.check_time_2()
-        # self.app.LineHours.check_time_3()
-        # self.app.LineHours.check_time_4()
-        # self.app.LineHours.check_time_5()
-        # self.app.LineHours.check_time_6()
-        # self.app.LineHours.check_time_7()
-        # self.app.LineHours.check_time_8()
-        # self.app.LineHours.check_time_9()
-        # self.app.LineHours.check_time_10()
-        # self.app.LineHours.check_time_11()
-        # self.app.LineHours.check_time_12()
-        # self.app.LineHours.check_time_13()
-        # self.app.LineHours.check_time_14()
-        # self.app.LineHours.check_time_15()
-        # self.app.LineHours.check_time_16()
-        # self.app.LineHours.check_time_17()
-        # self.app.LineHours.check_time_18()
-        # self.app.LineHours.check_time_19()
-        # self.app.LineHours.check_time_20()
-        # self.app.LineHours.check_time_21()
-        # self.app.LineHours.check_time_22()
-        # self.app.LineHours.check_time_23()
+        self.app.LineHours.check_time_2()
+        self.app.LineHours.check_time_3()
+        self.app.LineHours.check_time_4()
+        self.app.LineHours.check_time_5()
+        self.app.LineHours.check_time_6()
+        self.app.LineHours.check_time_7()
+        self.app.LineHours.check_time_8()
+        self.app.LineHours.check_time_9()
+        self.app.LineHours.check_time_10()
+        self.app.LineHours.check_time_11()
+        self.app.LineHours.check_time_12()
+        self.app.LineHours.check_time_13()
+        self.app.LineHours.check_time_14()
+        self.app.LineHours.check_time_15()
+        self.app.LineHours.check_time_16()
+        self.app.LineHours.check_time_17()
+        self.app.LineHours.check_time_18()
+        self.app.LineHours.check_time_19()
+        self.app.LineHours.check_time_20()
+        self.app.LineHours.check_time_21()
+        self.app.LineHours.check_time_22()
+        self.app.LineHours.check_time_23()
 
 
     def check_player(self):
         driver = self.app.driver
-        # y = self.app.ii
         try:   #Проверка появления плеера
             WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
-            
+
 #TODO : Переделать проверку загрузки видео
             try:   #Проверка появления таймлайна
-                if WebDriverWait(driver, 30).until(EC.visibility_of_element_located(
-                    (By.CSS_SELECTOR, "div.player-bottom-controlbar"))):
+                if WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='screen']/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]"))):
                     self.seek_total_time()
-                elif WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div.player-main-controlbar-seek-wrap"))):
+                else:
+                    WebDriverWait(driver, 15).until(EC.presence_of_element_located(
+                    (By.XPATH, "//*[@id='screen']/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]")))
                     self.seek_total_time()
 
+#TODO : Добавить в текст временной диапазон архива
                 #Проверка длительности записи Архива
                 if str(self.archive_time) > '11:50':
                     print(
                         'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                            self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.')
+                            self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.')
 
                     with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                         f.write(
                             '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.\n')
+                                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.\n')
                         f.close()
                 else:
                     print(
                             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                                self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
+                                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
                     with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                         f.write(
                                 '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" прошла успешно. Видео ' + str(
-                                    self.app.LineHours.ii) + ' загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
+                                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
                         f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
@@ -285,12 +286,12 @@ class monitoring:
 
                 print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                        self.app.LineHours.ii) + ' не загрузилось')
+                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось')
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Видео ' + str(
-                            self.app.LineHours.ii) + ' не загрузилось.\n')
+                            self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось.\n')
                     f.close()
 
                 driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
@@ -299,20 +300,21 @@ class monitoring:
 
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
-                    self.app.LineHours.ii) + ' не отобразился.')
+                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" провалилась. Плеер ' + str(
-                        self.app.LineHours.ii) + ' не отобразился.\n')
+                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.\n')
                 f.close()
 
     def seek_total_time(self):
         driver = self.app.driver
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
+        Focus = ActionChains(driver)
+        Focus.move_to_element(archive_duration).perform()
         self.archive_time = archive_duration.get_attribute('textContent')
         return self.archive_time
-        # self.archive_time = driver.execute_script("document.getElementsByClassName('seek-total-time')[0].textContent;")
 
     def title(self):
         driver = self.app.driver
@@ -331,4 +333,3 @@ class monitoring:
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('7ujm6yhn')
         driver.find_element_by_id('login').click()
         time.sleep(1)
-
