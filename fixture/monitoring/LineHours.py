@@ -297,21 +297,21 @@ class hours:
         if "item empty " in self.T.get_attribute('class'):
             item = 0
             if item == self.item_time:
-                print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+                print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива под номером ' + str(
                     self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.')
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
+                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива под номером ' + str(
                         self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.\n')
                     f.close()
             else:
                 print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива под номером ' + str(
                     self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.')
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '". Архива ' + str(
+                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива под номером ' + str(
                         self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.\n')
                     f.close()
         else:
