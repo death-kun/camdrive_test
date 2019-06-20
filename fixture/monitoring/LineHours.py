@@ -98,8 +98,6 @@ class hours:
             self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
 
-
-
     def check_time_8(self):
         driver = self.app.driver
         for i in range(40, 45, 1):
@@ -279,7 +277,6 @@ class hours:
             item = driver.find_element_by_xpath('//*[@id="23"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
-
 
     def check_time_23(self):
         driver = self.app.driver

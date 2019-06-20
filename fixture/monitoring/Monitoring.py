@@ -6,7 +6,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-import glob, os
+from pathlib import Path
 
 class monitoring:
 
@@ -14,7 +14,7 @@ class monitoring:
         self.app = app
 
     def detection_of_archive(self):
-        # self.delete_txt()
+        self.delete_txt()
         self.app.login_autotest()
         # self.login_monitoring()
         time.sleep(4)
@@ -24,11 +24,13 @@ class monitoring:
         self.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_CD120_D521()
+
         time.sleep(1)
-        self.click_CD_120()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD_120()
+
+        # self.click_CD_120()
+        # self.open_schedule_open_archive()
+        # time.sleep(4)
+        # self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
         # self.check_first_tree()
@@ -220,8 +222,8 @@ class monitoring:
 
     def archive_check(self):
         self.app.LineHours.check_time_0()
-        self.app.LineHours.check_time_1()
-        self.app.LineHours.check_time_2()
+        # self.app.LineHours.check_time_1()
+        # self.app.LineHours.check_time_2()
         # self.app.LineHours.check_time_3()
         # self.app.LineHours.check_time_4()
         # self.app.LineHours.check_time_5()
@@ -257,8 +259,29 @@ class monitoring:
                 # if WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='screen']/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]"))):
                 #     self.seek_total_time()
                 # else:
+                # WebDriverWait(driver, 15).until(EC.visibility_of_elements_located(
+                #     (By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover" "div.player-bottom-controlbar")))
+                #
                 WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
-                    (By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover" or "div.player-bottom-controlbar")))
+                    (By.XPATH, '//*[@id="screen"]/div[1]/div/div[2]/[(@class="hover-video" and contains(style()"opacity: 0; display: block;")]')))
+                print('YES')
+                # time.sleep(4)
+                # Focus = ActionChains(driver)
+                # Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
+                i = 0
+                T = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]/div[1]')
+                print(T.get_attribute("style"))
+
+                while i == 10:
+                    print(T.get_attribute("style") + 'WIDTH AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+                    if "width: 0%;" in T.get_attribute("style"):
+                        time.sleep(1)
+                        i = i + 1
+                    else:
+                        Focus = ActionChains(driver)
+                        Focus.move_to_element(
+                            driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
+                        break
                 self.seek_total_time()
 
 #TODO : Добавить в текст временной диапазон архива
@@ -314,13 +337,18 @@ class monitoring:
 
     def seek_total_time(self):
         driver = self.app.driver
-        time_line = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]')
-        if  "opacity: 1;" in time_line.get_attribute("style"):
-            Focus = ActionChains(driver)
-            Focus.move_to_element(driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]/div[1]')).perform()
+        # self.focus_element()
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
         self.archive_time = archive_duration.get_attribute('textContent')
         return self.archive_time
+
+    def focus_element(self):
+        driver = self.app.driver
+        if driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]'):
+            time.sleep(3)
+            Focus = ActionChains(driver)
+            Focus.move_to_element(driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]')).perform() #Фокус на нижнюю панель
+
 
     def title(self):
         driver = self.app.driver
@@ -342,11 +370,7 @@ class monitoring:
 
 #TODO : Сделать проверку на наличие txt файлов в папке test
     def delete_txt(self):
-        dir = os.path.dirname(__file__)
-        # file1 = "test/monitoring error report.txt"
-        # file2 = "test/monitoring report.txt"
-        # PATH = os.path.join("~/camdrive_test/test/") #Изменить путь на сервере перед тем, как запускать на Jenkins
-        folder = os.path.dirname(dir)
-        filelist = glob.glob(os.path.join(folder, "*.txt", 'test/'))
-        for f in filelist:
-            os.remove(f)
+        T = Path('.').glob('*.txt')
+        for f in T:
+            Path.unlink(f)
+
