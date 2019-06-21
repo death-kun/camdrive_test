@@ -246,6 +246,7 @@ class monitoring:
         # self.app.LineHours.check_time_22()
         # self.app.LineHours.check_time_23()
 
+# TODO : РЕФАКТОРИНГ - Сделать проверку плеера. Добавить наведение фокуса на тамлайн, чтобы считать дилу видео
 
     def check_player(self):
         driver = self.app.driver
@@ -253,101 +254,69 @@ class monitoring:
             WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
 
-#TODO : Переделать проверку загрузки видео
-            # Проверка появления таймлайна
-            try:
-                # if WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='screen']/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]"))):
-                #     self.seek_total_time()
-                # else:
-                # WebDriverWait(driver, 15).until(EC.visibility_of_elements_located(
-                #     (By.CSS_SELECTOR, "div.player-main-controlbar-seek-hover" "div.player-bottom-controlbar")))
-                #
-                WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
-                    (By.XPATH, '//*[@id="screen"]/div[1]/div/div[2]/[(@class="hover-video" and contains(style()"opacity: 0; display: block;")]')))
-                print('YES')
-                # time.sleep(4)
-                # Focus = ActionChains(driver)
-                # Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
-                i = 0
-                T = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]/div[1]')
-                print(T.get_attribute("style"))
 
-                while i == 10:
-                    print(T.get_attribute("style") + 'WIDTH AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-                    if "width: 0%;" in T.get_attribute("style"):
-                        time.sleep(1)
-                        i = i + 1
-                    else:
-                        Focus = ActionChains(driver)
-                        Focus.move_to_element(
-                            driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
-                        break
-                self.seek_total_time()
 
-#TODO : Добавить в текст временной диапазон архива
-                #Проверка длительности записи Архива
-                if str(self.archive_time) > '11:50':
-                    print(
-                        'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
-                            self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.')
+    def text_player_is_not_displayed(self):
+        print(
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер под номером ' + str(
+                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.')
+        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер под номером ' + str(
+                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.\n')
+            f.close()
 
-                    with open('monitoring report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                            '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут.\n')
-                        f.close()
-                else:
-                    print(
-                            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
-                                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
+    def text_the_video_did_not_load(self):
+        driver = self.app.driver
+        print(
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео под номером ' + str(
+                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось')
+        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
+                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось.\n')
+            f.close()
+        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
-                    with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
-                        f.close()
-
-                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-
-            except TimeoutException:
-
-                print(
-                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео под номером ' + str(
-                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось')
-
-                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
-                    f.write(
-                        '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                            self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось.\n')
-                    f.close()
-
-                driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
-
-        except TimeoutException:
-
+    def video_length_check(self):
+        # Проверка длительности записи Архива
+        driver = self.app.driver
+        if str(self.archive_time) > '11:50':
             print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер под номером ' + str(
-                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.')
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
+                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                    self.archive_time).strip() + ' минут.')
+
+            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                f.write(
+                    '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
+                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                        self.archive_time).strip() + ' минут.\n')
+                f.close()
+        else:
+            print(
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
+                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                    self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер под номером ' + str(
-                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.\n')
+                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
+                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                        self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
                 f.close()
+        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def seek_total_time(self):
         driver = self.app.driver
-        # self.focus_element()
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
         self.archive_time = archive_duration.get_attribute('textContent')
         return self.archive_time
 
     def focus_element(self):
         driver = self.app.driver
-        if driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[3]'):
-            time.sleep(3)
-            Focus = ActionChains(driver)
-            Focus.move_to_element(driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]')).perform() #Фокус на нижнюю панель
+        Focus = ActionChains(driver)
+        Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
 
 
     def title(self):
