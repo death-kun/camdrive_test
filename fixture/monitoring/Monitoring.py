@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from pathlib import Path
-import lxml.html as html
 
 class monitoring:
 
@@ -252,7 +251,7 @@ class monitoring:
     def check_player(self):
         driver = self.app.driver
         try:
-            WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.hover-video')))
+            WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.container.active')))
             try:
                 width_element = 0
                 while width_element < 7:
