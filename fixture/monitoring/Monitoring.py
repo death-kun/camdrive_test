@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from pathlib import Path
+import lxml.html as html
 
 class monitoring:
 
@@ -25,12 +26,12 @@ class monitoring:
         time.sleep(4)
         self.check_camera_CD120_D521()
 
-        time.sleep(1)
+        time.sleep(2)
 
-        # self.click_CD_120()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD_120()
+        self.click_CD_120()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
         # self.check_first_tree()
@@ -222,39 +223,50 @@ class monitoring:
 
     def archive_check(self):
         self.app.LineHours.check_time_0()
-        # self.app.LineHours.check_time_1()
-        # self.app.LineHours.check_time_2()
-        # self.app.LineHours.check_time_3()
-        # self.app.LineHours.check_time_4()
-        # self.app.LineHours.check_time_5()
-        # self.app.LineHours.check_time_6()
-        # self.app.LineHours.check_time_7()
-        # self.app.LineHours.check_time_8()
-        # self.app.LineHours.check_time_9()
-        # self.app.LineHours.check_time_10()
-        # self.app.LineHours.check_time_11()
-        # self.app.LineHours.check_time_12()
-        # self.app.LineHours.check_time_13()
-        # self.app.LineHours.check_time_14()
-        # self.app.LineHours.check_time_15()
-        # self.app.LineHours.check_time_16()
-        # self.app.LineHours.check_time_17()
-        # self.app.LineHours.check_time_18()
-        # self.app.LineHours.check_time_19()
-        # self.app.LineHours.check_time_20()
-        # self.app.LineHours.check_time_21()
-        # self.app.LineHours.check_time_22()
-        # self.app.LineHours.check_time_23()
+        self.app.LineHours.check_time_1()
+        self.app.LineHours.check_time_2()
+        self.app.LineHours.check_time_3()
+        self.app.LineHours.check_time_4()
+        self.app.LineHours.check_time_5()
+        self.app.LineHours.check_time_6()
+        self.app.LineHours.check_time_7()
+        self.app.LineHours.check_time_8()
+        self.app.LineHours.check_time_9()
+        self.app.LineHours.check_time_10()
+        self.app.LineHours.check_time_11()
+        self.app.LineHours.check_time_12()
+        self.app.LineHours.check_time_13()
+        self.app.LineHours.check_time_14()
+        self.app.LineHours.check_time_15()
+        self.app.LineHours.check_time_16()
+        self.app.LineHours.check_time_17()
+        self.app.LineHours.check_time_18()
+        self.app.LineHours.check_time_19()
+        self.app.LineHours.check_time_20()
+        self.app.LineHours.check_time_21()
+        self.app.LineHours.check_time_22()
+        self.app.LineHours.check_time_23()
 
 # TODO : РЕФАКТОРИНГ - Сделать проверку плеера. Добавить наведение фокуса на тамлайн, чтобы считать дилу видео
 
     def check_player(self):
         driver = self.app.driver
-        try:   #Проверка появления плеера
-            WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "div.hover-video")))
-
-
+        try:
+            WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.hover-video')))
+            try:
+                width_element = 0
+                while width_element < 7:
+                    time.sleep(1)
+                    T = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
+                    size_element = T.size
+                    width_element = size_element['width']
+                self.focus_element()
+                self.seek_total_time()
+                self.video_length_check()
+            except TimeoutException:
+                self.text_the_video_did_not_load()
+        except TimeoutException:
+            self.text_player_is_not_displayed()
 
     def text_player_is_not_displayed(self):
         print(
