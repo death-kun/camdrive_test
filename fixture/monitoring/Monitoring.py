@@ -329,7 +329,6 @@ class monitoring:
         Focus = ActionChains(driver)
         Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
 
-
     def title(self):
         driver = self.app.driver
         camera_title = driver.find_element_by_css_selector('a.jstree-clicked')
@@ -348,7 +347,6 @@ class monitoring:
         driver.find_element_by_id('login').click()
         time.sleep(1)
 
-#TODO : Сделать проверку на наличие txt файлов в папке test
     def delete_txt(self):
         T = Path('.').glob('*.txt')
         for f in T:
