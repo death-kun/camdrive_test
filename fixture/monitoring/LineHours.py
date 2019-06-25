@@ -3,7 +3,7 @@ class hours:
     def __init__(self, app):
         self.app = app
 
-
+#TODO: Изменить "имя" плеера/видео для вывода в сообщение. Проиндексировать элементы в строке и выводить индекс в номер видео за временной диапозон.
     def check_time_0(self):
         driver = self.app.driver
         for i in range(0, 5, 1):
