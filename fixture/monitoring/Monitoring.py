@@ -292,6 +292,7 @@ class monitoring:
     def video_length_check(self):
         # Проверка длительности записи Архива
         driver = self.app.driver
+        self.app.getting_time()
         if str(self.archive_time) > '11:50':
             print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(

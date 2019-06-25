@@ -6,7 +6,7 @@ class hours:
 #TODO: Изменить "имя" плеера/видео для вывода в сообщение. Выводить имя типа 00:00 - 00:12
     def check_time_0(self):
         driver = self.app.driver
-        m = 0
+        self.m = 0
         for i in range(0, 5, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
@@ -16,19 +16,11 @@ class hours:
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
             print(self.d)
-            if m == 0:
-                h = str(self.d) + ':' + str(m) + str('0')
-                print(h + ' if')
-                m = m + 12
-            else:
-                h = str(self.d) + ':' + str(m)
-                print(h + ' else')
-                m = m + 12
+            self.getting_time()
             self.check_for_emptiness()
 
     def check_time_1(self):
         driver = self.app.driver
-        m = 0
         for i in range(5, 10, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -39,15 +31,6 @@ class hours:
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0] #Получаем первую часть времени
             print(self.d)
-            if m == 0:
-                h = str(self.d) + ':' + str(m) + str('0')
-                print(h + ' if')
-                m = m + 12
-            else:
-                h = str(self.d) + ':' + str(m)
-                print(h + ' else')
-                m = m + 12
-
             self.check_for_emptiness()
 
     def check_time_2(self):
@@ -312,6 +295,31 @@ class hours:
             item = driver.find_element_by_xpath('//*[@id="24"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.check_for_emptiness()
+
+    def getting_time(self):
+        self.m = 0
+        if self.m == 0:
+            self.h1 = str(self.d) + ':' + str(self.m) + str('0')
+            print(self.h1 + ' if')
+            self.m = self.m + 12
+            self.h2 = str(self.d) + ':' + str(self.m)
+            print(self.h2 + ' if')
+            print(self.h1 + '-' + self.h2 + ' if')
+        else:
+            self.h1 = str(self.d) + ':' + str(self.m)
+            print(self.h1 + ' else if')
+            if self.m == 48:
+                self.m = self.m + 11
+                self.h2 = str(self.d) + ':' + str(self.m)
+                print(self.h2 + ' else if')
+                print(self.h1 + '-' + self.h2 + ' else if')
+            else:
+                self.h1 = str(self.d) + ':' + str(self.m)
+                print(self.h1 + ' else else if')
+                self.m = self.m + 12
+                self.h2 = str(self.d) + ':' + str(self.m)
+                print(self.h2 + ' else else if')
+                print(self.h1 + '-' + self.h2 + ' else else if')
 
     def check_for_emptiness(self):
         if "item empty " in self.T.get_attribute('class'):
