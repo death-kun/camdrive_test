@@ -3,20 +3,32 @@ class hours:
     def __init__(self, app):
         self.app = app
 
-#TODO: Изменить "имя" плеера/видео для вывода в сообщение. Проиндексировать элементы в строке и выводить индекс в номер видео за временной диапозон.
+#TODO: Изменить "имя" плеера/видео для вывода в сообщение. Выводить имя типа 00:00 - 00:12
     def check_time_0(self):
         driver = self.app.driver
+        m = 0
         for i in range(0, 5, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
-            self.ii = i
+
             self.item_time = self.app.Schedule.element_time_0
             item = driver.find_element_by_xpath('//*[@id="1"]/td[1]')
             self.time_name = item.get_attribute('textContent')
+            self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
+            print(self.d)
+            if m == 0:
+                h = str(self.d) + ':' + str(m) + str('0')
+                print(h + ' if')
+                m = m + 12
+            else:
+                h = str(self.d) + ':' + str(m)
+                print(h + ' else')
+                m = m + 12
             self.check_for_emptiness()
 
     def check_time_1(self):
         driver = self.app.driver
+        m = 0
         for i in range(5, 10, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -25,6 +37,17 @@ class hours:
             self.item_time = self.app.Schedule.element_time_1
             item = driver.find_element_by_xpath('//*[@id="2"]/td[1]')
             self.time_name = item.get_attribute('textContent')
+            self.d = self.time_name.partition(':')[0] #Получаем первую часть времени
+            print(self.d)
+            if m == 0:
+                h = str(self.d) + ':' + str(m) + str('0')
+                print(h + ' if')
+                m = m + 12
+            else:
+                h = str(self.d) + ':' + str(m)
+                print(h + ' else')
+                m = m + 12
+
             self.check_for_emptiness()
 
     def check_time_2(self):
