@@ -268,53 +268,47 @@ class monitoring:
             self.text_player_is_not_displayed()
 
     def text_player_is_not_displayed(self):
+        self.app.LineHours.getting_time()
         print(
-            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер под номером ' + str(
-                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.')
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер под номером ' + str(
-                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не отобразился.\n')
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился.\n')
             f.close()
 
     def text_the_video_did_not_load(self):
         driver = self.app.driver
+        self.app.LineHours.getting_time()
         print(
-            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео под номером ' + str(
-                self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось')
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '+ str(self.app.LineHours.h) +' не загрузилось')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" не загрузилось.\n')
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось.\n')
             f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def video_length_check(self):
         # Проверка длительности записи Архива
         driver = self.app.driver
-        self.app.getting_time()
+        self.app.LineHours.getting_time()
         if str(self.archive_time) > '11:50':
             print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
-                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                     self.archive_time).strip() + ' минут.')
 
             with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                    '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут.\n')
                 f.close()
         else:
             print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео под номером ' + str(
-                    self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                     self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео под номером ' + str(
-                        self.app.LineHours.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" загрузилось. Длительность видео ' + str(
+                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
                 f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()

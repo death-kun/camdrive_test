@@ -16,7 +16,7 @@ class hours:
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
             print(self.d)
-            self.getting_time()
+
             self.check_for_emptiness()
 
     def check_time_1(self):
@@ -297,50 +297,41 @@ class hours:
             self.check_for_emptiness()
 
     def getting_time(self):
-        self.m = 0
-        if self.m == 0:
-            self.h1 = str(self.d) + ':' + str(self.m) + str('0')
-            print(self.h1 + ' if')
-            self.m = self.m + 12
-            self.h2 = str(self.d) + ':' + str(self.m)
-            print(self.h2 + ' if')
-            print(self.h1 + '-' + self.h2 + ' if')
+        m = 0
+        if m == 0:
+            self.h1 = str(self.d) + ':' + str(m) + str('0')
+            m = m + 12
+            self.h2 = str(self.d) + ':' + str(m)
+            self.h = self.h1 + '-' + self.h2
         else:
-            self.h1 = str(self.d) + ':' + str(self.m)
+            self.h1 = str(self.d) + ':' + str(m)
             print(self.h1 + ' else if')
-            if self.m == 48:
-                self.m = self.m + 11
-                self.h2 = str(self.d) + ':' + str(self.m)
-                print(self.h2 + ' else if')
-                print(self.h1 + '-' + self.h2 + ' else if')
+            if m == 48:
+                m = self.m + 11
+                self.h2 = str(self.d) + ':' + str(m)
+                self.h = self.h1 + '-' + self.h2
             else:
-                self.h1 = str(self.d) + ':' + str(self.m)
-                print(self.h1 + ' else else if')
-                self.m = self.m + 12
-                self.h2 = str(self.d) + ':' + str(self.m)
-                print(self.h2 + ' else else if')
-                print(self.h1 + '-' + self.h2 + ' else else if')
+                self.h1 = str(self.d) + ':' + str(m)
+                m = m + 12
+                self.h2 = str(self.d) + ':' + str(m)
+                self.h = self.h1 + '-' + self.h2
 
     def check_for_emptiness(self):
         if "item empty " in self.T.get_attribute('class'):
             item = 0
             if item == self.item_time:
-                print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива под номером ' + str(
-                    self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.')
+                print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива '+ str(self.app.LineHours.h) +' нет по расписанию.')
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива под номером ' + str(
-                        self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет по расписанию.\n')
+                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива '+ str(self.app.LineHours.h) +' нет по расписанию.\n')
                     f.close()
             else:
                 print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива под номером ' + str(
-                    self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.')
+                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива '+ str(self.app.LineHours.h) +' нет.')
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива под номером ' + str(
-                        self.ii) + ' за временной диапазон "' + self.app.LineHours.time_name.strip() + ' часов" нет.\n')
+                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива '+ str(self.app.LineHours.h) +' нет.\n')
                     f.close()
         else:
             self.T.click()

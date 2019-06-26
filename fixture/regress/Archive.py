@@ -47,6 +47,7 @@ class archive_check:
         click_element.click()
         time.sleep(2)
 
+#TODO :: Сделать Рефакторинг. Добавить создание отчета. Таймаут для ожидания скачивания файла заменить на проверку/ожидание
     def download_archive(self):
         driver = self.app.driver
         #Проверка есть ли в папке Downloads файл с расширением avi и удаляет его
