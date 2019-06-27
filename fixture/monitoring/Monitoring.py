@@ -25,12 +25,12 @@ class monitoring:
         time.sleep(4)
         self.check_camera_CD120_D521()
 
-        # time.sleep(2)
-        #
-        # self.click_CD_120()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD_120()
+        time.sleep(2)
+
+        self.click_CD_120()
+        self.open_schedule_open_archive()
+        time.sleep(4)
+        self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
         # self.check_first_tree()
@@ -100,7 +100,7 @@ class monitoring:
     def open_schedule_open_archive(self):
         driver = self.app.driver
         self.app.Schedule.open_schedule()
-        time.sleep(3)
+        time.sleep(3) #Заменить на ожидание
         self.app.Schedule.yesterday_day_of_the_week()
         time.sleep(5)
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
@@ -221,30 +221,30 @@ class monitoring:
         self.archive_check()
 
     def archive_check(self):
-        # self.app.LineHours.check_time_0()
+        self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
-        # self.app.LineHours.check_time_2()
-        # self.app.LineHours.check_time_3()
-        # self.app.LineHours.check_time_4()
-        # self.app.LineHours.check_time_5()
-        # self.app.LineHours.check_time_6()
-        # self.app.LineHours.check_time_7()
-        # self.app.LineHours.check_time_8()
-        # self.app.LineHours.check_time_9()
-        # self.app.LineHours.check_time_10()
-        # self.app.LineHours.check_time_11()
-        # self.app.LineHours.check_time_12()
-        # self.app.LineHours.check_time_13()
-        # self.app.LineHours.check_time_14()
-        # self.app.LineHours.check_time_15()
-        # self.app.LineHours.check_time_16()
-        # self.app.LineHours.check_time_17()
-        # self.app.LineHours.check_time_18()
-        # self.app.LineHours.check_time_19()
-        # self.app.LineHours.check_time_20()
-        # self.app.LineHours.check_time_21()
-        # self.app.LineHours.check_time_22()
-        # self.app.LineHours.check_time_23()
+        self.app.LineHours.check_time_2()
+        self.app.LineHours.check_time_3()
+        self.app.LineHours.check_time_4()
+        self.app.LineHours.check_time_5()
+        self.app.LineHours.check_time_6()
+        self.app.LineHours.check_time_7()
+        self.app.LineHours.check_time_8()
+        self.app.LineHours.check_time_9()
+        self.app.LineHours.check_time_10()
+        self.app.LineHours.check_time_11()
+        self.app.LineHours.check_time_12()
+        self.app.LineHours.check_time_13()
+        self.app.LineHours.check_time_14()
+        self.app.LineHours.check_time_15()
+        self.app.LineHours.check_time_16()
+        self.app.LineHours.check_time_17()
+        self.app.LineHours.check_time_18()
+        self.app.LineHours.check_time_19()
+        self.app.LineHours.check_time_20()
+        self.app.LineHours.check_time_21()
+        self.app.LineHours.check_time_22()
+        self.app.LineHours.check_time_23()
 
 # TODO : РЕФАКТОРИНГ - Сделать проверку плеера. Добавить наведение фокуса на тамлайн, чтобы считать дилу видео
 
@@ -301,15 +301,28 @@ class monitoring:
                         self.archive_time).strip() + ' минут.\n')
                 f.close()
         else:
-            print(
+            if self.app.LineHours.item_time == 2:
+                print(
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
+                        self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                        self.archive_time).strip() + ' минут. Запись по детекции движения.')
+
+                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
+                        '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео ' + str(
+                            self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                            self.archive_time).strip() + ' минут. Запись по детекции движения.\n')
+                    f.close()
+            else:
+                print(
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                     self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
-            with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
-                f.write(
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
-                f.close()
+                    f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def seek_total_time(self):

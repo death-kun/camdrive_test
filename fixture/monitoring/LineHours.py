@@ -347,7 +347,6 @@ class hours:
             self.h = self.h1 + '-' + self.h2
         else:
             self.h1 = str(self.d) + ':' + str(self.m)
-            print(self.h1 + ' else if')
             if self.m == 48:
                 self.m = self.m + 11
                 self.h2 = str(self.d) + ':' + str(self.m)
