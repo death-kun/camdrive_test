@@ -10,7 +10,6 @@ class hours:
         for i in range(0, 5, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
-            # self.item_time = self.app.Schedule.element_time_0
             element_schedule = self.app.Schedule.massiv[0]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="1"]/td[1]')
@@ -26,7 +25,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            # self.item_time = self.app.Schedule.element_time_1
             element_schedule = self.app.Schedule.massiv[1]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="2"]/td[1]')
@@ -42,7 +40,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            # self.item_time = self.app.Schedule.element_time_2
             element_schedule = self.app.Schedule.massiv[2]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="3"]/td[1]')
@@ -58,7 +55,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            # self.item_time = self.app.Schedule.element_time_3
             element_schedule = self.app.Schedule.massiv[3]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="4"]/td[1]')
@@ -74,7 +70,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            # self.item_time = self.app.Schedule.element_time_4
             element_schedule = self.app.Schedule.massiv[4]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="5"]/td[1]')
@@ -90,7 +85,6 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            # self.item_time = self.app.Schedule.element_time_5
             element_schedule = self.app.Schedule.massiv[5]
             self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="6"]/td[1]')
@@ -105,7 +99,8 @@ class hours:
         for i in range(30, 35, 1):
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
-            self.item_time = self.app.Schedule.element_time_6
+            element_schedule = self.app.Schedule.massiv[6]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="7"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -119,7 +114,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_7
+            element_schedule = self.app.Schedule.massiv[7]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="8"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -133,7 +129,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_8
+            element_schedule = self.app.Schedule.massiv[8]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="9"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -147,7 +144,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_9
+            element_schedule = self.app.Schedule.massiv[9]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="10"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -161,7 +159,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_10
+            element_schedule = self.app.Schedule.massiv[10]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="11"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -175,7 +174,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_11
+            element_schedule = self.app.Schedule.massiv[11]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="12"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -189,7 +189,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_12
+            element_schedule = self.app.Schedule.massiv[12]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="13"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -203,7 +204,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_13
+            element_schedule = self.app.Schedule.massiv[13]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="14"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -217,7 +219,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_14
+            element_schedule = self.app.Schedule.massiv[14]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="15"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -231,7 +234,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_15
+            element_schedule = self.app.Schedule.massiv[15]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="16"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -245,7 +249,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_16
+            element_schedule = self.app.Schedule.massiv[16]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="17"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -259,7 +264,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_17
+            element_schedule = self.app.Schedule.massiv[17]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="18"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -273,7 +279,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_18
+            element_schedule = self.app.Schedule.massiv[18]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="19"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -287,7 +294,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_19
+            element_schedule = self.app.Schedule.massiv[19]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="20"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -301,7 +309,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_20
+            element_schedule = self.app.Schedule.massiv[20]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="21"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -315,7 +324,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_21
+            element_schedule = self.app.Schedule.massiv[21]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="22"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -329,7 +339,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_22
+            element_schedule = self.app.Schedule.massiv[22]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="23"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
@@ -343,7 +354,8 @@ class hours:
             self.T = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
-            self.item_time = self.app.Schedule.element_time_23
+            element_schedule = self.app.Schedule.massiv[23]
+            self.item_time = element_schedule
             item = driver.find_element_by_xpath('//*[@id="24"]/td[1]')
             self.time_name = item.get_attribute('textContent')
             self.d = self.time_name.partition(':')[0]  # Получаем первую часть времени
