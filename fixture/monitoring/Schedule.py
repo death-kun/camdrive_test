@@ -349,80 +349,80 @@ class schedule:
         self.time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[25]')
         self.elem_time_23()
 
-    def wednesday(self):
-        driver = self.app.driver
-        # Среда
-        self.time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[2]')
-        self.elem_time_0()
-
-        self.time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[3]')
-        self.elem_time_1()
-
-        self.time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[4]')
-        self.elem_time_2()
-
-        self.time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[5]')
-        self.elem_time_3()
-
-        self.time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[6]')
-        self.elem_time_4()
-
-        self.time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[7]')
-        self.elem_time_5()
-
-        self.time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[8]')
-        self.elem_time_6()
-
-        self.time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[9]')
-        self.elem_time_7()
-
-        self.time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[10]')
-        self.elem_time_8()
-
-        self.time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[11]')
-        self.elem_time_9()
-
-        self.time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[12]')
-        self.elem_time_10()
-
-        self.time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[13]')
-        self.elem_time_11()
-
-        self.time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[14]')
-        self.elem_time_12()
-
-        self.time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[15]')
-        self.elem_time_13()
-
-        self.time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[16]')
-        self.elem_time_14()
-
-        self.time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[17]')
-        self.elem_time_15()
-
-        self.time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[18]')
-        self.elem_time_16()
-
-        self.time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[19]')
-        self.elem_time_17()
-
-        self.time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[20]')
-        self.elem_time_18()
-
-        self.time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[21]')
-        self.elem_time_19()
-
-        self.time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[22]')
-        self.elem_time_20()
-
-        self.time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[23]')
-        self.elem_time_21()
-
-        self.time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[24]')
-        self.elem_time_22()
-
-        self.time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[25]')
-        self.elem_time_23()
+    # def wednesday(self):
+    #     driver = self.app.driver
+    #     # Среда
+    #     self.time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[2]')
+    #     self.elem_time_0()
+    #
+    #     self.time_1 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[3]')
+    #     self.elem_time_1()
+    #
+    #     self.time_2 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[4]')
+    #     self.elem_time_2()
+    #
+    #     self.time_3 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[5]')
+    #     self.elem_time_3()
+    #
+    #     self.time_4 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[6]')
+    #     self.elem_time_4()
+    #
+    #     self.time_5 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[7]')
+    #     self.elem_time_5()
+    #
+    #     self.time_6 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[8]')
+    #     self.elem_time_6()
+    #
+    #     self.time_7 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[9]')
+    #     self.elem_time_7()
+    #
+    #     self.time_8 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[10]')
+    #     self.elem_time_8()
+    #
+    #     self.time_9 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[11]')
+    #     self.elem_time_9()
+    #
+    #     self.time_10 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[12]')
+    #     self.elem_time_10()
+    #
+    #     self.time_11 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[13]')
+    #     self.elem_time_11()
+    #
+    #     self.time_12 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[14]')
+    #     self.elem_time_12()
+    #
+    #     self.time_13 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[15]')
+    #     self.elem_time_13()
+    #
+    #     self.time_14 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[16]')
+    #     self.elem_time_14()
+    #
+    #     self.time_15 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[17]')
+    #     self.elem_time_15()
+    #
+    #     self.time_16 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[18]')
+    #     self.elem_time_16()
+    #
+    #     self.time_17 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[19]')
+    #     self.elem_time_17()
+    #
+    #     self.time_18 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[20]')
+    #     self.elem_time_18()
+    #
+    #     self.time_19 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[21]')
+    #     self.elem_time_19()
+    #
+    #     self.time_20 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[22]')
+    #     self.elem_time_20()
+    #
+    #     self.time_21 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[23]')
+    #     self.elem_time_21()
+    #
+    #     self.time_22 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[24]')
+    #     self.elem_time_22()
+    #
+    #     self.time_23 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[25]')
+    #     self.elem_time_23()
 
     def tuesday(self):
         driver = self.app.driver
@@ -767,3 +767,32 @@ class schedule:
 
 
 
+
+
+    def wednesday(self):
+        driver = self.app.driver
+        self.massiv = []
+        for td in range(2, 26, 1):
+            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')
+            self.elem_time()
+
+
+    def elem_time(self):
+        if self.massiv == 0:
+            if "item " in self.time.get_attribute("class"):
+                self.element_time = 0  # 0 = нет записи
+            if "item detection" in self.time.get_attribute("class"):
+                self.element_time = 2  # 2 = запись по детекции
+            else:
+                self.element_time = 1  # 1 = запись есть
+            self.massiv = [self.element_time]
+        else:
+            if "item " in self.time.get_attribute("class"):
+                self.element_time = 0  # 0 = нет записи
+            if "item detection" in self.time.get_attribute("class"):
+                self.element_time = 2  # 2 = запись по детекции
+            else:
+                self.element_time = 1  # 1 = запись есть
+            self.massiv.append(self.element_time)
+
+        print(self.massiv)
