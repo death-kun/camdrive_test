@@ -262,7 +262,7 @@ class monitoring:
                 self.focus_element()
                 self.seek_total_time()
                 self.video_length_check()
-            except TimeoutException:
+            except:
                 self.text_the_video_did_not_load()
         except TimeoutException:
             self.text_player_is_not_displayed()
