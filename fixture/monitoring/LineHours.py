@@ -387,7 +387,7 @@ class hours:
                 print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива '+ str(self.app.LineHours.h) +' нет по расписанию.')
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива '+ str(self.app.LineHours.h) +' нет по расписанию.\n')
+                    '"' + self.app.Monitoring.strg_today + '" INFO: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(self.app.LineHours.h) + ' нет по расписанию.\n')
                     f.close()
             else:
                 print(
@@ -395,7 +395,7 @@ class hours:
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива '+ str(self.app.LineHours.h) +' нет.\n')
+                    '"' + self.app.Monitoring.strg_today + '" WARNING: Проверка для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(self.app.LineHours.h) + ' нет.\n')
                     f.close()
         else:
             self.T.click()

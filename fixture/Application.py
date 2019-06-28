@@ -11,7 +11,8 @@ from fixture.regress.BottomEditButtons import bottom_edit_buttons
 from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
-
+from model.camera_CD120_D521 import CD120_D521
+from model.camera_CD_120 import CD_120
 
 class Application:
 
@@ -33,7 +34,8 @@ class Application:
         self.Monitoring = monitoring(self)
         self.Schedule = schedule(self)
         self.LineHours = hours(self)
-
+        self.camera_CD120_D521 = CD120_D521(self)
+        self.camera_CD_120 = CD_120(self)
 
     def is_valid(self):
         try:

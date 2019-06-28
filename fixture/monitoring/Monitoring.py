@@ -13,24 +13,11 @@ class monitoring:
     def __init__(self, app):
         self.app = app
 
-    def detection_of_archive(self):
-        self.delete_txt()
-        self.app.login_autotest()
-        # self.login_monitoring()
-        time.sleep(4)
-
-        # Камеры для проверки на тестовом сервере
-        self.click_CD120_D521()
-        self.open_schedule_open_archive()
-        time.sleep(4)
-        self.check_camera_CD120_D521()
-
-        # time.sleep(2)
-        #
-        # self.click_CD_120()
-        # self.open_schedule_open_archive()
+    # def detection_of_archive(self):
+        # self.delete_txt()
+        # self.app.login_autotest()
+        # # self.login_monitoring()
         # time.sleep(4)
-        # self.check_camera_CD_120()
 
         # Камеры для проверке на рабочем сервере
         # self.check_first_tree()
@@ -86,7 +73,7 @@ class monitoring:
         # time.sleep(4)
         # self.check_camera_CD100_E75A_ms3_dev()
 
-        self.app.logout_butten()
+        # self.app.logout_butten()
 
     def click_yesterday(self):
         driver = self.app.driver
@@ -100,11 +87,16 @@ class monitoring:
     def open_schedule_open_archive(self):
         driver = self.app.driver
         self.app.Schedule.open_schedule()
-        time.sleep(3) #Заменить на ожидание
-        self.app.Schedule.yesterday_day_of_the_week()
-        time.sleep(5)
-        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
-        self.click_yesterday()
+        # time.sleep(3) #Заменить на ожидание
+        try:
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#schedule")))
+            self.app.Schedule.yesterday_day_of_the_week()
+            time.sleep(5)
+            driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
+            self.click_yesterday()
+        except TimeoutException:
+            print('Не загрузилось расписание')
+            return False
 
     def schedule_camera(self):
         driver = self.app.driver
@@ -118,57 +110,40 @@ class monitoring:
     def click_CD100_E75A_ms3_dev(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12597"]/a').click()  # камера CD100(E75A)_ms3_dev
-        self.camera_name = self.title()
 
     def click_CD100_E778_ms5(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_6827"]/a').click()  # камера CD100(E778)_ms5_ПЗ
-        self.camera_name = self.title()
 
     def click_CD600_EF78_ms6_serv(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12601"]/a').click()  # камера CD600(EF78)_ms6_serv
-        self.camera_name = self.title()
 
     def click_N1001_3A00_bwd(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_14875"]/a').click()  # камера N1001(3A00)_bwd
-        self.camera_name = self.title()
 
     def click_CD100_E772_ms4(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_6830"]/a').click()  # камера CD100(E772)_ms4_ПЗ
-        self.camera_name = self.title()
 
     def click_CD310_2E51_ms4_dev(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_13959"]/a').click()  # камера CD310(2E51)_ms4_dev
-        self.camera_name = self.title()
 
     def click_CD320_AA78_ms5(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_11460"]/a').click()  # камера CD320(AA78)_ms5_Пр_С
-        self.camera_name = self.title()
 
     def click_CD320_AA06_ms3_dev(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12603"]/a').click()  # камера CD320(AA06)_ms3_dev
-        self.camera_name = self.title()
 
     def click_CD630_910D_ms6_dev(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="node_12602"]/a').click()  # камера CD630(910D)_ms6_dev
-        self.camera_name = self.title()
 
-    #Камеры для проверки на тестовом сервере
-    def click_CD_120(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_4343"]/a').click()
-        self.camera_name = self.title()
-
-    def click_CD120_D521(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_4184"]/a').click()
+    def camera_title(self):
         self.camera_name = self.title()
 
     def check_second_tree(self):
