@@ -130,7 +130,7 @@ class schedule:
     def check_attribute(self):
         if "item " in self.time.get_attribute("class"):
             self.element_time = 0  # 0 = нет записи
-        if "item detection" in self.time.get_attribute("class"):
+        elif "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
         else:
             self.element_time = 1  # 1 = запись есть

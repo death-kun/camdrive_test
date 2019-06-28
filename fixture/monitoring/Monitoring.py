@@ -12,7 +12,6 @@ class monitoring:
 
     def __init__(self, app):
         self.app = app
-        self.delete_txt()
 
     # def detection_of_archive(self):
         # self.app.login_autotest()
