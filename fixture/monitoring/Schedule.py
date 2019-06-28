@@ -16,7 +16,11 @@ class schedule:
         driver.find_element_by_xpath('//*[@id="subsections"]/table/tbody/tr/td[2]/a').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'li#node_3063.jstree-last.jstree-open')))
         self.camera_name_shedule = self.app.Monitoring.title()
-        assert self.app.Monitoring.camera_name == self.camera_name_shedule, 'Выбранная камера не совпадает с камерой для проверки'
+        if self.app.Monitoring.camera_name == self.camera_name_shedule:
+            return True
+        else:
+            driver.find_element_by_xpath('//*contains(text(), "' + self.app.Monitoring.camera_name + '")')
+            self.app.click_camera.click()
 
     def schedule_first_tree(self):
         self.app.check_first_tree()

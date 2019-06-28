@@ -11,8 +11,19 @@ from fixture.regress.BottomEditButtons import bottom_edit_buttons
 from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
+#тестовые камеры
 from model.camera_CD120_D521 import CD120_D521
 from model.camera_CD_120 import CD_120
+#рабочие камеры
+from model.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
+from model.camera_CD100_E778_ms5 import CD100_E778_ms5
+from model.camera_CD600_EF78_ms6_serv import CD600_EF78_ms6_serv
+from model.camera_CD630_910D_ms6_dev import CD630_910D_ms6_dev
+from model.camera_CD320_AA06_ms3_dev import CD320_AA06_ms3_dev
+from model.camera_CD320_AA78_ms5 import CD320_AA78_ms5
+from model.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_dev
+from model.camera_CD100_E772_ms4 import CD100_E772_ms4
+from model.camera_N1001_3A00_bwd import N1001_3A00_bwd
 
 class Application:
 
@@ -34,8 +45,20 @@ class Application:
         self.Monitoring = monitoring(self)
         self.Schedule = schedule(self)
         self.LineHours = hours(self)
+        #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
+        #рабочие камеры
+        self.camera_CD100_E778_ms5 = CD100_E778_ms5(self)
+        self.camera_CD100_E75A_ms3_dev = CD100_E75A_ms3_dev(self)
+        self.camera_CD600_EF78_ms6_serv = CD600_EF78_ms6_serv(self)
+        self.camera_CD630_910D_ms6_dev = CD630_910D_ms6_dev(self)
+        self.camera_CD320_AA06_ms3_dev = CD320_AA06_ms3_dev(self)
+        self.camera_CD320_AA78_ms5 = CD320_AA78_ms5(self)
+        self.camera_CD310_2E51_ms4_dev = CD310_2E51_ms4_dev(self)
+        self.camera_CD100_E772_ms4 = CD100_E772_ms4(self)
+        self.camera_N1001_3A00_bwd = N1001_3A00_bwd(self)
+
 
     def is_valid(self):
         try:

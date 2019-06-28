@@ -12,68 +12,15 @@ class monitoring:
 
     def __init__(self, app):
         self.app = app
+        self.delete_txt()
 
     # def detection_of_archive(self):
-        # self.delete_txt()
         # self.app.login_autotest()
         # # self.login_monitoring()
-        # time.sleep(4)
 
-        # Камеры для проверке на рабочем сервере
-        # self.check_first_tree()
-        #
-        # time.sleep(2)
-        #
-        # self.click_CD630_910D_ms6_dev()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD630_910D_ms6_dev()
-        #
-        # self.click_CD320_AA06_ms3_dev()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD320_AA06_ms3_dev()
-        #
-        # self.click_CD320_AA78_ms5()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD320_AA78_ms5()
-        #
-        # self.click_CD310_2E51_ms4_dev()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD310_2E51_ms4_dev()
-        #
-        # self.check_second_tree()
-        #
-        # time.sleep(2)
-        #
-        # self.click_CD100_E772_ms4()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD100_E772_ms4()
-        #
-        # self.click_N1001_3A00_bwd()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_N1001_3A00_bwd()
-        #
-        # self.click_CD600_EF78_ms6_serv()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD600_EF78_ms6_serv()
-        #
-        # self.click_CD100_E778_ms5()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD100_E778_ms5()
-        #
-        # self.click_CD100_E75A_ms3_dev()
-        # self.open_schedule_open_archive()
-        # time.sleep(4)
-        # self.check_camera_CD100_E75A_ms3_dev()
-
-        # self.app.logout_butten()
+    def click_camera(self):
+        self.click_camera = self.app.camera_CD120_D521.click_CD120_D521
+        self.click_camera = self.app.camera_CD120_D521.click_CD_120
 
     def click_yesterday(self):
         driver = self.app.driver
@@ -87,16 +34,16 @@ class monitoring:
     def open_schedule_open_archive(self):
         driver = self.app.driver
         self.app.Schedule.open_schedule()
-        # time.sleep(3) #Заменить на ожидание
-        try:
-            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#schedule")))
-            self.app.Schedule.yesterday_day_of_the_week()
-            time.sleep(5)
-            driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
-            self.click_yesterday()
-        except TimeoutException:
-            print('Не загрузилось расписание')
-            return False
+        # try:
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#schedule")))
+        self.app.Schedule.yesterday_day_of_the_week()
+        # time.sleep(5)
+        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
+        self.click_yesterday()
+        # except TimeoutException:
+        #     print('Не загрузилось расписание')
+        #     self.app.logout_butten()
+        #     return False
 
     def schedule_camera(self):
         driver = self.app.driver
@@ -105,43 +52,6 @@ class monitoring:
         self.app.Schedule.item_time()
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[4]/div[3]/div[2]/ul/li/ul")))
-
-    #Камеры для проверке на рабочем сервере
-    def click_CD100_E75A_ms3_dev(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_12597"]/a').click()  # камера CD100(E75A)_ms3_dev
-
-    def click_CD100_E778_ms5(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_6827"]/a').click()  # камера CD100(E778)_ms5_ПЗ
-
-    def click_CD600_EF78_ms6_serv(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_12601"]/a').click()  # камера CD600(EF78)_ms6_serv
-
-    def click_N1001_3A00_bwd(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_14875"]/a').click()  # камера N1001(3A00)_bwd
-
-    def click_CD100_E772_ms4(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_6830"]/a').click()  # камера CD100(E772)_ms4_ПЗ
-
-    def click_CD310_2E51_ms4_dev(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_13959"]/a').click()  # камера CD310(2E51)_ms4_dev
-
-    def click_CD320_AA78_ms5(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_11460"]/a').click()  # камера CD320(AA78)_ms5_Пр_С
-
-    def click_CD320_AA06_ms3_dev(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_12603"]/a').click()  # камера CD320(AA06)_ms3_dev
-
-    def click_CD630_910D_ms6_dev(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//*[@id="node_12602"]/a').click()  # камера CD630(910D)_ms6_dev
 
     def camera_title(self):
         self.camera_name = self.title()
@@ -160,41 +70,6 @@ class monitoring:
         except NoSuchElementException:
             driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
 
-    #Камеры для проверке на рабочем сервере
-    def check_camera_CD630_910D_ms6_dev(self):
-        self.archive_check()
-
-    def check_camera_CD320_AA06_ms3_dev(self):
-        self.archive_check()
-
-    def check_camera_CD320_AA78_ms5(self):
-        self.archive_check()
-
-    def check_camera_CD310_2E51_ms4_dev(self):
-        self.archive_check()
-
-    def check_camera_CD100_E772_ms4(self):
-        self.archive_check()
-
-    def check_camera_N1001_3A00_bwd(self):
-        self.archive_check()
-
-    def check_camera_CD600_EF78_ms6_serv(self):
-        self.archive_check()
-
-    def check_camera_CD100_E778_ms5(self):
-        self.archive_check()
-
-    def check_camera_CD100_E75A_ms3_dev(self):
-        self.archive_check()
-
-    #Камеры для проверки на тестовом сервере
-    def check_camera_CD_120(self):
-        self.archive_check()
-
-    def check_camera_CD120_D521(self):
-        self.archive_check()
-
     def archive_check(self):
         # self.app.LineHours.check_time_0()
         # self.app.LineHours.check_time_1()
@@ -204,7 +79,7 @@ class monitoring:
         # self.app.LineHours.check_time_5()
         # self.app.LineHours.check_time_6()
         self.app.LineHours.check_time_7()
-        self.app.LineHours.check_time_8()
+        # self.app.LineHours.check_time_8()
         # self.app.LineHours.check_time_9()
         # self.app.LineHours.check_time_10()
         # self.app.LineHours.check_time_11()

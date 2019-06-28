@@ -1,5 +1,6 @@
 import pytest
 
+@pytest.mark.xfail(reason=False)
 def test_camera_CD120_D521(app):
     app.camera_CD120_D521.detection_of_archive()
 
