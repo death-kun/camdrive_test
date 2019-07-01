@@ -1,15 +1,3 @@
-#
-# def test_Log_In(app):
-#     app.Authorization.login_with_incorrect_data() #Проверка того, что указан не верный пароль
-#     app.Authorization.password_visibility_check() #Проверка, что при нажатии на "глаз" видно введенный пароль
-#     app.Authorization.login_with_valid_data() #Проверка того, что указан верный логин и пароль
-#
-# def test_Forgot_Your_Password(app):
-#     app.forgot_your_password() #Проверка перехода на форму "Забыли пароль?"
-#
-# def test_Checkbox(app):
-#     app.tick_activity() #Проверка активности "галочки"
-#
 # def test_VideoStreamOnline(app):
 #     app.Player.add_camera_player1() #Проверка добавления камеры в Плеер 1
 #     app.Player.add_camera_player2() #Проверка добавления камеры в Плеер 2

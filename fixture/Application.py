@@ -83,15 +83,6 @@ class Application:
         driver = self.driver
         driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
 
-    def forgot_your_password(self):
-        driver = self.driver
-        self.open_home_page()
-        driver.find_element_by_link_text('Забыли пароль?').click()
-        #Проверка перехода на форму "Забыли пароль?"
-        if driver.find_element_by_css_selector('.info-title').text == "Восстановление пароля":
-            print('Проверка перехода на форму "Забыли пароль?". Проверка прошла успешно. Открылась форма "Забыли пароль?".')
-        else:
-            print('Проверка перехода на форму "Забыли пароль?". Проверка провалилась. Форма "Забыли пароль?" не открылась.')
 
     def tick_activity(self):
         driver = self.driver
