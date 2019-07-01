@@ -59,7 +59,7 @@ class top_edit_buttons:
         driver.find_element_by_xpath('//*[@id="rename-channel"]').click()
         rename_camera = driver.find_element_by_css_selector('input.jstree-rename-input')
         time.sleep(1)
-        rename_camera.send_keys('CD120_D521')
+        rename_camera.send_keys('online')
         time.sleep(1)
         rename_camera.send_keys(Keys.ENTER)
 

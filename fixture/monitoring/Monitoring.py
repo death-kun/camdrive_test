@@ -13,10 +13,6 @@ class monitoring:
     def __init__(self, app):
         self.app = app
 
-    # def detection_of_archive(self):
-        # self.app.login_autotest()
-        # # self.login_monitoring()
-
     def click_camera(self):
         self.click_camera = self.app.camera_CD120_D521.click_CD120_D521
         self.click_camera = self.app.camera_CD120_D521.click_CD_120

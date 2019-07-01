@@ -12,18 +12,18 @@ from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
 #тестовые камеры
-from model.camera_CD120_D521 import CD120_D521
-from model.camera_CD_120 import CD_120
+from model.archive.camera_CD120_D521 import CD120_D521
+from model.archive.camera_CD_120 import CD_120
 #рабочие камеры
-from model.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
-from model.camera_CD100_E778_ms5 import CD100_E778_ms5
-from model.camera_CD600_EF78_ms6_serv import CD600_EF78_ms6_serv
-from model.camera_CD630_910D_ms6_dev import CD630_910D_ms6_dev
-from model.camera_CD320_AA06_ms3_dev import CD320_AA06_ms3_dev
-from model.camera_CD320_AA78_ms5 import CD320_AA78_ms5
-from model.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_dev
-from model.camera_CD100_E772_ms4 import CD100_E772_ms4
-from model.camera_N1001_3A00_bwd import N1001_3A00_bwd
+from model.archive.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
+from model.archive.camera_CD100_E778_ms5 import CD100_E778_ms5
+from model.archive.camera_CD600_EF78_ms6_serv import CD600_EF78_ms6_serv
+from model.archive.camera_CD630_910D_ms6_dev import CD630_910D_ms6_dev
+from model.archive.camera_CD320_AA06_ms3_dev import CD320_AA06_ms3_dev
+from model.archive.camera_CD320_AA78_ms5 import CD320_AA78_ms5
+from model.archive.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_dev
+from model.archive.camera_CD100_E772_ms4 import CD100_E772_ms4
+from model.archive.camera_N1001_3A00_bwd import N1001_3A00_bwd
 
 class Application:
 
