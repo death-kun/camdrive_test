@@ -1,6 +1,13 @@
 import time
-import glob, os
+import glob
+import os
+from pathlib import PurePath
+from pathlib import Path
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class archive_check:
 
@@ -25,40 +32,32 @@ class archive_check:
     def open_archive(self):
         driver = self.app.driver
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
-        driver.find_element_by_css_selector('div.item.day.today').click()
-        time.sleep(1)
-        click_element = driver.find_element_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')
-        time.sleep(1)
-        click_element.click()
-        time.sleep(2)
 
 #TODO :: Сделать Рефакторинг. Добавить создание отчета. Таймаут для ожидания скачивания файла заменить на проверку/ожидание
     def download_archive(self):
         driver = self.app.driver
+
         #Проверка есть ли в папке Downloads файл с расширением avi и удаляет его
         PATH = os.path.expanduser('~/Downloads')
         filelist = glob.glob(os.path.join(PATH, "*.avi"))
         for f in filelist:
             os.remove(f)
             print('Файл удален')
-        self.app.open_home_page()
-        self.app.login_autotest()
-        self.open_archive()
-        button_dowload = driver.find_element_by_xpath('//*[@id="generate_link"]')
-        time.sleep(1)
-        button_dowload.click()
-        time.sleep(2)
-        button_OK = driver.find_element_by_xpath('//*[@id="notification-block"]/div[2]/div[3]/div/button[1]/span')
-        time.sleep(1)
-        button_OK.click()
-        time.sleep(90) #Время на скачивание файла
-        #Проверка, что скачался видеофайл архива
-        os.chdir(os.path.expanduser('~/Downloads'))
-        if glob.glob('*.avi'):
-            print(glob.glob('*.avi'))
-            print('Проверка, что скачался видеофайл архива. Проверка прошла успешно. Файл скачался')
-            self.app.logout_butten()
-        else:
-            print('Проверка, что скачался видеофайл архива. Проверка провалилась.Файл не скачался')
-            self.app.logout_butten()
+
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='time-intervals']/table/tbody"))) #Ожидание отрисовки таблицы с контейнерами с архивом
+
+        driver.find_element_by_xpath('//*[@id="generate_link"]').click()
+
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='notification-block']/div[2]"))) #Ожидание появления диалогового окна
+
+        driver.find_element_by_xpath('//*[@id="notification-block"]/div[2]/div[3]/div/button[1]/span').click()
+
+        # Проверка, что скачался видеофайл архива
+        T = 0
+        while T != 1:
+            PATH = os.path.expanduser('~/Downloads')
+            filelist = glob.glob(os.path.join(PATH, "*.avi"))
+            for f in filelist:
+                print(f)
+                print('Проверка, что скачался видеофайл архива. Проверка прошла успешно. Файл скачался')
+                T += 1

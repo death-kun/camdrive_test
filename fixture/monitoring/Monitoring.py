@@ -45,7 +45,7 @@ class monitoring:
         self.app.Schedule.open_schedule()
         time.sleep(5)
         self.app.Schedule.item_time()
-        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
+        self.app.Archive.open_archive()
         WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[4]/div[3]/div[2]/ul/li/ul")))
 
     def camera_title(self):

@@ -12,6 +12,7 @@ from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
 from fixture.Camera_List import cameralist
+from model.autotest_gui.download_archive import downloadarchive
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
@@ -48,6 +49,8 @@ class Application:
         self.Schedule = schedule(self)
         self.LineHours = hours(self)
         self.Camera_List = cameralist(self)
+        self.download_archive = downloadarchive(self)
+
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
@@ -98,17 +101,6 @@ class Application:
             print('Проверка авктивности "галочки". Проверка прошла успешно. Галочка поставилась в чекбокс')
         else:
             print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
-
-    def open_archive(self):
-        driver = self.driver
-        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
-        driver.find_element_by_css_selector('div.item.day.today').click()
-        time.sleep(1)
-        click_element = driver.find_element_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant"]')
-        time.sleep(1)
-        click_element.click()
-        time.sleep(2)
 
     def first_tree(self):
         driver = self.driver
