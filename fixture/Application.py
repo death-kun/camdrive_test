@@ -11,19 +11,21 @@ from fixture.regress.BottomEditButtons import bottom_edit_buttons
 from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
+from fixture.Camera_List import cameralist
 #тестовые камеры
-from model.archive.camera_CD120_D521 import CD120_D521
-from model.archive.camera_CD_120 import CD_120
+from model.monitoring_archive.camera_CD120_D521 import CD120_D521
+from model.monitoring_archive.camera_CD_120 import CD_120
 #рабочие камеры
-from model.archive.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
-from model.archive.camera_CD100_E778_ms5 import CD100_E778_ms5
-from model.archive.camera_CD600_EF78_ms6_serv import CD600_EF78_ms6_serv
-from model.archive.camera_CD630_910D_ms6_dev import CD630_910D_ms6_dev
-from model.archive.camera_CD320_AA06_ms3_dev import CD320_AA06_ms3_dev
-from model.archive.camera_CD320_AA78_ms5 import CD320_AA78_ms5
-from model.archive.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_dev
-from model.archive.camera_CD100_E772_ms4 import CD100_E772_ms4
-from model.archive.camera_N1001_3A00_bwd import N1001_3A00_bwd
+from model.monitoring_archive.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
+from model.monitoring_archive.camera_CD100_E778_ms5 import CD100_E778_ms5
+from model.monitoring_archive.camera_CD600_EF78_ms6_serv import CD600_EF78_ms6_serv
+from model.monitoring_archive.camera_CD630_910D_ms6_dev import CD630_910D_ms6_dev
+from model.monitoring_archive.camera_CD320_AA06_ms3_dev import CD320_AA06_ms3_dev
+from model.monitoring_archive.camera_CD320_AA78_ms5 import CD320_AA78_ms5
+from model.monitoring_archive.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_dev
+from model.monitoring_archive.camera_CD100_E772_ms4 import CD100_E772_ms4
+from model.monitoring_archive.camera_N1001_3A00_bwd import N1001_3A00_bwd
+
 
 class Application:
 
@@ -45,6 +47,7 @@ class Application:
         self.Monitoring = monitoring(self)
         self.Schedule = schedule(self)
         self.LineHours = hours(self)
+        self.Camera_List = cameralist(self)
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)

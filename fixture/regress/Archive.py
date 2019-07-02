@@ -22,20 +22,6 @@ class archive_check:
             print('Проверка, что появился новый день с архивом. Проверка провалилась. Архив за текущий день не найден')
             self.app.logout_butten()
 
-    def archive_playback(self):
-        driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
-        self.open_archive()
-        #Проверка, что открылся плеер с архивом
-        try:
-            driver.find_element_by_css_selector('div.hover-video')
-            print('Проверка, что открылся плеер с архивом. Проверка прошла успешно. Плеер с архивом открыт')
-            self.app.logout_butten()
-        except NoSuchElementException:
-            print('Проверка, что открылся плеер с архивом. Проверка провалилась. Плеер с архивом не открыт')
-            self.app.logout_butten()
-
     def open_archive(self):
         driver = self.app.driver
         driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
