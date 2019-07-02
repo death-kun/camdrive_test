@@ -19,12 +19,15 @@ class monitoring:
 
     def click_yesterday(self):
         driver = self.app.driver
+        self.find_yesterday()
+        time.sleep(4)
+        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.yesterday + '")]').click()
+
+    def find_yesterday(self):
         now = datetime.datetime.now()
         cur_day = now.day
         self.strg_today = now.strftime('%B %d, %Y')
-        yesterday = str(cur_day - 1)
-        time.sleep(4)
-        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + yesterday + '")]').click()
+        self.yesterday = str(cur_day - 1)
 
     def open_schedule_open_archive(self):
         driver = self.app.driver
