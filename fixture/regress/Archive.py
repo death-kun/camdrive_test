@@ -3,6 +3,7 @@ import os
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 
 class archive_check:
 
@@ -16,12 +17,26 @@ class archive_check:
 #TODO :: Сделать Рефакторинг. Добавить создание отчета. Таймаут для ожидания скачивания файла заменить на проверку/ожидание
     def video_archive_fragment_download(self):
         driver = self.app.driver
+
+        win = driver.find_element_by_xpath('//*[@id="wrapper"]')
+        size_element = win.size
+        width_element = size_element['width']
+        hx = (int(width_element) * 2) / 100 #Для определения движения бегунка для Часов
+        mx = (int(width_element) * 1) / 100 #Для определения движения бегунка для Минут
+
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='time-intervals']/table/tbody"))) #Ожидание отрисовки таблицы с контейнерами с архивом
         driver.find_element_by_xpath('//*[@id="archive_download"]/div/table/tbody/tr[1]/td[2]/img').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='ui-datepicker-div']/table/tbody")))
         self.app.Monitoring.find_yesterday()
         driver.find_element_by_xpath(
             '//*[@class="ui-state-default" and contains(text(), "' + self.app.Monitoring.yesterday + '")]').click()
+        driver.find_element_by_xpath('//*[@id="archive_download"]/div/table/tbody/tr[2]/td[2]/img').click()
+        hour = driver.find_element_by_xpath('//*[@id="ui_tpicker_hour_downloadtime"]/a')
+        ActionChains(driver).drag_and_drop_by_offset(hour, hx, 1).perform()
+        minutes = driver.find_element_by_xpath('//*[@id="ui_tpicker_minute_downloadtime"]/a')
+        ActionChains(driver).drag_and_drop_by_offset(minutes, mx, 1).perform()
+
+        driver.find_element_by_xpath('//*[@id="ui-datepicker-div"]/div[3]/button[2]').click()
         driver.find_element_by_xpath('//*[@id="generate_link"]').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='notification-block']/div[2]"))) #Ожидание появления диалогового окна
         driver.find_element_by_xpath('//*[@id="notification-block"]/div[2]/div[3]/div/button[1]/span').click()
