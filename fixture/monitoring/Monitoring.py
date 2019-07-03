@@ -13,10 +13,6 @@ class monitoring:
     def __init__(self, app):
         self.app = app
 
-    def click_camera(self):
-        self.click_camera = self.app.camera_CD120_D521.click_CD120_D521
-        self.click_camera = self.app.camera_CD120_D521.click_CD_120
-
     def click_yesterday(self):
         driver = self.app.driver
         self.find_yesterday()
@@ -70,29 +66,29 @@ class monitoring:
 
     def archive_check(self):
         self.app.LineHours.check_time_0()
-        self.app.LineHours.check_time_1()
-        self.app.LineHours.check_time_2()
-        self.app.LineHours.check_time_3()
-        self.app.LineHours.check_time_4()
-        self.app.LineHours.check_time_5()
-        self.app.LineHours.check_time_6()
-        self.app.LineHours.check_time_7()
-        self.app.LineHours.check_time_8()
-        self.app.LineHours.check_time_9()
-        self.app.LineHours.check_time_10()
-        self.app.LineHours.check_time_11()
-        self.app.LineHours.check_time_12()
-        self.app.LineHours.check_time_13()
-        self.app.LineHours.check_time_14()
-        self.app.LineHours.check_time_15()
-        self.app.LineHours.check_time_16()
-        self.app.LineHours.check_time_17()
-        self.app.LineHours.check_time_18()
-        self.app.LineHours.check_time_19()
-        self.app.LineHours.check_time_20()
-        self.app.LineHours.check_time_21()
-        self.app.LineHours.check_time_22()
-        self.app.LineHours.check_time_23()
+        # self.app.LineHours.check_time_1()
+        # self.app.LineHours.check_time_2()
+        # self.app.LineHours.check_time_3()
+        # self.app.LineHours.check_time_4()
+        # self.app.LineHours.check_time_5()
+        # self.app.LineHours.check_time_6()
+        # self.app.LineHours.check_time_7()
+        # self.app.LineHours.check_time_8()
+        # self.app.LineHours.check_time_9()
+        # self.app.LineHours.check_time_10()
+        # self.app.LineHours.check_time_11()
+        # self.app.LineHours.check_time_12()
+        # self.app.LineHours.check_time_13()
+        # self.app.LineHours.check_time_14()
+        # self.app.LineHours.check_time_15()
+        # self.app.LineHours.check_time_16()
+        # self.app.LineHours.check_time_17()
+        # self.app.LineHours.check_time_18()
+        # self.app.LineHours.check_time_19()
+        # self.app.LineHours.check_time_20()
+        # self.app.LineHours.check_time_21()
+        # self.app.LineHours.check_time_22()
+        # self.app.LineHours.check_time_23()
 
 # TODO : РЕФАКТОРИНГ - Сделать проверку плеера. Добавить наведение фокуса на тамлайн, чтобы считать дилу видео
 

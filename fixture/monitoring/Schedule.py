@@ -19,8 +19,7 @@ class schedule:
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
         else:
-            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + str(self.app.Monitoring.camera_name) + '")]')
-            self.app.click_camera.click()
+            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
     def schedule_first_tree(self):
         self.app.check_first_tree()
@@ -118,7 +117,7 @@ class schedule:
             self.elem_time()
 
     def elem_time(self):
-        if self.massiv == 0:
+        if self.massiv == []:
             self.check_attribute()
             self.massiv = [self.element_time]
         else:
@@ -130,7 +129,7 @@ class schedule:
     def check_attribute(self):
         if "item " in self.time.get_attribute("class"):
             self.element_time = 0  # 0 = нет записи
-        elif "item detection" in self.time.get_attribute("class"):
+        if "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
         else:
             self.element_time = 1  # 1 = запись есть
