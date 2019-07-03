@@ -19,7 +19,7 @@ class schedule:
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
         else:
-            driver.find_element_by_xpath('//*contains(text(), "' + str(self.app.Monitoring.camera_name) + '")')
+            driver.find_element_by_xpath('//a[contains(text(), "' + str(self.app.Monitoring.camera_name) + '")]')
             self.app.click_camera.click()
 
     def schedule_first_tree(self):
