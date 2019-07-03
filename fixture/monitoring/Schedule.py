@@ -19,6 +19,7 @@ class schedule:
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
         else:
+            print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
     def schedule_first_tree(self):
