@@ -1,6 +1,7 @@
 import time
 import glob
 import os
+from pathlib import Path
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -43,6 +44,8 @@ class archive_check:
         ActionChains(driver).drag_and_drop_by_offset(hour, self.hx, 1).perform()
         minutes = driver.find_element_by_xpath('//*[@id="ui_tpicker_minute_downloadtime"]/a')
         ActionChains(driver).drag_and_drop_by_offset(minutes, self.mx, 1).perform()
+        element_time_timing = driver.find_element_by_css_selector('dd#ui_tpicker_time_downloadtime.ui_tpicker_time')
+        self.attribute_time_timing = element_time_timing.get_attribute('textContent')
         driver.find_element_by_xpath('//*[@id="ui-datepicker-div"]/div[3]/button[2]').click()
 
 
@@ -67,12 +70,21 @@ class archive_check:
     def search_avi(self):
         T = 0
         while T != 1:
-            PATH = os.path.expanduser('~/Downloads')
+            PATH = os.path.expanduser('~\Downloads')
             filelist = glob.glob(os.path.join(PATH, "*.avi"))
             for f in filelist:
                 print(f)
+                avi = Path(f).name
+                print(avi)
                 print('Проверка, что скачался видеофайл архива. Проверка прошла успешно. Файл скачался')
                 T += 1
+                camer_name = '' + self.app.Monitoring.camera_name.strip() + '_' + self.attribute_time_timing + '.avi'
+                print(camer_name)
+                if camer_name == avi:
+                    print('скачался нужный файл')
+                else:
+                    print("скачался не тот файл")
+
 
     def delete_avi(self):
         PATH = os.path.expanduser('~/Downloads')
