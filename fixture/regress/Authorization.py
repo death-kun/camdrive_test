@@ -33,9 +33,7 @@ class AuthorizationHelper:
     def login_with_incorrect_password(self):
         driver = self.app.driver
         self.app.open_home_page()
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
-        driver.find_element_by_id('login').click()
+        self.entering_the_wrong_password()
         #Проверка того, что указан не верный пароль
         try:
             WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "#text")))
@@ -48,6 +46,12 @@ class AuthorizationHelper:
                 f.write('"Проверка валидных/невалидных данных" WARNING: Проверка провалилась. Надпись "Ошибка идентификации" не отобразилась.\n')
                 f.close()
             print('Проверка того, что указан не верный пароль. Проверка провалилась. Введены корректные значения')
+
+    def entering_the_wrong_password(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
+        driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
+        driver.find_element_by_id('login').click()
 
     def password_visibility_check(self):
         driver = self.app.driver
