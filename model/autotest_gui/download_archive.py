@@ -5,6 +5,7 @@ class downloadarchive:
         self.app = app
 
     def autotest(self):
+        self.app.Monitoring.delete_txt()
         self.app.login_autotest()
         self.app.Camera_List.click_camera_CD_120()
         self.app.Archive.open_archive()

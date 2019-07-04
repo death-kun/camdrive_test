@@ -78,18 +78,18 @@ class archive_check:
 
             for f in filelist:
                 print(f)
-                avi = Path(f).name
-                print(avi) #Файл, который скачался
+                avi = Path(f).name #Файл, который скачался
+                print('Файл, который скачался', avi) 
                 print('Проверка, что скачался видеофайл архива. Проверка прошла успешно. Файл скачался.')
                 T += 1
                 m_Y_element = self.app.Monitoring.now.strftime('%m_%Y')
 
                 if int(self.app.Monitoring.yesterday) < 10:
                     camer_name = '' + self.app.Monitoring.camera_name.strip() + '_0' + self.app.Monitoring.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
-                    print(camer_name)
+                    print('Файл, который мы ищем', camer_name)
                 else:
                     camer_name = '' + self.app.Monitoring.camera_name.strip() + '_' + self.app.Monitoring.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
-                    print(camer_name)
+                    print('Файл, который мы ищем', camer_name)
 
                 if camer_name == avi:
                     print('Скачался нужный файл.')
