@@ -1,6 +1,8 @@
 from selenium import webdriver
 import time
 from sys import platform
+
+#для регреса
 from fixture.regress.Authorization import AuthorizationHelper
 from fixture.regress.OnlinePageTestSuite import onlineTestSuite
 from fixture.regress.Localization_RU import Local_RU
@@ -8,10 +10,14 @@ from fixture.regress.Player import player_check
 from fixture.regress.Archive import archive_check
 from fixture.regress.TopEditButtons import top_edit_buttons
 from fixture.regress.BottomEditButtons import bottom_edit_buttons
+from fixture.regress.Balance import check_balance
+#для мониторинга
 from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
+#общее
 from fixture.Camera_List import cameralist
+#тесты
 from model.autotest_gui.download_archive import downloadarchive
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
@@ -50,6 +56,7 @@ class Application:
         self.LineHours = hours(self)
         self.Camera_List = cameralist(self)
         self.download_archive = downloadarchive(self)
+        self.Balance = check_balance(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
