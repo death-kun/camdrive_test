@@ -25,6 +25,9 @@ class check_balance:
         print(c)
         print(r2)
         print(r.url)
+        parsing1 = r2.split('],')[1]
+        print(parsing1)
+
 
         # print(e.text)
 
