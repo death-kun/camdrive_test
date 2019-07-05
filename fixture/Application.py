@@ -15,6 +15,7 @@ from fixture.regress.Balance import balance
 from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
+from fixture.monitoring.Online import checkonlune
 #общее
 from fixture.Camera_List import cameralist
 #тесты
@@ -59,7 +60,7 @@ class Application:
         self.download_archive = downloadarchive(self)
         self.Balance = balance(self)
         self.balance_check = balance_LK(self)
-
+        self.Online = checkonlune(self)
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
