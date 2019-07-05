@@ -1,2 +1,2 @@
 def test_online(app):
-    app.Online.request_online()
+    app.CD120_D521.detection_of_online()

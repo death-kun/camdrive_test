@@ -1,6 +1,7 @@
 from selenium import webdriver
 import time
 from sys import platform
+from selenium.webdriver.chrome.options import Options
 
 #для регреса
 from fixture.regress.Authorization import AuthorizationHelper
@@ -24,6 +25,7 @@ from model.autotest_gui.balance_check import balance_LK
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
+from model.monitoring_online.CD120_D521 import CD120_D521_online
 #рабочие камеры
 from model.monitoring_archive.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
 from model.monitoring_archive.camera_CD100_E778_ms5 import CD100_E778_ms5
@@ -42,7 +44,21 @@ class Application:
         if platform == "linux" or platform == "linux2":
             self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
         elif platform == "win32":
-            self.driver = webdriver.Chrome()  # для windows
+            chrome_options = Options()
+            chrome_options.add_argument("--disable-features=EnableEphemeralFlashPermission")
+
+            extensions = {"profile.default_content_setting_values.plugins": 1,
+                            "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
+                            "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
+                            "PluginsAllowedForUrls": "https://test.camdrive.org/online"}
+
+            chrome_options.add_experimental_option("prefs", extensions)
+            chrome_options.add_argument('--disable-features=EnableEphemeralFlashPermission')
+            chrome_options.add_argument('--disable-infobars')
+            chrome_options.add_argument("--ppapi-flash-version=32.0.0.207")
+
+            self.driver = webdriver.Chrome(options=chrome_options)
+            # self.driver = webdriver.Chrome()  # для windows
         driver = self.driver
         driver.delete_all_cookies()
 
@@ -64,6 +80,7 @@ class Application:
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
+        self.CD120_D521 = CD120_D521_online(self)
         #рабочие камеры
         self.camera_CD100_E778_ms5 = CD100_E778_ms5(self)
         self.camera_CD100_E75A_ms3_dev = CD100_E75A_ms3_dev(self)

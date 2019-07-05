@@ -7,63 +7,43 @@ class player_check:
 
     def add_camera_player1(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
         driver.find_element_by_xpath('//*[@id="screen_1"]').click()
         #Проверка добавления камеры в Плеер 1
         try:
             driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]')
             print('Проверка добавления камеры в Плеер 1. Проверка прошла успешно. Добавлена камера в Плеер 1')
-            self.closing_player()
-            self.app.logout_butten()
         except NoSuchElementException:
             print('Проверка добавления камеры в Плеер 1. Проверка провалилась.Камера не добавлена в Плеер 1')
-            self.app.logout_butten()
 
     def add_camera_player2(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
         driver.find_element_by_xpath('//*[@id="screen_2"]').click()
         #Проверка добавления камеры в Плеер 2
         try:
             driver.find_element_by_xpath('//*[@id="screens"]/div[2]/div/div[2]')
             print('Проверка добавления камеры в Плеер 2. Проверка прошла успешно. Добавлена камера в Плеер 2')
-            self.closing_player()
-            self.app.logout_butten()
         except NoSuchElementException:
             print('Проверка добавления камеры в Плеер 2. Проверка провалилась. Камера не добавлена в Плеер 2')
-            self.app.logout_butten()
 
     def add_camera_player3(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
         driver.find_element_by_xpath('//*[@id="screen_3"]').click()
         #Проверка добавления камеры в Плеер 3
         try:
             driver.find_element_by_xpath('//*[@id="screens"]/div[3]/div/div[2]')
             print('Проверка добавления камеры в Плеер 3. Проверка прошла успешно. Добавлена камера в Плеер 3')
-            self.closing_player()
-            self.app.logout_butten()
         except NoSuchElementException:
             print('Проверка добавления камеры в Плеер 3. Проверка провалилась. Камера не добавлена в Плеер 3')
-            self.app.logout_butten()
 
     def add_camera_player4(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
         driver.find_element_by_xpath('//*[@id="screen_4"]').click()
         #Проверка добавления камеры в Плеер 4
         try:
             driver.find_element_by_xpath('//*[@id="screens"]/div[4]/div/div[2]')
             print('Проверка добавления камеры в Плеер 4. Проверка прошла успешно. Добавлена камера в Плеер 4')
-            self.closing_player()
-            self.app.logout_butten()
         except NoSuchElementException:
             print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 4')
-            self.app.logout_butten()
 
     def closing_player(self):
         driver = self.app.driver
