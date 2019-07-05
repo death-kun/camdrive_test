@@ -9,6 +9,7 @@ class balance_LK:
         self.app.Balance.request_balance()
         self.app.login_autotest()
         self.app.Balance.balance_gui()
+        self.app.Monitoring.find_yesterday()
         if self.app.Balance.parsing_balance_attribute == self.app.Balance.parsing3:
             print('Проверка баланса прошла успешно. Баланс запросом совпадает с балансом, который отображается в ЛК')
             with open('check balance report.txt', 'a', encoding='utf-8') as f:
