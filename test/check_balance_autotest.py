@@ -1,3 +1,3 @@
 
 def test_balance(app):
-    app.Balance.request()
+    app.balance_check.autotest_balance()
