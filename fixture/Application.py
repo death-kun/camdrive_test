@@ -44,20 +44,26 @@ class Application:
         if platform == "linux" or platform == "linux2":
             self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
         elif platform == "win32":
-            chrome_options = Options()
-            chrome_options.add_argument("--disable-features=EnableEphemeralFlashPermission")
+            options = webdriver.ChromeOptions()
+            prefs = {
+                # "profile.default_content_setting_values.plugins": 1,
+                # "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
+                # "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
+                # "profile.content_settings.exceptions.plugins.*,*.setting": 1,
+                "profile.content_settings.flash_data":"https://test.camdrive.org:443",
+                "profile.content_settings.setting.flashPreviouslyChanged": True,
+                "profile.content_settings.setting.dismiss_count":2,
+                "DefaultPluginsSetting": 1,
+                "PluginsAllowedForUrls": "https://test.camdrive.org/online"
+            }
 
-            extensions = {"profile.default_content_setting_values.plugins": 1,
-                            "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
-                            "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
-                            "PluginsAllowedForUrls": "https://test.camdrive.org/online"}
+            options.add_experimental_option("prefs", prefs)
+            # options.add_argument('--disable-features=EnableEphemeralFlashPermission')
+            # options.add_argument('--disable-infobars')
+            # options.add_argument("--ppapi-flash-version=32.0.0.207")
+            # options.add_argument("--ppapi-flash-path=/usr/lib/flashplugin-installer/libflashplayer.so")
 
-            chrome_options.add_experimental_option("prefs", extensions)
-            chrome_options.add_argument('--disable-features=EnableEphemeralFlashPermission')
-            chrome_options.add_argument('--disable-infobars')
-            chrome_options.add_argument("--ppapi-flash-version=32.0.0.207")
-
-            self.driver = webdriver.Chrome(options=chrome_options)
+            self.driver = webdriver.Chrome(chrome_options=options)
             # self.driver = webdriver.Chrome()  # для windows
         driver = self.driver
         driver.delete_all_cookies()
