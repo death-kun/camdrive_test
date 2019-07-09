@@ -1,3 +1,8 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+
 class cameralist:
 
     def __init__(self, app):
@@ -5,8 +10,8 @@ class cameralist:
 
     def click_camera_CD120_D521(self):
         driver = self.app.driver
-        self.click_CD120_D521 = driver.find_element_by_xpath('//*[@id="node_4184"]/a')
-        self.click_CD120_D521.click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='node_4184']/a")))
+        self.click_CD120_D521 = driver.find_element_by_xpath('//*[@id="node_4184"]/a').click()
         self.app.Monitoring.camera_title()
 
     def click_camera_CD_120(self):

@@ -38,7 +38,4 @@ class checkonlune:
     def online_gui(self):
         driver = self.app.driver
         self.app.Player.add_camera_player1()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='screens']/div[1]/div/div[2]/div[1]")))
-        time.sleep(10)
-        driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]/div[1]/a').click() #клик по надписе загрузить flash
-        time.sleep(5)
+
