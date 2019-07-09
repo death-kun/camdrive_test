@@ -7,9 +7,9 @@ class CD120_D521_online:
 
     def detection_of_online(self):
         # self.app.Online.request_flash()
-        # self.app.login_autotest()
-        # self.app.Camera_List.click_camera_CD120_D521()
-        # self.app.Online.online_gui()
-        self.app.Online.request_online()
+        self.app.login_autotest()
+        self.app.Camera_List.click_camera_CD120_D521()
+        self.app.Online.online_gui()
+        # self.app.Online.request_online()
         # time.sleep(10)
 
