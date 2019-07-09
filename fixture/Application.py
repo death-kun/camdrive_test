@@ -1,8 +1,6 @@
 from selenium import webdriver
 import time
 from sys import platform
-from selenium.webdriver.chrome.options import Options
-
 #для регреса
 from fixture.regress.Authorization import AuthorizationHelper
 from fixture.regress.OnlinePageTestSuite import onlineTestSuite
@@ -44,24 +42,7 @@ class Application:
         if platform == "linux" or platform == "linux2":
             self.driver = webdriver.Chrome('/home/mikhail/PycharmProjects/camdrive_test/chromedriver')  # для ubuntu
         elif platform == "win32":
-            options = webdriver.ChromeOptions()
-            prefs = {
-                "profile.default_content_setting_values.plugins": 1,
-                "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
-                "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
-                "profile.content_settings.exceptions.plugins.*,*.setting": 1,
-                "DefaultPluginsSetting": 1,
-                "PluginsAllowedForUrls": "https://test.camdrive.org"
-            }
-            options.add_experimental_option("prefs", prefs)
-            options.add_argument('--disable-features=EnableEphemeralFlashPermission')
-            options.add_argument('--disable-infobars')
-            options.add_argument("--ppapi-flash-version=32.0.0.207")
-            options.add_argument(
-                "--ppapi-flash-path=C:/Windows/SysWOW64/Macromed/Flash/pepflashplayer32_32_0_0_207.dll")
-            options.add_argument('--start-maximized')
-            self.driver = webdriver.Chrome(chrome_options=options)
-            # self.driver = webdriver.Chrome()  # для windows
+            self.driver = webdriver.Chrome()  # для windows
         driver = self.driver
         driver.delete_all_cookies()
 
