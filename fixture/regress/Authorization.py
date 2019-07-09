@@ -1,9 +1,7 @@
-import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
-
 
 class AuthorizationHelper:
 
@@ -12,7 +10,6 @@ class AuthorizationHelper:
 
     def login_with_incorrect_username(self):
         driver = self.app.driver
-        self.app.open_home_page()
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('1')
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
         driver.find_element_by_id('login').click()
@@ -32,7 +29,6 @@ class AuthorizationHelper:
 
     def login_with_incorrect_password(self):
         driver = self.app.driver
-        self.app.open_home_page()
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
         driver.find_element_by_id('login').click()
@@ -51,9 +47,7 @@ class AuthorizationHelper:
 
     def password_visibility_check(self):
         driver = self.app.driver
-        self.app.open_home_page()
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
-        time.sleep(1)
         driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
         #Проверка, что при нажатии на "глаз" видно введенный пароль
         if driver.find_element_by_xpath('//input[@name="password"]').get_attribute('value') == "111":
@@ -70,10 +64,8 @@ class AuthorizationHelper:
 
     def login_with_valid_data(self):
         driver = self.app.driver
-        self.app.login_autotest()
         #Проверка того, что указан верный логин и пароль
         if driver.find_element_by_id('logo'):
-            self.app.logout_butten()
             with open('authorization report.txt', 'a', encoding='utf-8') as f:
                 f.write(
                     '"Проверка валидных/невалидных данных" INFO: Проверка выполнена. Авторизация прошла успешно.\n')
@@ -87,7 +79,6 @@ class AuthorizationHelper:
 
     def forgot_your_password_gui(self):
         driver = self.app.driver
-        self.app.open_home_page()
         driver.find_element_by_link_text('Забыли пароль?').click()
         #Проверка перехода на форму "Забыли пароль?"
         if driver.find_element_by_css_selector('.info-title').text == "Восстановление пароля":

@@ -7,6 +7,7 @@ class CD120_D521:
 
     def detection_of_archive(self):
         self.app.Monitoring.delete_txt()
+        self.app.open_home_page()
         self.app.login_autotest()
         time.sleep(4)
         self.app.Camera_List.click_camera_CD120_D521()

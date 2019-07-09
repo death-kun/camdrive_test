@@ -42,30 +42,3 @@ class checkonlune:
         time.sleep(10)
         driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]/div[1]/a').click() #клик по надписе загрузить flash
         time.sleep(5)
-
-    def request_flash(self):
-        driver = self.app.driver
-        url1 = 'https://test.camdrive.org/'
-
-        url2 = 'https://test.camdrive.org/online'
-        d = {
-            "profile.default_content_setting_values.plugins": 1,
-                "profile.content_settings.plugin_whitelist.adobe-flash-player": 1,
-                "profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player": 1,
-                "profile.content_settings.exceptions.plugins.*,*.setting": 1,
-                "DefaultPluginsSetting": 3,
-                "PluginsAllowedForUrls":"https://test.camdrive.org:443"
-                }
-        # d = {'dismiss_count': 1, 'flash_data': 'https://test.camdrive.org:443', 'flashPreviouslyChanged': True}
-        data = {'username': 'autotest', 'password': 'autotest'}
-
-        # d = {'dismiss_count':1, 'flash_data':'https://test.camdrive.org:443', 'flashPreviouslyChanged':True}
-        s = requests.Session()  # Создание сеанс
-        a = s.post(url=url1, data=data)  # Авторизация запросо
-        c = a.cookies.get_dict()  # Получаем куки
-        driver.delete_all_cookies()
-
-        request_video = s.post(url=url2, data=d, cookies=c) # Отправка запроса на получение видео
-
-        print(request_video.text)
-        print(request_video.url)

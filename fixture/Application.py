@@ -20,6 +20,7 @@ from fixture.Camera_List import cameralist
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
+from model.autotest_gui.rename_camera import rename
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
@@ -61,6 +62,7 @@ class Application:
         self.Balance = balance(self)
         self.balance_check = balance_LK(self)
         self.Online = checkonlune(self)
+        self.rename_camera = rename(self)
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
@@ -90,11 +92,9 @@ class Application:
 
     def login_autotest(self):
         driver = self.driver
-        self.open_home_page()
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
         driver.find_element_by_id('login').click()
-        time.sleep(1)
 
     def logout_butten(self):
         driver = self.driver
@@ -103,7 +103,6 @@ class Application:
 
     def tick_activity(self):
         driver = self.driver
-        self.open_home_page()
         driver.find_element_by_xpath('/html/body/div/div/form/table/tbody/tr[3]/td[2]/input[2]').click()
         time.sleep(1)
         isChecked = driver.find_element_by_xpath('/html/body/div/div/form/table/tbody/tr[3]/td[2]/input[2]').get_attribute("checked")

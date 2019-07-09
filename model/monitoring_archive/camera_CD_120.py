@@ -6,6 +6,7 @@ class CD_120:
         self.app = app
 
     def detection_of_archive(self):
+        self.app.open_home_page()
         self.app.login_autotest()
         time.sleep(4)
         self.app.Camera_List.click_camera_CD_120()
