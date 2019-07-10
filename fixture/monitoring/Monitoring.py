@@ -112,20 +112,20 @@ class monitoring:
     def text_player_is_not_displayed(self):
         self.app.LineHours.getting_time()
         print(
-            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился.')
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился.\n')
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.\n')
             f.close()
 
     def text_the_video_did_not_load(self):
         driver = self.app.driver
         self.app.LineHours.getting_time()
         print(
-            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '+ str(self.app.LineHours.h) +' не загрузилось')
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось.\n')
+                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.\n')
             f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
