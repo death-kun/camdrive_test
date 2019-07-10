@@ -3,8 +3,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
-
 class schedule:
 
     def __init__(self, app):
@@ -21,12 +19,6 @@ class schedule:
         else:
             print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
-
-    def schedule_first_tree(self):
-        self.app.check_first_tree()
-
-    def schedule_second_tree(self):
-        self.app.check_second_tree()
 
     def yesterday_day_of_the_week(self):
         now = datetime.datetime.today().weekday()
@@ -130,7 +122,7 @@ class schedule:
     def check_attribute(self):
         if "item " in self.time.get_attribute("class"):
             self.element_time = 0  # 0 = нет записи
-        if "item detection" in self.time.get_attribute("class"):
+        elif "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
         else:
             self.element_time = 1  # 1 = запись есть

@@ -17,6 +17,7 @@ from fixture.monitoring.LineHours import hours
 from fixture.monitoring.Online import checkonlune
 #общее
 from fixture.Camera_List import cameralist
+from fixture.Requests import requests_camdrive
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
@@ -63,6 +64,7 @@ class Application:
         self.balance_check = balance_LK(self)
         self.Online = checkonlune(self)
         self.rename_camera = rename(self)
+        self.Request = requests_camdrive(self)
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
