@@ -85,6 +85,7 @@ class schedule:
 
     def wednesday(self):
         driver = self.app.driver
+        # Среда
         self.massiv = []
         for td in range(2, 26, 1):
             self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[' + str(td) + ']')
@@ -94,16 +95,15 @@ class schedule:
     def tuesday(self):
         driver = self.app.driver
         # Вторник
-        self.time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[2]')
         self.massiv = []
         for td in range(2, 26, 1):
             self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[' + str(td) + ']')
+            print(td)
             self.elem_time()
 
     def monday(self):
         driver = self.app.driver
         # Понедельник
-        self.time_0 = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[2]')
         self.massiv = []
         for td in range(2, 26, 1):
             self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')
@@ -120,9 +120,13 @@ class schedule:
         print(self.massiv)
 
     def check_attribute(self):
-        if "item " in self.time.get_attribute("class"):
-            self.element_time = 0  # 0 = нет записи
-        elif "item detection" in self.time.get_attribute("class"):
+
+        if "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
-        else:
+            print('два')
+        elif "item constant" in self.time.get_attribute("class"):
             self.element_time = 1  # 1 = запись есть
+            print('одын')
+        else:
+            self.element_time = 0  # 0 = нет записи
+            print('нуль')
