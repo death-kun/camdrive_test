@@ -1,4 +1,3 @@
-import imgdiff
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import time
@@ -22,9 +21,9 @@ class checkonlune:
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="flash_1"]')))
             i = 0
             p1 = 0
-            while i < 10:
-                driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]/div').screenshot("error_code_0.png") #делаем скриншот видеоплеера
-                screenshot_error = Image.open("D:/python test/camdrive_test/test/1.png") #скриншот с ошибкой
+            while i < 3000:
+                driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]/div').screenshot("1.png") #делаем скриншот видеоплеера
+                screenshot_error = Image.open("D:/python test/camdrive_test/test/error_code_0.png") #скриншот с ошибкой
                 screenshot_progress_bar = Image.open("D:/python test/camdrive_test/test/progress_bar.png") #скриншот с прогрессбаром
                 self.p = Image.open("1.png")
 
