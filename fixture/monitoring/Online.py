@@ -31,23 +31,23 @@ class checkonlune:
                 h1 = self.p.histogram()
                 h2 = screenshot_error.histogram()
                 rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1)) #определяем разницу между скриншотом плеера и скриншотом серверной ошибки
-                print(rms, ' сравнение с ошибкой')
+                # print(rms, ' сравнение с ошибкой')
 
                 h3 = screenshot_progress_bar.histogram()
                 rms2 = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h3)) / len(h1)) #определяем разницу между скриншотом плеера и скриншотом прогрессбара
-                print(rms2, ' сравнение с прогрессбаром')
+                # print(rms2, ' сравнение с прогрессбаром')
 
                 if self.p == p1:
-                    print('не идет онлайн')
+                    print('Не идет онлайн')
                 elif rms < 15.0:
-                    print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!серверное сообщение')
+                    print('Отображается серверное сообщение "Превышено максимальное допустимое количество одновременных подключений".')
                 elif rms2 < 6.0:
-                    print('!!!!!!!!!!ПРОГРЕССБАР!!!!!!!!!!!!!')
+                    print('Отображается ПРОГРЕССБАР')
                 else:
-                    print('онлайн идет')
+                    print('Идет онлайн')
                 time.sleep(1)
                 p1 = self.p
                 i += 1
 
         except TimeoutException:
-            print('не загрузился плеер')
+            print('Не загрузился плеер')
