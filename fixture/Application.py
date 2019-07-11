@@ -33,6 +33,7 @@ from model.autotest_gui.check_forgot_your_password_gui import forgot_your_passwo
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
 from model.monitoring_online.CD120_D521 import CD120_D521_online
+from model.monitoring_online.CD_120 import CD_120_online
 #рабочие камеры
 from model.monitoring_archive.camera_CD100_E75A_ms3_dev import CD100_E75A_ms3_dev
 from model.monitoring_archive.camera_CD100_E778_ms5 import CD100_E778_ms5
@@ -84,6 +85,7 @@ class Application:
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
         self.CD120_D521 = CD120_D521_online(self)
+        self.CD_120 = CD_120_online(self)
 
         #рабочие камеры
         self.camera_CD100_E778_ms5 = CD100_E778_ms5(self)

@@ -10,8 +10,6 @@ class CD120_D521_online:
         self.app.Camera_List.click_camera_CD120_D521()
         self.app.Player.add_camera_player1()
         self.app.Online.online_screenshot()
-        # time.sleep(10)
-        # self.app.Online.request_online()
-        # # self.app.Online.request_player()
-        # self.app.Online.request_setting()
+        self.app.Authorization.logout_butten()
+
 
