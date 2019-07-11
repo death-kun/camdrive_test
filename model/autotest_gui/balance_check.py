@@ -8,8 +8,8 @@ class balance_LK:
         self.app.Monitoring.delete_txt()
         self.app.Request.request_auth()
         self.app.Request.request_balance()
-        self.app.open_home_page()
-        self.app.login_autotest()
+        self.app.Authorization.open_home_page()
+        self.app.Authorization.login_autotest()
         self.app.Balance.balance_gui()
         self.app.Monitoring.find_yesterday()
         if self.app.Balance.parsing_balance_attribute == self.app.Request.parsing3:
@@ -24,4 +24,4 @@ class balance_LK:
                 f.write(
                     '"' + self.app.Monitoring.strg_today + '" "Проверка баланса" WARNING: Проверка пропалилась. Баланс отображающийся в ЛК не совпадает с балансом, который отправляет серве.\n')
                 f.close()
-        self.app.logout_butten()
+        self.app.Authorization.logout_butten()

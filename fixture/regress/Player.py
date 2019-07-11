@@ -62,10 +62,10 @@ class player_check:
             driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]')
             print('Проверка, что плеер открылся в формате 1х1. Проверка прошла успешно. Плеер развернулся в Формате 1х1')
             self.closing_player()
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
         except NoSuchElementException:
             print('Проверка, что плеер открылся в формате 1х1. Проверка провалилась. Плеер не развернулся')
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
 
     def roll_up_screen_button(self):
         driver = self.app.driver
@@ -81,10 +81,10 @@ class player_check:
             driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]')
             print('Проверка, что плеер открылся в формате 1х4. Проверка прошла успешно. Плеер развернулся в Формате 1х4')
             self.closing_player()
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
         except NoSuchElementException:
             print('Проверка, что плеер открылся в формате 1х4. Проверка провалилась. Плеер не свернулся')
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
 
     def roll_up_screen(self):
         driver = self.app.driver

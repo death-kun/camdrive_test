@@ -12,7 +12,7 @@ class CD100_E778_ms5:
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_CD100_E778_ms5()
-        self.app.logout_butten()
+        self.app.Authorization.logout_butten()
 
     def check_camera_CD100_E778_ms5(self):
         self.app.Monitoring.archive_check()

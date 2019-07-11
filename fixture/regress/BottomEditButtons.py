@@ -18,10 +18,10 @@ class bottom_edit_buttons:
         try:
             driver.find_element_by_xpath('//*[@id="node_4191"]/a')
             print('Проверка, что добавлеена новая группа. Проверка прошла успешно. Добавлена Новая группа')
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
         except NoSuchElementException:
             print('Проверка, что добавлеена новая группа. Проверка провалилась. Новая группа не добавлена')
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
 
     def group_creation(self):
         driver = self.app.driver
@@ -47,10 +47,10 @@ class bottom_edit_buttons:
         if new_name_group != default_name_group:
             print('Проверка, что изменилось имя группы. Проверка прошла успешно. Группа переименована')
             driver.find_element_by_xpath('//*[@id="remove-group"]').click()
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
         else:
             print('Проверка, что изменилось имя группы. Проверка провалилась. Группа не переименована')
-            self.app.logout_butten()
+            self.app.Authorization.logout_butten()
 
     def group_deletion(self):
         driver = self.app.driver

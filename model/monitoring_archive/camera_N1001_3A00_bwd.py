@@ -12,7 +12,7 @@ class N1001_3A00_bwd:
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_N1001_3A00_bwd()
-        self.app.logout_butten()
+        self.app.Authorization.logout_butten()
 
     def check_camera_N1001_3A00_bwd(self):
         self.app.Monitoring.archive_check()

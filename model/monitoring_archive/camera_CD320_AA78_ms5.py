@@ -12,7 +12,7 @@ class CD320_AA78_ms5:
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_CD320_AA78_ms5()
-        self.app.logout_butten()
+        self.app.Authorization.logout_butten()
 
     def check_camera_CD320_AA78_ms5(self):
         self.app.Monitoring.archive_check()

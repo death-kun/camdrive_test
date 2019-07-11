@@ -12,7 +12,7 @@ class CD600_EF78_ms6_serv:
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.check_camera_CD600_EF78_ms6_serv()
-        self.app.logout_butten()
+        self.app.Authorization.logout_butten()
 
     def check_camera_CD600_EF78_ms6_serv(self):
         self.app.Monitoring.archive_check()

@@ -18,10 +18,17 @@ from fixture.monitoring.Online import checkonlune
 #общее
 from fixture.Camera_List import cameralist
 from fixture.Requests import requests_camdrive
+from fixture.Tree import camera_tree
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
 from model.autotest_gui.rename_camera import rename
+from model.autotest_gui.enter_with_invalid_login import invalid_login
+from model.autotest_gui.enter_with_invalid_password import invalid_password
+from model.autotest_gui.password_visibility_check import password_visibility
+from model.autotest_gui.login_check_with_valid_data import valid_data
+from model.autotest_gui.check_activity_checkbox import checkbox
+from model.autotest_gui.check_forgot_your_password_gui import forgot_your_password
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
@@ -65,10 +72,19 @@ class Application:
         self.Online = checkonlune(self)
         self.rename_camera = rename(self)
         self.Request = requests_camdrive(self)
+        self.enter_with_invalid_login = invalid_login(self)
+        self.enter_with_invalid_password = invalid_password(self)
+        self.password_visibility_check = password_visibility(self)
+        self.login_check_with_valid_data = valid_data(self)
+        self.check_activity_checkbox = checkbox(self)
+        self.check_forgot_your_password_gui = forgot_your_password(self)
+        self.Tree = camera_tree(self)
+
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
         self.camera_CD_120 = CD_120(self)
         self.CD120_D521 = CD120_D521_online(self)
+
         #рабочие камеры
         self.camera_CD100_E778_ms5 = CD100_E778_ms5(self)
         self.camera_CD100_E75A_ms3_dev = CD100_E75A_ms3_dev(self)
@@ -80,55 +96,12 @@ class Application:
         self.camera_CD100_E772_ms4 = CD100_E772_ms4(self)
         self.camera_N1001_3A00_bwd = N1001_3A00_bwd(self)
 
-
     def is_valid(self):
         try:
             self.driver.current_url
             return True
         except:
             return False
-
-    def open_home_page(self):
-        driver = self.driver
-        driver.get('http://test.camdrive.org/')
-
-    def login_autotest(self):
-        driver = self.driver
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
-        driver.find_element_by_id('login').click()
-
-    def logout_butten(self):
-        driver = self.driver
-        driver.find_element_by_xpath('//*[@id="header"]/table/tbody/tr[1]/td[2]/input').click()
-
-
-    def tick_activity(self):
-        driver = self.driver
-        driver.find_element_by_xpath('/html/body/div/div/form/table/tbody/tr[3]/td[2]/input[2]').click()
-        time.sleep(1)
-        isChecked = driver.find_element_by_xpath('/html/body/div/div/form/table/tbody/tr[3]/td[2]/input[2]').get_attribute("checked")
-        #Проверка активности "галочки"
-        if isChecked is not None:
-            print('Проверка авктивности "галочки". Проверка прошла успешно. Галочка поставилась в чекбокс')
-        else:
-            print('Проверка авктивности "галочки". Проверка провалилась. Галочка не поставилась в чекбокс')
-
-    def first_tree(self):
-        driver = self.driver
-        driver.find_element_by_xpath('//*[@id="node_12602"]/a')
-        driver.find_element_by_xpath('//*[@id="node_12603"]/a')
-        driver.find_element_by_xpath('//*[@id="node_11460"]/a')
-        driver.find_element_by_xpath('//*[@id="node_13959"]/a')
-
-
-    def second_tree(self):
-        driver = self.driver
-        driver.find_element_by_xpath('//*[@id="node_6830"]/a')
-        driver.find_element_by_xpath('//*[@id="node_14875"]/a')
-        driver.find_element_by_xpath('//*[@id="node_12601"]/a')
-        driver.find_element_by_xpath('//*[@id="node_6827"]/a')
-        driver.find_element_by_xpath('//*[@id="node_12597"]/a')
 
     def destroy(self):
         self.driver.quit()
