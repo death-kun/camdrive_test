@@ -10,4 +10,5 @@ class CD_120_online:
         self.app.Camera_List.click_camera_CD_120()
         self.app.Player.add_camera_player1()
         self.app.Online.online_screenshot()
+        self.app.Player.closing_player()
         self.app.Authorization.logout_butten()
