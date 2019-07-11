@@ -1,4 +1,3 @@
-import time
 
 class CD120_D521_online:
 
