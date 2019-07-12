@@ -95,17 +95,26 @@ class monitoring:
         try:
             WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.container.active')))
             try:
-                width_element = 0
-                while width_element < 7:
-                    time.sleep(1)
-                    T = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
-                    size_element = T.size
-                    width_element = size_element['width']
-                self.focus_element()
-                self.seek_total_time()
-                self.video_length_check()
-            except:
-                self.text_the_video_did_not_load()
+                WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.player-bottom-controlbar-progress-left')))
+                try:
+                    width_element = 0
+                    while width_element < 7:
+                        time.sleep(1)
+                        T = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
+                        size_element = T.size
+                        width_element = size_element['width']
+                    self.focus_element()
+                    self.seek_total_time()
+                    self.video_length_check()
+                except:
+                    self.text_the_video_did_not_load()
+            except TimeoutException:
+                print('Не загрузилось видео за 10')
+                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                    f.write(
+                        '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
+                            self.app.LineHours.h) + ' не загрузилось видео за 10 секунд.\n')
+                    f.close()
         except TimeoutException:
             self.text_player_is_not_displayed()
 
