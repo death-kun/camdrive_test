@@ -22,7 +22,7 @@ class monitoring:
     def find_yesterday(self):
         self.now = datetime.datetime.now()
         cur_day = self.now.day
-        self.strg_today = self.now.strftime('%B %d, %Y')
+        self.strg_today = self.now.strftime('%B %d, %Y %H:%M')
         self.yesterday = str(cur_day - 1)
 
     def open_schedule_open_archive(self):
@@ -111,6 +111,7 @@ class monitoring:
 
     def text_player_is_not_displayed(self):
         self.app.LineHours.getting_time()
+        self.find_yesterday()
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
