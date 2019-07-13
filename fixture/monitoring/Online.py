@@ -1,7 +1,9 @@
-from PIL import Image, ImageFile
+from PIL import Image
+from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 import time
-import math, operator
+import math
+import operator
 from functools import reduce
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -21,8 +23,8 @@ class checkonlune:
             old_screenshot_player = 0
             while i < 300: # 5 минут в течение, которых проверяется стабильность онлайна
                 driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]/div').screenshot("1.png") #делаем скриншот видеоплеера
-                screenshot_error = Image.open("D:/python test/camdrive_test/test/error_code_0.png") #скриншот с ошибкой
-                screenshot_progress_bar = Image.open("D:/python test/camdrive_test/test/progress_bar.png") #скриншот с прогрессбаром
+                screenshot_error = Image.open("~/test/error_code_0.png") #скриншот с ошибкой
+                screenshot_progress_bar = Image.open("~/test/progress_bar.png") #скриншот с прогрессбаром
                 self.screenshot_player = Image.open("1.png")
 
                 # Среднеквадратическая разница. Чтобы измерить, насколько похожи два изображения, вы можете рассчитать среднеквадратичное (RMS) значение разницы между изображениями.

@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/fixture/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/regress/Player.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/Schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Schedule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/TopEditButtons.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/regress/TopEditButtons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/monitoring report.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/monitoring_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/monitoring_autotest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
