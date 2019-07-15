@@ -1,5 +1,6 @@
 import time
 import datetime
+import os
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
@@ -17,7 +18,16 @@ class monitoring:
         driver = self.app.driver
         self.find_yesterday()
         time.sleep(4)
-        driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.yesterday + '")]').click()
+        try:
+            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.yesterday + '")]')))
+            driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.yesterday + '")]').click()
+        except TimeoutException:
+            with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                f.write(
+                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Архива за ' + self.yesterday  + ' число нет.\n')
+                f.close()
+            self.app.Authorization.logout_butten()
+            self.app.destroy()
 
     def find_yesterday(self):
         self.now = datetime.datetime.now()
