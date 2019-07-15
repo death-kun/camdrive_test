@@ -19,6 +19,7 @@ from fixture.monitoring.Online import checkonlune
 from fixture.Camera_List import cameralist
 from fixture.Requests import requests_camdrive
 from fixture.Tree import camera_tree
+from fixture.Registry import regedit
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
@@ -80,6 +81,7 @@ class Application:
         self.check_activity_checkbox = checkbox(self)
         self.check_forgot_your_password_gui = forgot_your_password(self)
         self.Tree = camera_tree(self)
+        self.Registry = regedit(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)

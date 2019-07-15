@@ -3,6 +3,9 @@ import sys
 
 class regedit:
 
+    def __init__(self, app):
+        self.app = app
+
     def check_registry(self):
         reg_path = 'Software\Policies\Google\Chrome\PluginsAllowedForUrls'
         allow_flash = {'1': 'https://test.camdrive.org'}
