@@ -1,6 +1,5 @@
 import time
 import datetime
-import os
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
@@ -26,6 +25,7 @@ class monitoring:
                 f.write(
                     '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Архива за ' + self.yesterday  + ' число нет.\n')
                 f.close()
+            print('Нет расписания завчерашний день.')
             self.app.Authorization.logout_butten()
             self.app.destroy()
 
