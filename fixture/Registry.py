@@ -13,7 +13,7 @@ class regedit:
         if sys.platform == 'win32':
             try:
                 try:
-                    RegistryKey = OpenKey(HKEY_LOCAL_MACHINE, reg_path, 0, KEY_ALL_ACCESS)
+                    RegistryKey = OpenKey(HKEY_CURRENT_USER, reg_path, 0, KEY_ALL_ACCESS)
                     for K, V in allow_flash.items():
                         try:
                             if QueryValueEx(RegistryKey, K)[0] == V:
@@ -24,7 +24,7 @@ class regedit:
                             SetValueEx(RegistryKey, K, 0, REG_SZ, V)
                     CloseKey(RegistryKey)
                 except FileNotFoundError:
-                    RegistryKey = CreateKey(HKEY_LOCAL_MACHINE, reg_path)
+                    RegistryKey = CreateKey(HKEY_CURRENT_USER, reg_path)
                     for K, V in allow_flash.items():
                         SetValueEx(RegistryKey, K, 0, REG_SZ, V)
                     CloseKey(RegistryKey)
