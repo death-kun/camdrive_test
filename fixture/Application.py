@@ -15,6 +15,7 @@ from fixture.monitoring.Monitoring import monitoring
 from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
 from fixture.monitoring.Online import checkonlune
+from fixture.monitoring.Date_determination import DateDetermination
 #общее
 from fixture.Camera_List import cameralist
 from fixture.Requests import requests_camdrive
@@ -82,6 +83,7 @@ class Application:
         self.check_forgot_your_password_gui = forgot_your_password(self)
         self.Tree = camera_tree(self)
         self.Registry = regedit(self)
+        self.Date_determination = DateDetermination(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)

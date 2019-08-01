@@ -1,5 +1,4 @@
 import time
-import datetime
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
@@ -15,25 +14,19 @@ class monitoring:
 
     def click_yesterday(self):
         driver = self.app.driver
-        self.find_yesterday()
+        self.app.Date_determination.find_yesterday()
         time.sleep(4)
         try:
-            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.yesterday + '")]')))
-            driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.yesterday + '")]').click()
+            WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]')))
+            driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]').click()
         except TimeoutException:
             with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Архива за ' + self.yesterday  + ' число нет.\n')
+                    '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Архива за ' + self.app.Date_determination.yesterday  + ' число нет.\n')
                 f.close()
             print('Нет расписания завчерашний день.')
             self.app.Authorization.logout_butten()
             self.app.destroy()
-
-    def find_yesterday(self):
-        self.now = datetime.datetime.now()
-        cur_day = self.now.day
-        self.strg_today = self.now.strftime('%B %d, %Y %H:%M')
-        self.yesterday = str(cur_day - 1)
 
     def open_schedule_open_archive(self):
         driver = self.app.driver
@@ -122,7 +115,7 @@ class monitoring:
                 print('Не загрузилось видео за 10')
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                        '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
+                        '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
                             self.app.LineHours.h) + ' не загрузилось видео за 10 секунд.\n')
                     f.close()
         except TimeoutException:
@@ -130,12 +123,12 @@ class monitoring:
 
     def text_player_is_not_displayed(self):
         self.app.LineHours.getting_time()
-        self.find_yesterday()
+        self.app.Date_determination.find_yesterday()
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.\n')
+                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.\n')
             f.close()
 
     def text_the_video_did_not_load(self):
@@ -145,7 +138,7 @@ class monitoring:
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.')
         with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.\n')
+                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.\n')
             f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
@@ -159,7 +152,7 @@ class monitoring:
 
             with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                 f.write(
-                    '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
+                    '"' + self.app.Date_determination.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут.\n')
                 f.close()
         else:
@@ -171,7 +164,7 @@ class monitoring:
 
                 with open('monitoring report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                        '"' + self.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео ' + str(
+                        '"' + self.app.Date_determination.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео ' + str(
                             self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
                             self.archive_time).strip() + ' минут. Запись по детекции движения.\n')
                     f.close()
@@ -182,7 +175,7 @@ class monitoring:
 
                 with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
                     f.write(
-                    '"' + self.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
+                    '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
                     f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
