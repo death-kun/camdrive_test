@@ -9,3 +9,9 @@ class DateDetermination:
         cur_day = self.now.day
         self.strg_today = self.now.strftime('%B %d, %Y %H:%M')
         self.yesterday = str(cur_day - 1)
+
+    def find_previous_month(self):
+        today = datetime.date.today()
+        first = today.replace(day=1)
+        lastMonth = first - datetime.timedelta(days=1)
+        print(lastMonth.strftime("%m"))
