@@ -6,7 +6,6 @@ class CD120_D521:
         self.app = app
 
     def detection_of_archive(self):
-        self.app.Monitoring.delete_txt()
         self.app.Authorization.open_home_page()
         self.app.Authorization.login_autotest()
         time.sleep(4)
