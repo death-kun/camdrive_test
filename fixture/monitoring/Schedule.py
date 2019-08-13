@@ -12,7 +12,7 @@ class schedule:
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[3]/a').click()
         driver.find_element_by_xpath('//*[@id="subsections"]/table/tbody/tr/td[2]/a').click()
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'li#node_3063.jstree-last.jstree-open')))
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, 'jstree-last jstree-open')))
         self.camera_name_shedule = self.app.Monitoring.title()
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
