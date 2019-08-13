@@ -3,7 +3,6 @@ class hours:
     def __init__(self, app):
         self.app = app
 
-#TODO: Изменить "имя" плеера/видео для вывода в сообщение. Выводить имя типа 00:00 - 00:12
     def check_time_0(self):
         driver = self.app.driver
         self.m = 0

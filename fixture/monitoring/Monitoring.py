@@ -101,8 +101,6 @@ class monitoring:
         self.app.LineHours.check_time_22()
         self.app.LineHours.check_time_23()
 
-# TODO : РЕФАКТОРИНГ - Сделать проверку плеера. Добавить наведение фокуса на тамлайн, чтобы считать дилу видео
-
     def check_player(self):
         driver = self.app.driver
         try:
