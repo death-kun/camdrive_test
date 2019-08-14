@@ -205,13 +205,12 @@ class monitoring:
         camera_name = camera_title.get_attribute('textContent')
         return camera_name
 
-    def opem_LK_monitoring(self):
+    def site_opening(self):
         driver = self.app.driver
         driver.get('https://www.camdrive.com')
 
     def login_monitoring(self):
         driver = self.app.driver
-        self.opem_LK_monitoring()
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('service')
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('7ujm6yhn')
         driver.find_element_by_id('login').click()

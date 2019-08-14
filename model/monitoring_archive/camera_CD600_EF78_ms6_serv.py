@@ -6,6 +6,7 @@ class CD600_EF78_ms6_serv:
         self.app = app
 
     def detection_of_archive(self):
+        self.app.Monitoring.site_opening()
         self.app.Monitoring.login_monitoring()
         time.sleep(4)
         self.app.Camera_List.click_CD600_EF78_ms6_serv()

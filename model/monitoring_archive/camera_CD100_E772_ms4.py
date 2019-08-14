@@ -6,6 +6,7 @@ class CD100_E772_ms4:
         self.app = app
 
     def detection_of_archive(self):
+        self.app.Monitoring.site_opening()
         self.app.Monitoring.login_monitoring()
         time.sleep(4)
         self.app.Camera_List.click_camera_CD100_E772_ms4()

@@ -6,6 +6,7 @@ class N1001_3A00_bwd:
         self.app = app
 
     def detection_of_archive(self):
+        self.app.Monitoring.site_opening()
         self.app.login_autotest()
         time.sleep(4)
         self.app.Camera_List.click_camera_N1001_3A00_bwd()
