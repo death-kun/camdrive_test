@@ -30,7 +30,7 @@ class monitoring:
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]')))
                 driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]').click()
         except TimeoutException:
-            with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+            with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                 f.write(
                     '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Архива за ' + self.app.Date_determination.yesterday  + ' число нет.\n')
                 f.close()
@@ -121,7 +121,7 @@ class monitoring:
                     self.text_the_video_did_not_load()
             except TimeoutException:
                 print('Не загрузилось видео за 10')
-                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                with open('monitoring error report from camera ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
                             self.app.LineHours.h) + ' не загрузилось видео за 10 секунд.\n')
@@ -134,7 +134,7 @@ class monitoring:
         self.app.Date_determination.find_yesterday()
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.')
-        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+        with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.\n')
             f.close()
@@ -144,7 +144,7 @@ class monitoring:
         self.app.LineHours.getting_time()
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.')
-        with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+        with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' не загрузилось за 15 секунд.\n')
             f.close()
@@ -158,7 +158,7 @@ class monitoring:
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                     self.archive_time).strip() + ' минут.')
 
-            with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+            with open('monitoring report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                 f.write(
                     '"' + self.app.Date_determination.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут.\n')
@@ -170,7 +170,7 @@ class monitoring:
                         self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут. Запись по детекции движения.')
 
-                with open('monitoring report.txt', 'a', encoding='utf-8') as f:
+                with open('monitoring report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.app.Date_determination.strg_today + '" INFO: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео ' + str(
                             self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
@@ -181,7 +181,7 @@ class monitoring:
                 'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                     self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
-                with open('monitoring error report.txt', 'a', encoding='utf-8') as f:
+                with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                     f.write(
                     '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
@@ -217,7 +217,10 @@ class monitoring:
         time.sleep(1)
 
     def delete_txt(self):
-        T = Path('.').glob('*.txt')
-        for f in T:
+        T1 = Path('.').glob('monitoring report ' + self.camera_name.strip() + '.txt')
+        for f in T1:
+            Path.unlink(f)
+        T2 = Path('.').glob('monitoring error report ' + self.camera_name.strip() + '.txt')
+        for f in T2:
             Path.unlink(f)
 

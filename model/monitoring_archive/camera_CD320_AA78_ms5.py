@@ -9,6 +9,7 @@ class CD320_AA78_ms5:
         self.app.Monitoring.site_opening()
         self.app.Monitoring.login_monitoring()
         self.app.Camera_List.click_camera_CD320_AA78_ms5()
+        self.app.Monitoring.delete_txt()
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.app.Monitoring.archive_check()

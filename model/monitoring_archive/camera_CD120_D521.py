@@ -9,6 +9,7 @@ class CD120_D521:
         self.app.Authorization.open_home_page()
         self.app.Authorization.login_autotest()
         self.app.Camera_List.click_camera_CD120_D521()
+        self.app.Monitoring.delete_txt()
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.app.Monitoring.archive_check()
