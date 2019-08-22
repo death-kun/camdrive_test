@@ -101,6 +101,8 @@ class monitoring:
         self.app.LineHours.check_time_22()
         self.app.LineHours.check_time_23()
 
+# TODO :: Добавить счетчик для отслеживания загрузки видео
+
     def check_player(self):
         driver = self.app.driver
         try:
@@ -121,7 +123,7 @@ class monitoring:
                     self.text_the_video_did_not_load()
             except TimeoutException:
                 print('Не загрузилось видео за 10')
-                with open('monitoring error report from camera ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
+                with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
                             self.app.LineHours.h) + ' не загрузилось видео за 10 секунд.\n')
