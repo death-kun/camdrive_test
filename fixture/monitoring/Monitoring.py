@@ -101,8 +101,6 @@ class monitoring:
         self.app.LineHours.check_time_22()
         self.app.LineHours.check_time_23()
 
-# TODO :: Добавить счетчик для отслеживания загрузки видео
-
     def check_player(self):
         driver = self.app.driver
         try:
@@ -110,9 +108,12 @@ class monitoring:
             try:
                 WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'div.player-bottom-controlbar-progress-left')))
                 try:
-                    width_element = 0
-                    while width_element < 7:
+                    width_element = 0 #Переменная для отслеживания длины загруженного таймлайна
+                    caunter = 0 #Переменная для счетчика отслеживающий загрузку видео
+                    while width_element < 7 and caunter < 15:
                         time.sleep(1)
+                        print(str(caunter) + ' - счетчик, длина пройденного таймлайна - ' + str(width_element))
+                        caunter += 1
                         T = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
                         size_element = T.size
                         width_element = size_element['width']
