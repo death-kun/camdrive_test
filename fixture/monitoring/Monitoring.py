@@ -127,7 +127,7 @@ class monitoring:
                 with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
                     f.write(
                         '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Плеер ' + str(
-                            self.app.LineHours.h) + ' не загрузилось видео за 10 секунд.\n')
+                            self.app.LineHours.h) + ' не загрузился за 10 секунд.\n')
                     f.close()
         except TimeoutException:
             self.text_player_is_not_displayed()
