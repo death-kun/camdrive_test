@@ -1,3 +1,9 @@
+from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+import math
+import operator
+from functools import reduce
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
@@ -180,15 +186,17 @@ class monitoring:
                             self.archive_time).strip() + ' минут. Запись по детекции движения.\n')
                     f.close()
             else:
-                print(
-                'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
-                    self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
+                if str(self.archive_time) == '00:13':
+                    self.check_screen()
+                    print(
+                    'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
+                        self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
 
-                with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
-                    f.write(
-                    '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
-                        self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
-                    f.close()
+                    with open('monitoring error report ' + self.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
+                        f.write(
+                        '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка для камеры "' + self.camera_name.strip() + '" выполнена. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
+                            self.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
+                        f.close()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def seek_total_time(self):
@@ -201,6 +209,7 @@ class monitoring:
         driver = self.app.driver
         Focus = ActionChains(driver)
         Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
+        driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]').screenshot("1.png")
 
     def title(self):
         driver = self.app.driver
@@ -227,3 +236,10 @@ class monitoring:
         for f in T2:
             Path.unlink(f)
 
+    def check_screen(self):
+        Insufficient_funds_screen = Image.open("Insufficient_funds.png") #скриншот с серверной ошибки
+        screen_1 = Image.open("1.png")
+        h1 = Insufficient_funds_screen.histogram()
+        h2 = screen_1.histogram()
+        rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1)) #определяем разницу между скриншотом плеера и скриншотом серверной ошибки
+        print(rms, ' сравнение с ошибкой')

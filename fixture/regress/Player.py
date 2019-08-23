@@ -52,8 +52,6 @@ class player_check:
 
     def expand_screen_button(self):
         driver = self.app.driver
-        self.app.open_home_page()
-        self.app.login_autotest()
         driver.find_element_by_xpath('//*[@id="screen_1"]').click()
         time.sleep(1)
         self.expand_screen()
@@ -61,11 +59,8 @@ class player_check:
         try:
             driver.find_element_by_xpath('//*[@id="screens"]/div[1]/div/div[2]')
             print('Проверка, что плеер открылся в формате 1х1. Проверка прошла успешно. Плеер развернулся в Формате 1х1')
-            self.closing_player()
-            self.app.Authorization.logout_butten()
         except NoSuchElementException:
             print('Проверка, что плеер открылся в формате 1х1. Проверка провалилась. Плеер не развернулся')
-            self.app.Authorization.logout_butten()
 
     def roll_up_screen_button(self):
         driver = self.app.driver
