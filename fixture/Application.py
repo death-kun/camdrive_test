@@ -16,6 +16,7 @@ from fixture.monitoring.Schedule import schedule
 from fixture.monitoring.LineHours import hours
 from fixture.monitoring.Online import checkonlune
 from fixture.monitoring.Date_determination import DateDetermination
+from fixture.monitoring.Messages_for_the_report import messages
 #общее
 from fixture.Camera_List import cameralist
 from fixture.Requests import requests_camdrive
@@ -86,6 +87,7 @@ class Application:
         self.Registry = regedit(self)
         self.Date_determination = DateDetermination(self)
         self.RMS = rms(self)
+        self.Messages_for_the_report = messages(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
