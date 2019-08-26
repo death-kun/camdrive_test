@@ -161,17 +161,6 @@ class monitoring:
         camera_name = camera_title.get_attribute('textContent')
         return camera_name
 
-    def site_opening(self):
-        driver = self.app.driver
-        driver.get('https://www.camdrive.com')
-
-    def login_monitoring(self):
-        driver = self.app.driver
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('service')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('7ujm6yhn')
-        driver.find_element_by_id('login').click()
-        time.sleep(1)
-
     def delete_txt(self):
         T1 = Path('.').glob('monitoring report ' + self.camera_name.strip() + '.txt')
         for f in T1:

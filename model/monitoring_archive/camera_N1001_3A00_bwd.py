@@ -6,8 +6,8 @@ class N1001_3A00_bwd:
         self.app = app
 
     def detection_of_archive(self):
-        self.app.Monitoring.site_opening()
-        self.app.Monitoring.login_monitoring()
+        self.app.Authorization.site_opening()
+        self.app.Authorization.login_monitoring()
         self.app.Camera_List.click_camera_N1001_3A00_bwd()
         self.app.Monitoring.delete_txt()
         self.app.Monitoring.open_schedule_open_archive()

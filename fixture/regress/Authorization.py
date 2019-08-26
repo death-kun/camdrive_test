@@ -1,3 +1,4 @@
+import time
 
 class AuthorizationHelper:
 
@@ -13,6 +14,17 @@ class AuthorizationHelper:
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
         driver.find_element_by_id('login').click()
+
+    def site_opening(self):
+        driver = self.app.driver
+        driver.get('https://www.camdrive.com')
+
+    def login_monitoring(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//input[@name="username"]').send_keys('service')
+        driver.find_element_by_xpath('//input[@name="password"]').send_keys('7ujm6yhn')
+        driver.find_element_by_id('login').click()
+        time.sleep(1)
 
     def logout_butten(self):
         driver = self.app.driver
