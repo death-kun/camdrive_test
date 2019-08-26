@@ -52,20 +52,20 @@ class requests_camdrive:
             'connect_restriction']  # парсим json, чтобы получить результат connect_restriction
         print(self.request_video3)
 
-    def request_player(self):
-
-        s = requests.Session()
-        r = s.get(url=self.url2, cookies=self.c, headers={"Accept": "*/*",
-                                                        "Accept-Encoding": "gzip, deflate, br",
-                                                        "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
-                                                        "Connection": "keep-alive",
-                                                        "Referer": "https://test.camdrive.org/online",
-                                                        "Host": "test.camdrive.org",
-                                                        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
-                                                        "X-Requested-With": "ShockwaveFlash/32.0.0.207"})
-        r2 = r.headers.items()
-        s.close()
-        # print(r2)
+    # def request_player(self):
+    #
+    #     s = requests.Session()
+    #     r = s.get(url=self.url2, cookies=self.c, headers={"Accept": "*/*",
+    #                                                     "Accept-Encoding": "gzip, deflate, br",
+    #                                                     "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+    #                                                     "Connection": "keep-alive",
+    #                                                     "Referer": "https://test.camdrive.org/online",
+    #                                                     "Host": "test.camdrive.org",
+    #                                                     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
+    #                                                     "X-Requested-With": "ShockwaveFlash/32.0.0.207"})
+    #     r2 = r.headers.items()
+    #     s.close()
+    #     # print(r2)
 
     def request_setting(self):
         data = {'username': 'autotest', 'password': 'autotest'}
@@ -79,3 +79,9 @@ class requests_camdrive:
         r2 = r.text
         s.close()
         print(r2)
+
+    def request_test(self):
+
+        d = {'action': 'get_host', 'channel_id': 'cd2aec6529925a5632118fb0974a4a97'}
+        req = requests.post(url='https://test.camdrive.org/archive', data=d)
+        print(req.text)

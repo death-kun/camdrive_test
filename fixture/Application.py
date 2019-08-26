@@ -76,7 +76,7 @@ class Application:
         self.balance_check = balance_LK(self)
         self.Online = checkonlune(self)
         self.rename_camera = rename(self)
-        self.Request = requests_camdrive(self)
+        self.Requests = requests_camdrive(self)
         self.enter_with_invalid_login = invalid_login(self)
         self.enter_with_invalid_password = invalid_password(self)
         self.password_visibility_check = password_visibility(self)

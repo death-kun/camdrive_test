@@ -6,8 +6,8 @@ class balance_LK:
 
     def autotest_balance(self):
         self.app.Monitoring.delete_txt()
-        self.app.Request.request_auth()
-        self.app.Request.request_balance()
+        self.app.Requests.request_auth()
+        self.app.Requests.request_balance()
         self.app.Authorization.open_home_page()
         self.app.Authorization.login_autotest()
         self.app.Balance.balance_gui()
