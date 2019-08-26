@@ -187,7 +187,7 @@ class monitoring:
                     f.close()
             else:
                 if str(self.archive_time) == '00:13':
-                    self.check_screen()
+                    self.computation_rms()
                     print(
                     'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео '+ str(self.app.LineHours.h) +' загрузилось. Длительность видео ' + str(
                         self.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
@@ -236,10 +236,10 @@ class monitoring:
         for f in T2:
             Path.unlink(f)
 
-    def check_screen(self):
-        Insufficient_funds_screen = Image.open("Insufficient_funds.png") #скриншот с серверной ошибки
-        screen_1 = Image.open("1.png")
-        h1 = Insufficient_funds_screen.histogram()
-        h2 = screen_1.histogram()
-        rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1)) #определяем разницу между скриншотом плеера и скриншотом серверной ошибки
-        print(rms, ' сравнение с ошибкой')
+    # def computation_rms(self):
+    #     Insufficient_funds_screen = Image.open("Insufficient_funds.png") #скриншот с серверной ошибки
+    #     screen_1 = Image.open("1.png")
+    #     h1 = Insufficient_funds_screen.histogram()
+    #     h2 = screen_1.histogram()
+    #     rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1)) #определяем разницу между скриншотом плеера и скриншотом серверной ошибки
+    #     print(rms, ' сравнение с ошибкой')

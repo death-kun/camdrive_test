@@ -21,6 +21,7 @@ from fixture.Camera_List import cameralist
 from fixture.Requests import requests_camdrive
 from fixture.Tree import camera_tree
 from fixture.Registry import regedit
+from fixture.RMS import rms
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
@@ -84,6 +85,7 @@ class Application:
         self.Tree = camera_tree(self)
         self.Registry = regedit(self)
         self.Date_determination = DateDetermination(self)
+        self.RMS = rms(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
