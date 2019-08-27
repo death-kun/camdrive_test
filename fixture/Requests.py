@@ -71,7 +71,6 @@ class requests_camdrive:
         data = {'username': 'autotest', 'password': 'autotest'}
         url1 = 'https://test.camdrive.org/'
 
-
         s = requests.Session()  # Создание сеанс
         a = s.post(url=url1, data=data)  # Авторизация запросом
         c = a.cookies.get_dict()  # Получаем куки
@@ -81,7 +80,12 @@ class requests_camdrive:
         print(r2)
 
     def request_test(self):
+        s = requests.Session().cookies()
+        d = {'action': 'get_host'}
+        req = requests.post(url='https://test.camdrive.org/archive', data=d, cookies=s)
+        rr = req.text
+        print(rr)
+        parsed_string = json.loads(rr)
+        print(parsed_string)
 
-        d = {'action': 'get_host', 'channel_id': 'cd2aec6529925a5632118fb0974a4a97'}
-        req = requests.post(url='https://test.camdrive.org/archive', data=d)
-        print(req.text)
+
