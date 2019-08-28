@@ -29,7 +29,7 @@ class monitoring:
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]')))
                 driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]').click()
         except TimeoutException:
-            self.app.Messages_for_the_report.no_archive()
+            self.app.Messages_for_the_report.no_archive_for_the()
             self.app.Authorization.logout_butten()
             self.app.destroy()
 
