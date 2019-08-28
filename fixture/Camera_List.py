@@ -84,9 +84,9 @@ class cameralist:
     def click_CD600_EF78_ms6_serv(self):
         driver = self.app.driver
         try:
-            self.app.Tree.first_tree()
+            self.app.Tree.second_tree()
         except:
-            driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+            driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='node_12601']/a")))
         self.click_CD600_EF78_ms6_serv = driver.find_element_by_xpath('//*[@id="node_12601"]/a').click()  # камера CD600(EF78)_ms6_serv
         self.app.Monitoring.camera_title()
