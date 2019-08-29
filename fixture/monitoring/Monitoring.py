@@ -143,8 +143,9 @@ class monitoring:
                     if self.app.RMS.rms4 < 25.0:
                         # self.app.Requests.request_test()
                         self.app.Messages_for_the_report.maximum_allowed_concurrent_connections_exceeded()
-                    else:
-                        self.app.Messages_for_the_report.archive_duration_is_shorter()
+                else:
+                    # self.app.Requests.request_test()
+                    self.app.Messages_for_the_report.archive_duration_is_shorter()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def seek_total_time(self):
