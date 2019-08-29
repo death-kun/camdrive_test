@@ -80,12 +80,25 @@ class requests_camdrive:
         print(r2)
 
     def request_test(self):
-        s = requests.Session().cookies()
-        d = {'action': 'get_host'}
-        req = requests.post(url='https://test.camdrive.org/archive', data=d, cookies=s)
-        rr = req.text
-        print(rr)
-        parsed_string = json.loads(rr)
-        print(parsed_string)
+        driver = self.app.driver
+        request_cookies_browser = driver.get_cookies()
+        # print('cookies - ', request_cookies_browser)
 
+        parsing1 = str(request_cookies_browser).split("'httpOnly': False, ")[1]
+        parsing_name = parsing1.split(", 'path':")[0]
+        # print(parsing_name, ' смотрим что осталось')
+        parsing_value1 = parsing1.split("'secure': False, ")[1]
+        parsing_value2 = parsing_value1.split('}]')[0]
+        # print(parsing_value2, ' смотрим что осталось')
 
+        concatenation = parsing_name + ', ' + parsing_value2
+        print(concatenation)
+
+        s = requests.Session()
+        cookies = dict(cookies_are=concatenation)
+
+        request_auth = s.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
+        resp = s.post(url='https://test.camdrive.org/archive', cookies=cookies)
+        # request_archive = str(resp)
+        # parsed_string = json.loads(request_archive)
+        print(resp.headers)

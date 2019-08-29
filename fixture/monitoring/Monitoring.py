@@ -130,21 +130,17 @@ class monitoring:
         # Проверка длительности записи Архива
         driver = self.app.driver
         if str(self.archive_time) > '11:50':
-            # self.app.Requests.request_test()
             self.app.Messages_for_the_report.video_download_and_the_duration_is_correct()
         else:
             if self.app.LineHours.item_time == 2:
-                # self.app.Requests.request_test()
                 self.app.Messages_for_the_report.motion_recording()
             else:
                 if str(self.archive_time) == '00:13':
                     self.screen_archive()
                     self.app.RMS.computation_rms()
-                    if self.app.RMS.rms4 < 25.0:
-                        # self.app.Requests.request_test()
+                    if self.app.RMS.rms4 == 0.0:
                         self.app.Messages_for_the_report.maximum_allowed_concurrent_connections_exceeded()
                 else:
-                    # self.app.Requests.request_test()
                     self.app.Messages_for_the_report.archive_duration_is_shorter()
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
