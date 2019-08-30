@@ -7,7 +7,7 @@ class DateDetermination:
     def find_yesterday(self):
         self.now = datetime.datetime.now()
         cur_day = self.now.day
-        self.strg_today = self.now.strftime('%B %d, %Y %H:%M')
+        self.strg_today = self.now.strftime('%B %d')
         self.yesterday = str(cur_day - 1)
 
     def find_previous_month(self):
