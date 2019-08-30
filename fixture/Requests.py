@@ -12,8 +12,9 @@ class requests_camdrive:
         url = 'https://test.camdrive.org/state'
 
         r = self.s.post(url=url, data=d, cookies=self.c)  # Отправка запроса на получение баланса
+        print(r)
         r2 = r.text
-
+        print(r2)
         parsing1 = r2.split('],')[1]
         parsing2 = parsing1.split('<span')[0]
         self.parsing3 = parsing2.replace('"balance":"', '')
@@ -98,7 +99,15 @@ class requests_camdrive:
         cookies = dict(cookies_are=concatenation)
 
         request_auth = s.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
-        resp = s.post(url='https://test.camdrive.org/archive', cookies=cookies)
-        # request_archive = str(resp)
-        # parsed_string = json.loads(request_archive)
-        print(resp.headers)
+
+        channel_id = self.app.Camera_List.chanel_id
+        interval = self.app.LineHours.interval_value
+        data = {'action': 'get_host', 'channel_id': channel_id, 'interval': interval}
+
+        resp = s.post(url='https://test.camdrive.org/archive', data= data, cookies=cookies)
+        r = resp.text
+        print(r)
+        s.close()
+
+        parsed_string = json.loads(r)
+        print(parsed_string)
