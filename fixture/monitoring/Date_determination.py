@@ -13,6 +13,6 @@ class DateDetermination:
     def find_previous_month(self):
         today = datetime.date.today()
         first = today.replace(day=1)
-        lastMonth = first - datetime.timedelta(days=1)
-        self.number_of_days = lastMonth.strftime('%d') #Определяем сколько дней в прошлем месяце
+        last_month = first - datetime.timedelta(days=1)
+        self.number_of_days = last_month.strftime('%d') #Определяем сколько дней в прошлем месяце
         print(self.number_of_days)

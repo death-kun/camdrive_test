@@ -11,18 +11,18 @@ from fixture.regress.TopEditButtons import top_edit_buttons
 from fixture.regress.BottomEditButtons import bottom_edit_buttons
 from fixture.regress.Balance import balance
 #для мониторинга
-from fixture.monitoring.Monitoring import monitoring
-from fixture.monitoring.Schedule import schedule
-from fixture.monitoring.LineHours import hours
-from fixture.monitoring.Online import checkonlune
+from fixture.monitoring.Monitoring import Monitoring
+from fixture.monitoring.Schedule import Schedule
+from fixture.monitoring.LineHours import Hours
+from fixture.monitoring.Online import CheckOnlune
 from fixture.monitoring.Date_determination import DateDetermination
-from fixture.monitoring.Messages_for_the_report import messages
+from fixture.monitoring.Messages_for_the_report import Messages
 #общее
-from fixture.Camera_List import cameralist
-from fixture.Requests import requests_camdrive
-from fixture.Tree import camera_tree
-from fixture.Registry import regedit
-from fixture.RMS import rms
+from fixture.Camera_List import CameraList
+from fixture.Requests import RequestsCamdrive
+from fixture.Tree import CameraTree
+from fixture.Registry import Regedit
+from fixture.RMS import RMS
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
@@ -65,27 +65,27 @@ class Application:
         self.Archive = archive_check(self)
         self.TopEditButtons = top_edit_buttons(self)
         self.BottomEditButtons = bottom_edit_buttons(self)
-        self.Monitoring = monitoring(self)
-        self.Schedule = schedule(self)
-        self.LineHours = hours(self)
-        self.Camera_List = cameralist(self)
+        self.Monitoring = Monitoring(self)
+        self.Schedule = Schedule(self)
+        self.LineHours = Hours(self)
+        self.Camera_List = CameraList(self)
         self.download_archive = downloadarchive(self)
         self.Balance = balance(self)
         self.balance_check = balance_LK(self)
-        self.Online = checkonlune(self)
+        self.Online = CheckOnlune(self)
         self.rename_camera = rename(self)
-        self.Requests = requests_camdrive(self)
+        self.Requests = RequestsCamdrive(self)
         self.enter_with_invalid_login = invalid_login(self)
         self.enter_with_invalid_password = invalid_password(self)
         self.password_visibility_check = password_visibility(self)
         self.login_check_with_valid_data = valid_data(self)
         self.check_activity_checkbox = checkbox(self)
         self.check_forgot_your_password_gui = forgot_your_password(self)
-        self.Tree = camera_tree(self)
-        self.Registry = regedit(self)
+        self.Tree = CameraTree(self)
+        self.Registry = Regedit(self)
         self.Date_determination = DateDetermination(self)
-        self.RMS = rms(self)
-        self.Messages_for_the_report = messages(self)
+        self.RMS = RMS(self)
+        self.Messages_for_the_report = Messages(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)

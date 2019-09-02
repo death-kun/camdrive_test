@@ -1,51 +1,50 @@
 import requests
 import json
 
-class requests_camdrive:
+class RequestsCamdrive:
 
     def __init__(self, app):
         self.app = app
 
     def request_balance(self):
 
-        d = {'controller':'online', 'config':'{"balance":true,"tree":true,"check_camera_public_payment":false,"cameras":false}'}
-        url = 'https://test.camdrive.org/state'
+        DATA = {'controller':'online', 'config':'{"balance":true,"tree":true,"check_camera_public_payment":false,"cameras":false}'}
+        URL = 'https://test.camdrive.org/state'
 
-        r = self.s.post(url=url, data=d, cookies=self.c)  # Отправка запроса на получение баланса
-        print(r)
-        r2 = r.text
-        print(r2)
-        parsing1 = r2.split('],')[1]
-        parsing2 = parsing1.split('<span')[0]
-        self.parsing3 = parsing2.replace('"balance":"', '')
-        print(self.parsing3, 'Баланс, который мы получаем запросом')
+        request_balance = self.create_session.post(url=URL, data=DATA, cookies=self.receive_cookies)  # Отправка запроса на получение баланса
+        print(request_balance)
+        print(request_balance.text)
+        split_request_balance = request_balance.text.split('],')[1]
+        split_request_balance_2 = split_request_balance.split('<span')[0]
+        self.respon_balance = split_request_balance_2.replace('"balance":"', '')
+        print(self.respon_balance, 'Баланс, который мы получаем запросом')
 
     def request_auth(self):
 
-        data = {'username': 'autotest', 'password': 'autotest'}
-        url1 = 'https://test.camdrive.org/'
+        DATA = {'username': 'autotest', 'password': 'autotest'}
+        URL = 'https://test.camdrive.org/'
 
-        self.s = requests.Session()  # Создание сеанс
-        self.a = self.s.post(url1, data=data)  # Авторизация запросом
-        self.c = self.a.cookies.get_dict()  # Получаем куки
+        self.create_session = requests.Session()  # Создание сеанс
+        self.request_auth = self.create_session.post(URL, data=DATA)  # Авторизация запросом
+        self.receive_cookies = self.request_auth.cookies.get_dict()  # Получаем куки
 
     def request_online(self):
 
-        data = {'username': 'autotest', 'password': 'autotest'}
-        d = {'action': 'screen_play', 'data': '{"num":1,"id":"cd2aec6529925a5632118fb0974a4a97"}'}
-        url1 = 'https://test.camdrive.org/'
-        self.url2 = 'https://test.camdrive.org/camdrive/assets/flash/BewardVideoPlayerOnline_1.51.swf'  # плеер
-        url3 = 'https://test.camdrive.org/online/get_screens_items'  # получить информацию по видео
+        DATA_AUTH = {'username': 'autotest', 'password': 'autotest'}
+        DATA = {'action': 'screen_play', 'data': '{"num":1,"id":"cd2aec6529925a5632118fb0974a4a97"}'}
+        URL_1 = 'https://test.camdrive.org/'
+        # self.url2 = 'https://test.camdrive.org/camdrive/assets/flash/BewardVideoPlayerOnline_1.51.swf'  # плеер
+        URL_2 = 'https://test.camdrive.org/online/get_screens_items'  # получить информацию по видео
 
-        s = requests.Session()  # Создание сеанс
-        a = s.post(url1, data=data)  # Авторизация запросом
-        self.c = a.cookies.get_dict()  # Получаем куки
-        print(self.c)
+        create_session = requests.Session()  # Создание сеанс
+        request_auth = create_session.post(URL_1, data=DATA_AUTH)  # Авторизация запросом
+        self.receive_cookies = request_auth.cookies.get_dict()  # Получаем куки
+        print(self.receive_cookies)
 
-        request_video = s.post(url=url3, data=d, cookies=self.c,
+        request_video = create_session.post(url=URL_2, data=DATA, cookies=self.receive_cookies,
                                headers={'Connection': 'close'})  # Отправка запроса на получение видео
         request_video2 = request_video.text
-        s.close()
+        create_session.close()
         print(request_video2)
 
         parsed_string = json.loads(request_video2)
@@ -69,45 +68,43 @@ class requests_camdrive:
     #     # print(r2)
 
     def request_setting(self):
-        data = {'username': 'autotest', 'password': 'autotest'}
-        url1 = 'https://test.camdrive.org/'
+        DATA_AUTH = {'username': 'autotest', 'password': 'autotest'}
+        URL_1 = 'https://test.camdrive.org/'
 
-        s = requests.Session()  # Создание сеанс
-        a = s.post(url=url1, data=data)  # Авторизация запросом
-        c = a.cookies.get_dict()  # Получаем куки
-        r = s.post(url='https://test.camdrive.org/settings/other/action', cookies=c, data={"action": "content", "channel_id": "dbe81e3bd23e8f6b697b9b234784cc39dbe81e3bd23e8f6b697b9b234784cc39"})
-        r2 = r.text
-        s.close()
-        print(r2)
+        create_session = requests.Session()  # Создание сеанс
+        request_auth = create_session.post(url=URL_1, data=DATA_AUTH)  # Авторизация запросом
+        receive_cookies = request_auth.cookies.get_dict()  # Получаем куки
+        request_setting = create_session.post(url='https://test.camdrive.org/settings/other/action', cookies=receive_cookies, data={"action": "content", "channel_id": "dbe81e3bd23e8f6b697b9b234784cc39dbe81e3bd23e8f6b697b9b234784cc39"})
+        create_session.close()
+        print(request_setting.text)
 
     def request_test(self):
         driver = self.app.driver
         request_cookies_browser = driver.get_cookies()
         # print('cookies - ', request_cookies_browser)
 
-        parsing1 = str(request_cookies_browser).split("'httpOnly': False, ")[1]
-        parsing_name = parsing1.split(", 'path':")[0]
+        split_cookies = str(request_cookies_browser).split("'httpOnly': False, ")[1]
+        split_name = split_cookies.split(", 'path':")[0]
         # print(parsing_name, ' смотрим что осталось')
-        parsing_value1 = parsing1.split("'secure': False, ")[1]
-        parsing_value2 = parsing_value1.split('}]')[0]
+        split_value_1 = split_cookies.split("'secure': False, ")[1]
+        split_value_2 = split_value_1.split('}]')[0]
         # print(parsing_value2, ' смотрим что осталось')
 
-        concatenation = parsing_name + ', ' + parsing_value2
+        concatenation = split_name + ', ' + split_value_2
         print(concatenation)
 
-        s = requests.Session()
+        create_session = requests.Session()
         cookies = dict(cookies_are=concatenation)
 
-        request_auth = s.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
+        request_auth = create_session.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
 
         channel_id = self.app.Camera_List.chanel_id
         interval = self.app.LineHours.interval_value
-        data = {'action': 'get_host', 'channel_id': channel_id, 'interval': interval}
+        DATA = {'action': 'get_host', 'channel_id': channel_id, 'interval': interval}
 
-        resp = s.post(url='https://test.camdrive.org/archive', data= data, cookies=cookies)
-        r = resp.text
-        print(r)
-        s.close()
+        request_archive = create_session.post(url='https://test.camdrive.org/archive', data= DATA, cookies=cookies)
+        print(request_archive.text)
+        create_session.close()
 
-        parsed_string = json.loads(r)
-        print(parsed_string)
+        parsed_request_archive = json.loads(request_archive.text)
+        print(parsed_request_archive)

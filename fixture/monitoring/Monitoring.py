@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from pathlib import Path
 
-class monitoring:
+class Monitoring:
 
     def __init__(self, app):
         self.app = app
@@ -108,8 +108,8 @@ class monitoring:
                     time.sleep(1)
                     print(str(caunter) + ' - счетчик, длина пройденного таймлайна - ' + str(width_element))
                     caunter += 1
-                    T = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
-                    size_element = T.size
+                    time_line = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
+                    size_element = time_line.size
                     width_element = size_element['width']
                 if width_element == 0:
                     self.app.LineHours.getting_time()
@@ -156,8 +156,8 @@ class monitoring:
 
     def focus_element(self):
         driver = self.app.driver
-        Focus = ActionChains(driver)
-        Focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
+        focus = ActionChains(driver)
+        focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
 
     def title(self):
         driver = self.app.driver
@@ -166,13 +166,14 @@ class monitoring:
         return camera_name
 
     def delete_txt(self):
-        T1 = Path('.').glob('monitoring report ' + self.camera_name.strip() + '.txt')
-        for f in T1:
+        monitoring_report = Path('.').glob('monitoring report ' + self.camera_name.strip() + '.txt')
+        for f in monitoring_report:
             Path.unlink(f)
-        T2 = Path('.').glob('monitoring error report ' + self.camera_name.strip() + '.txt')
-        for f in T2:
+        monitoring_error_report = Path('.').glob('monitoring error report ' + self.camera_name.strip() + '.txt')
+        for f in monitoring_error_report:
             Path.unlink(f)
 
     def screen_archive(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[2]').screenshot("1.png")  # делаем скриншот видеоплеера
+

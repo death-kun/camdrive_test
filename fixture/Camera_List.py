@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 #TODO :: Добавить проверки на раскрыты группы или нет.
 
-class cameralist:
+class CameraList:
 
     def __init__(self, app):
         self.app = app

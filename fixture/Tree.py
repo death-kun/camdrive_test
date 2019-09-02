@@ -1,5 +1,5 @@
 
-class camera_tree:
+class CameraTree:
 
     def __init__(self, app):
         self.app = app

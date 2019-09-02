@@ -1,5 +1,5 @@
 
-class messages:
+class Messages:
 
     def __init__(self, app):
         self.app = app

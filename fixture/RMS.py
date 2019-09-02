@@ -5,7 +5,7 @@ import math
 import operator
 from functools import reduce
 
-class rms:
+class RMS:
 
     def __init__(self, app):
         self.app = app
@@ -31,17 +31,17 @@ class rms:
         h1 = self.screenshot_player.histogram()
         h2 = screenshot_deviceNotConnectedToServer.histogram()
         h3 = screenshot_progress_bar.histogram()
-        h4 = screenshot_deviceNotConnectedToServer.histogram()
+        h4 = screenshot_outOfRangeMaxConnectionsLimitTariff.histogram()
         h5 = cropped_screenshot_outOfRangeMaxConnectionsLimitTariff_and_focus.histogram()
         h6 = cropped_screenshot_player.histogram()
 
-        self.rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1))  # определяем разницу между скриншотом плеера и скриншотом серверной ошибки Превышено максимальное подключение
+        self.rms = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h4)) / len(h1))  # определяем разницу между скриншотом плеера и скриншотом серверной ошибки Превышено максимальное подключение
         print(self.rms, ' сравнение с ошибкой превышено максимальное подключение')
 
         self.rms2 = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h3)) / len(h1))  # определяем разницу между скриншотом плеера и скриншотом прогрессбара
         print(self.rms2, ' сравнение с прогрессбаром')
 
-        self.rms3 = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h4)) / len(h1))  # определеняем разницу между скринщотом плеера с скриншотом ошибки  камера не подключена к серверу
+        self.rms3 = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h1, h2)) / len(h1))  # определеняем разницу между скринщотом плеера с скриншотом ошибки  камера не подключена к серверу
         print(self.rms3, ' сравнение с ошибкой камера не подключена к серверу')
 
         self.rms4 = math.sqrt(reduce(operator.add, map(lambda a, b: (a - b) ** 2, h6, h5)) / len(h6))  # определяем разницу между скриншотом плеера и скриншотом серверной ошибки Превышено максимальное подключение с наведенным курсором

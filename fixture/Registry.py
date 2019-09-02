@@ -2,7 +2,7 @@ import sys
 import ctypes
 import winreg
 
-class regedit:
+class Regedit:
 
     def __init__(self, app):
         self.app = app
