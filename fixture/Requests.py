@@ -52,20 +52,18 @@ class RequestsCamdrive:
             'connect_restriction']  # парсим json, чтобы получить результат connect_restriction
         print(self.request_video3)
 
-    # def request_player(self):
-    #
-    #     s = requests.Session()
-    #     r = s.get(url=self.url2, cookies=self.c, headers={"Accept": "*/*",
-    #                                                     "Accept-Encoding": "gzip, deflate, br",
-    #                                                     "Accept-Language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
-    #                                                     "Connection": "keep-alive",
-    #                                                     "Referer": "https://test.camdrive.org/online",
-    #                                                     "Host": "test.camdrive.org",
-    #                                                     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36",
-    #                                                     "X-Requested-With": "ShockwaveFlash/32.0.0.207"})
-    #     r2 = r.headers.items()
-    #     s.close()
-    #     # print(r2)
+    def request_call(self):
+        PUSH_SERVER = "push-for-test.beward.ru"
+        MAC = "186882304CDE"
+        SIP_ADDRESS = "8_872_363"
+        SIP_SERVER = "pbx.dev.ktotam.info"
+        IP_ADDRESS = "192.168.28.159"
+        LOGIN = "admin"
+        PASSWORD = "qweQWE123"
+        create_session = requests.Session()
+        push = create_session.get(url='https://'+ PUSH_SERVER +'/intercom/?mac='+ MAC +'&event=0&mode=0&sipaddr1='+ SIP_ADDRESS +'@'+ SIP_SERVER +'')
+        call = create_session.get(url='http://'+ LOGIN +':'+ PASSWORD +'@'+ IP_ADDRESS +'/cgi-bin/sip_cgi?action=call&Uri='+ SIP_ADDRESS +'@'+ SIP_SERVER +'')
+        create_session.close()
 
     def request_setting(self):
         DATA_AUTH = {'username': 'autotest', 'password': 'autotest'}
