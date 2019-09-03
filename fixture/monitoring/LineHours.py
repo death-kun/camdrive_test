@@ -1,3 +1,4 @@
+
 class Hours:
 
     def __init__(self, app):
@@ -400,9 +401,16 @@ class Hours:
         self.minutes = 0
         for i in range(115, 120, 1):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
-            self.archive_container = driver.find_elements_by_xpath(
-                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
-                i]
+            # print(driver.find_elements_by_xpath(
+            #     '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
+            #     i])
+            try:
+                self.archive_container = driver.find_elements_by_xpath(
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
+            except:
+                print('Вылезла ошибка list index out of range')
+                self.archive_container = driver.find_elements_by_xpath(
+                    '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[115]
             # print(self.app.Schedule.massiv, ' массив из расписания')                               #Выводим весь массив
             # print(self.app.Schedule.massiv[23], ' элемент из массива, который мы берем')           #Выводим элемент из массива с нужным индексом
             self.item_time = self.app.Schedule.massiv[23]
