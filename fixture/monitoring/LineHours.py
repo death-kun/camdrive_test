@@ -7,7 +7,8 @@ class Hours:
     def check_time_0(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(0, 5, 1):
+        INDEX_LIST = [0, 1, 2, 3, 4]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             # interval = driver.find_elements_by_xpath('//div[@id="time-intervals"]//td//input[@name="interval" and @type="hidden"]')[i]
             # self.interval_value = interval.get_attribute('value') #Получаем интервел, за который просматриваем архив камеры
@@ -26,7 +27,8 @@ class Hours:
     def check_time_1(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(5, 10, 1):
+        INDEX_LIST = [5, 6, 7, 8, 9]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -43,7 +45,8 @@ class Hours:
     def check_time_2(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(10, 15, 1):
+        INDEX_LIST = [10, 11, 12, 13, 14]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -60,7 +63,8 @@ class Hours:
     def check_time_3(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(15, 20, 1):
+        INDEX_LIST = [15, 16, 17, 18, 19]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -77,7 +81,8 @@ class Hours:
     def check_time_4(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(20, 25, 1):
+        INDEX_LIST = [20, 21, 22, 23, 24]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -94,7 +99,8 @@ class Hours:
     def check_time_5(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(25, 30, 1):
+        INDEX_LIST = [25, 26, 27, 28, 29]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -111,7 +117,8 @@ class Hours:
     def check_time_6(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(30, 35, 1):
+        INDEX_LIST = [30, 31, 32, 33, 34]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
@@ -127,7 +134,8 @@ class Hours:
     def check_time_7(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(35, 40, 1):
+        INDEX_LIST = [35, 36, 37, 38, 39]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -144,7 +152,8 @@ class Hours:
     def check_time_8(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(40, 45, 1):
+        INDEX_LIST = [40, 41, 42, 43, 44]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -161,7 +170,8 @@ class Hours:
     def check_time_9(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(45, 50, 1):
+        INDEX_LIST = [45, 46, 47, 48, 49]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -178,7 +188,8 @@ class Hours:
     def check_time_10(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(50, 55, 1):
+        INDEX_LIST = [50, 51, 52, 53, 54]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -195,7 +206,8 @@ class Hours:
     def check_time_11(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(55, 60, 1):
+        INDEX_LIST = [55, 56, 57, 58, 59]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -212,7 +224,8 @@ class Hours:
     def check_time_12(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(60, 65, 1):
+        INDEX_LIST = [60, 61, 62, 63, 64]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -229,7 +242,8 @@ class Hours:
     def check_time_13(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(65, 70, 1):
+        INDEX_LIST = [65, 66, 67, 68, 69]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -246,7 +260,8 @@ class Hours:
     def check_time_14(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(70, 75, 1):
+        INDEX_LIST = [70, 71, 72, 73, 74]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -263,7 +278,8 @@ class Hours:
     def check_time_15(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(75, 80, 1):
+        INDEX_LIST = [75, 76, 77, 78, 79]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -280,7 +296,8 @@ class Hours:
     def check_time_16(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(80, 85, 1):
+        INDEX_LIST = [80, 81, 82, 83, 84]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -297,7 +314,8 @@ class Hours:
     def check_time_17(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(85, 90, 1):
+        INDEX_LIST = [85, 86, 87, 88, 89]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -314,7 +332,8 @@ class Hours:
     def check_time_18(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(90, 95, 1):
+        INDEX_LIST = [90, 91, 92, 93, 94]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -331,7 +350,8 @@ class Hours:
     def check_time_19(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(95, 100, 1):
+        INDEX_LIST = [95, 96, 97, 98, 99]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -348,7 +368,8 @@ class Hours:
     def check_time_20(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(100, 105, 1):
+        INDEX_LIST = [100, 101, 102, 103, 104]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -365,7 +386,8 @@ class Hours:
     def check_time_21(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(105, 110, 1):
+        INDEX_LIST = [105, 106, 107, 108, 109]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -382,7 +404,8 @@ class Hours:
     def check_time_22(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(110, 115, 1):
+        INDEX_LIST = [110, 111, 112, 113, 114]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
@@ -399,15 +422,11 @@ class Hours:
     def check_time_23(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(115, 120, 1):
+        INDEX_LIST = [115, 116, 117, 118, 119]
+        for i in list(INDEX_LIST):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
-            try:
-                self.archive_container = driver.find_elements_by_xpath(
+            self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
-            except:
-                print('Вылезла ошибка list index out of range')
-                self.archive_container = driver.find_elements_by_xpath(
-                    '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[115]
             # print(self.app.Schedule.massiv, ' массив из расписания')                               #Выводим весь массив
             # print(self.app.Schedule.massiv[23], ' элемент из массива, который мы берем')           #Выводим элемент из массива с нужным индексом
             self.item_time = self.app.Schedule.massiv[23]
