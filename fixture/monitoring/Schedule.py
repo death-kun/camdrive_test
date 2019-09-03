@@ -19,14 +19,16 @@ class Schedule:
             return True
         else:
             print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
-            try:
-                self.app.Tree.second_tree()
-            except:
-                driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
-            try:
-                self.app.Tree.first_tree()
-            except:
-                driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+            url = driver.current_url
+            if url != 'https://test.camdrive.org/settings/schedule':
+                try:
+                    self.app.Tree.second_tree()
+                except:
+                    driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
+                try:
+                    self.app.Tree.first_tree()
+                except:
+                    driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
     def yesterday_day_of_the_week(self):

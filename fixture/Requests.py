@@ -76,33 +76,33 @@ class RequestsCamdrive:
         create_session.close()
         print(request_setting.text)
 
-    def request_test(self):
-        driver = self.app.driver
-        request_cookies_browser = driver.get_cookies()
-        # print('cookies - ', request_cookies_browser)
-
-        split_cookies = str(request_cookies_browser).split("'httpOnly': False, ")[1]
-        split_name = split_cookies.split(", 'path':")[0]
-        # print(parsing_name, ' смотрим что осталось')
-        split_value_1 = split_cookies.split("'secure': False, ")[1]
-        split_value_2 = split_value_1.split('}]')[0]
-        # print(parsing_value2, ' смотрим что осталось')
-
-        concatenation = split_name + ', ' + split_value_2
-        print(concatenation)
-
-        create_session = requests.Session()
-        cookies = dict(cookies_are=concatenation)
-
-        request_auth = create_session.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
-
-        channel_id = self.app.Camera_List.chanel_id
-        interval = self.app.LineHours.interval_value
-        DATA = {'action': 'get_host', 'channel_id': channel_id, 'interval': interval}
-
-        request_archive = create_session.post(url='https://test.camdrive.org/archive', data= DATA, cookies=cookies)
-        print(request_archive.text)
-        create_session.close()
-
-        parsed_request_archive = json.loads(request_archive.text)
-        print(parsed_request_archive)
+    # def request_test(self):
+    #     driver = self.app.driver
+    #     request_cookies_browser = driver.get_cookies()
+    #     # print('cookies - ', request_cookies_browser)
+    #
+    #     split_cookies = str(request_cookies_browser).split("'httpOnly': False, ")[1]
+    #     split_name = split_cookies.split(", 'path':")[0]
+    #     # print(parsing_name, ' смотрим что осталось')
+    #     split_value_1 = split_cookies.split("'secure': False, ")[1]
+    #     split_value_2 = split_value_1.split('}]')[0]
+    #     # print(parsing_value2, ' смотрим что осталось')
+    #
+    #     concatenation = split_name + ', ' + split_value_2
+    #     print(concatenation)
+    #
+    #     create_session = requests.Session()
+    #     cookies = dict(cookies_are=concatenation)
+    #
+    #     request_auth = create_session.post(url='https://test.camdrive.org', data= {'username': 'autotest', 'password': 'autotest'})
+    #
+    #     channel_id = self.app.Camera_List.chanel_id
+    #     interval = self.app.LineHours.interval_value
+    #     DATA = {'action': 'get_host', 'channel_id': channel_id, 'interval': interval}
+    #
+    #     request_archive = create_session.post(url='https://test.camdrive.org/archive', data= DATA, cookies=cookies)
+    #     print(request_archive.text)
+    #     create_session.close()
+    #
+    #     parsed_request_archive = json.loads(request_archive.text)
+    #     print(parsed_request_archive)

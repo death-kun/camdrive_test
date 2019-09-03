@@ -35,6 +35,7 @@ class Monitoring:
 
     def open_schedule_open_archive(self):
         driver = self.app.driver
+        WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
         self.app.Schedule.open_schedule()
         try:
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#schedule")))
