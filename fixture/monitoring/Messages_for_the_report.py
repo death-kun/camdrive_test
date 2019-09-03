@@ -9,12 +9,12 @@ class Messages:
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Плеер ' + str(
-                    self.app.LineHours.h) + ' не загрузился за 10 секунд.\n')
+                    self.app.LineHours.hour) + ' не загрузился за 10 секунд.\n')
             f.close()
 
     def player_did_not_appear_in_15_seconds(self):
         print(
-            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.')
+            'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.hour) +' не отобразился за 15 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Плеер '+ str(self.app.LineHours.h) +' не отобразился за 15 секунд.\n')
@@ -23,59 +23,59 @@ class Messages:
     def video_did_not_load_in_15_seconds(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Видео ' + str(
-                self.app.LineHours.h) + ' не загрузилось за 15 секунд.')
+                self.app.LineHours.hour) + ' не загрузилось за 15 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Видео ' + str(
-                    self.app.LineHours.h) + ' не загрузилось за 15 секунд.\n')
+                    self.app.LineHours.hour) + ' не загрузилось за 15 секунд.\n')
             f.close()
 
     def video_download_and_the_duration_is_correct(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                 self.app.Monitoring.archive_time).strip() + ' минут.')
         with open('monitoring report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Видео ' + str(
-                    self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                    self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time).strip() + ' минут.\n')
             f.close()
 
     def maximum_allowed_concurrent_connections_exceeded(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                 self.app.Monitoring.archive_time).strip() + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременный подключений.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a',
                   encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Видео ' + str(
-                    self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                    self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time).strip() + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременный подключений.\n')
             f.close()
 
     def motion_recording(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                 self.app.Monitoring.archive_time).strip() + ' минут. Запись по детекции движения.')
         with open('monitoring report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Видео ' + str(
-                    self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                    self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time).strip() + ' минут. Запись по детекции движения.\n')
             f.close()
 
     def archive_duration_is_shorter(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
-                self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                 self.app.Monitoring.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!')
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Видео ' + str(
-                    self.app.LineHours.h) + ' загрузилось. Длительность видео ' + str(
+                    self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time).strip() + ' минут. !Длительность Архива меньше допустимой!\n')
             f.close()
 
@@ -90,19 +90,19 @@ class Messages:
     def no_archive(self):
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
-                self.app.LineHours.h) + ' нет.')
+                self.app.LineHours.hour) + ' нет.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a',
                   encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(
-                    self.app.LineHours.h) + ' нет.\n')
+                    self.app.LineHours.hour) + ' нет.\n')
             f.close()
 
     def there_is_no_scheduled_archive(self):
         print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
-            self.app.LineHours.h) + ' нет по расписанию.')
+            self.app.LineHours.hour) + ' нет по расписанию.')
         with open('monitoring report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(
-                    self.app.LineHours.h) + ' нет по расписанию.\n')
+                    self.app.LineHours.hour) + ' нет по расписанию.\n')
             f.close()

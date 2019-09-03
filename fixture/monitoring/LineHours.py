@@ -6,7 +6,7 @@ class Hours:
     def check_time_0(self):
         driver = self.app.driver
         self.minutes = 0
-        for i in range(0, 1, 1):
+        for i in range(0, 5, 1):
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             interval = driver.find_elements_by_xpath('//div[@id="time-intervals"]//td//input[@name="interval" and @type="hidden"]')[i]
             self.interval_value = interval.get_attribute('value') #Получаем интервел, за который просматриваем архив камеры
