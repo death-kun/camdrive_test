@@ -8,6 +8,7 @@ class Schedule:
     def __init__(self, app):
         self.app = app
 
+#TODO :: Придумать корректную проверку на раскрыто дерево или нет
     def open_schedule(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[3]/a').click()
@@ -18,6 +19,14 @@ class Schedule:
             return True
         else:
             print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
+            try:
+                self.app.Tree.second_tree()
+            except:
+                driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
+            try:
+                self.app.Tree.first_tree()
+            except:
+                driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
     def yesterday_day_of_the_week(self):
