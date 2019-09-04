@@ -426,6 +426,13 @@ class Hours:
         for i in INDEX_LIST:
 
             # Для выявления ошибки LIST INDEX OUT OF RANGE
+            list_elements = driver.find_elements_by_xpath(
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')
+            print(list_elements)
+            with open('test.txt', 'a',
+                      encoding='utf-8') as f:
+                f.write('"'+ list_elements +'"')
+                f.close()
             len_list_elements = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')
             print(len(len_list_elements), ' длина списка контейнеров с архивом.')
