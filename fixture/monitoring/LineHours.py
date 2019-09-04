@@ -424,7 +424,13 @@ class Hours:
         self.minutes = 0
         INDEX_LIST = [115, 116, 117, 118, 119]
         for i in INDEX_LIST:
+
+            # Для выявления ошибки LIST INDEX OUT OF RANGE
+            len_list_elements = driver.find_elements_by_xpath(
+                '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')
+            print(len(len_list_elements), ' длина списка контейнеров с архивом.')
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
+
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             # print(self.app.Schedule.massiv, ' массив из расписания')                               #Выводим весь массив
@@ -464,5 +470,3 @@ class Hours:
         else:
             self.archive_container.click()
             self.app.Monitoring.check_player()
-
-

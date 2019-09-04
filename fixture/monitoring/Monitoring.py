@@ -177,4 +177,3 @@ class Monitoring:
     def screen_archive(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[2]').screenshot("1.png")  # делаем скриншот видеоплеера
-
