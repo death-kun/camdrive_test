@@ -30,17 +30,14 @@ class Hours:
     def LIST_INDEX_OUT_OF_RANGE(self, driver, i):
         list_elements = driver.find_elements_by_xpath(
             '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')
-        print(list_elements)
+        print(list_elements, ' длина списка контейнеров с архивом.')
+        print(i,
+              ' - инедекс, который подставляем в для поиска контейнера с архивом')  # Выводим индекс, чтобы отследить ошибку list index out of range
         with open('выявления ошибки LIST INDEX OUT OF RANGE ' + self.app.Monitoring.camera_name.strip() + '.txt',
                   'a',
                   encoding='utf-8') as f:
-            f.write('"' + str(list_elements) + '"')
+            f.write('"'+ str(len(list_elements)) +' длина списка контейнеров с архивом, '+ i +' - инедекс, который подставляем в для поиска контейнера с архивом"')
             f.close()
-        len_list_elements = driver.find_elements_by_xpath(
-            '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')
-        print(len(len_list_elements), ' длина списка контейнеров с архивом.')
-        print(i,
-              ' - инедекс, который подставляем в для поиска контейнера с архивом')  # Выводим индекс, чтобы отследить ошибку list index out of range
 
     def check_time_1(self):
         driver = self.app.driver
