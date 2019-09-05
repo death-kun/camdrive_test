@@ -99,7 +99,7 @@ class Messages:
             f.close()
 
     def there_is_no_scheduled_archive(self):
-        print('роверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+        print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
             self.app.LineHours.hour) + ' нет по расписанию.')
         with open('monitoring report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
             f.write(
