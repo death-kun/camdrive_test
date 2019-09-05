@@ -37,7 +37,7 @@ class Hours:
         with open('выявления ошибки LIST INDEX OUT OF RANGE ' + self.app.Monitoring.camera_name.strip() + '.txt',
                   'a',
                   encoding='utf-8') as f:
-            f.write('"'+ str(len_list_elements) +' длина списка контейнеров с архивом, '+ i +' - инедекс, который подставляем в для поиска контейнера с архивом"')
+            f.write(''+ str(i) +' - инедекс, который подставляем в для поиска контейнера с архивом , '+ str(len_list_elements) +' длина списка контейнеров с архивом. \n')
             f.close()
 
     def check_time_1(self):
