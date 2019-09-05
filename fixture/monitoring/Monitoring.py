@@ -167,11 +167,8 @@ class Monitoring:
         return camera_name
 
     def delete_txt(self):
-        monitoring_report = Path('.').glob('monitoring report ' + self.camera_name.strip() + '.txt')
-        for f in monitoring_report:
-            Path.unlink(f)
-        monitoring_error_report = Path('.').glob('monitoring error report ' + self.camera_name.strip() + '.txt')
-        for f in monitoring_error_report:
+        txt_files = Path('.').glob('*.txt')
+        for f in txt_files:
             Path.unlink(f)
 
     def screen_archive(self):
