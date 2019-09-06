@@ -29,6 +29,7 @@ class Schedule:
                     self.app.Tree.first_tree()
                 except:
                     driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
     def yesterday_day_of_the_week(self):
@@ -125,11 +126,9 @@ class Schedule:
         else:
             self.check_attribute()
             self.massiv.append(self.element_time)
-
-        print(self.massiv)
+        # print(self.massiv)
 
     def check_attribute(self):
-
         if "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
         elif "item constant" in self.time.get_attribute("class"):

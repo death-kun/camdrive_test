@@ -106,3 +106,15 @@ class Messages:
                 '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(
                     self.app.LineHours.hour) + ' нет по расписанию.\n')
             f.close()
+
+    def error_list_index_out_of_range(self, i):
+        print(len(self.app.LineHours.list_elements), ' длина списка контейнеров с архивом.')
+        self.len_list_elements = len(self.app.LineHours.list_elements)
+        print(i,
+              ' - инедекс, который подставляем в для поиска контейнера с архивом')  # Выводим индекс, чтобы отследить ошибку list index out of range
+        with open('выявления ошибки LIST INDEX OUT OF RANGE ' + self.app.Monitoring.camera_name.strip() + '.txt',
+                  'a',
+                  encoding='utf-8') as f:
+            f.write('' + str(i) + ' - инедекс, который подставляем в для поиска контейнера с архивом , ' + str(
+                self.len_list_elements) + ' длина списка контейнеров с архивом. \n')
+            f.close()

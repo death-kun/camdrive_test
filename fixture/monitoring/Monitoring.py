@@ -107,7 +107,7 @@ class Monitoring:
                 caunter = 0 #Переменная для счетчика отслеживающий загрузку видео
                 while width_element < 7 and caunter < 15:
                     time.sleep(1)
-                    print(str(caunter) + ' - счетчик, длина пройденного таймлайна - ' + str(width_element))
+                    # print(str(caunter) + ' - счетчик, длина пройденного таймлайна - ' + str(width_element))
                     caunter += 1
                     time_line = driver.find_element_by_css_selector('div.player-bottom-controlbar-progress-left')
                     size_element = time_line.size
