@@ -14,7 +14,7 @@ class CameraList:
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='node_4184']/a")))
         chanel = driver.find_element_by_xpath('//*[@id="node_4184"]')
         self.chanel_id = chanel.get_attribute('idi') #Получаем chanel_id камеры
-        print(self.chanel_id)
+        print(self.chanel_id, ' - chanel_id камеры.')
         self.click_CD120_D521 = driver.find_element_by_xpath('//*[@id="node_4184"]/a').click()
         self.app.Monitoring.camera_title()
 
@@ -23,7 +23,7 @@ class CameraList:
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='node_4343']/a")))
         chanel = driver.find_element_by_xpath('//*[@id="node_4343"]')
         self.chanel_id = chanel.get_attribute('idi')  # Получаем chanel_id камеры
-        print(self.chanel_id)
+        print(self.chanel_id, ' - chanel_id камеры.')
         self.click_CD_120 = driver.find_element_by_xpath('//*[@id="node_4343"]/a').click()
         self.app.Monitoring.camera_title()
 

@@ -462,4 +462,4 @@ class Hours:
             time.sleep(1)
             print(timeout)
             timeout += 1
-            print(self.len_list_elements, ' длина списка контейнеров с архивом после ожидания 1 секунды.')
+            print(self.len_list_elements, ' - длина списка контейнеров с архивом после ожидания.')
