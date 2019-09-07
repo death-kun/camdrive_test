@@ -17,7 +17,7 @@ class Hours:
 
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[0]
@@ -34,7 +34,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[1]
@@ -51,7 +51,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[2]
@@ -68,7 +68,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[3]
@@ -85,7 +85,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[4]
@@ -102,7 +102,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[5]
@@ -119,7 +119,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[6]
@@ -136,7 +136,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
@@ -154,7 +154,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[8]
@@ -171,7 +171,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[
                 i]
@@ -189,7 +189,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             print(i, ' - инедекс, который подставляем в для поиска контейнера с архивом') #Выводим индекс, чтобы отследить ошибку list index out of range
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
@@ -207,7 +207,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[11]
@@ -224,7 +224,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[12]
@@ -241,7 +241,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[13]
@@ -258,7 +258,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[14]
@@ -275,7 +275,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[15]
@@ -292,7 +292,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[16]
@@ -309,7 +309,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[17]
@@ -326,7 +326,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[18]
@@ -343,7 +343,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[19]
@@ -360,7 +360,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[20]
@@ -377,7 +377,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[21]
@@ -394,7 +394,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[22]
@@ -411,7 +411,7 @@ class Hours:
         for i in INDEX_LIST:
             # Для выявления ошибки LIST INDEX OUT OF RANGE
             self.error_prevention_list_index_out_of_range(driver, i)
-            self.check_len_list_elements()
+            self.check_len_list_elements(driver)
             self.archive_container = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div[@class="time item  button" or @class="time item  detection" or @class="time item  constant" or @class="item empty "]')[i]
             self.item_time = self.app.Schedule.massiv[23]
@@ -456,9 +456,11 @@ class Hours:
         self.len_list_elements = len(self.list_elements)
         self.app.Messages_for_the_report.error_list_index_out_of_range(i)
 
-    def check_len_list_elements(self):
+    def check_len_list_elements(self, driver):
         timeout = 0
         if self.len_list_elements < 120 and timeout < 5:
+            driver.find_element_by_xpath('//*[@id="time-intervals"]').screenshot(
+                "screenshot_time_intervals.png")  # делаем скриншот видеоплеера
             time.sleep(1)
             print(timeout)
             timeout += 1

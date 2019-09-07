@@ -129,6 +129,8 @@ class Schedule:
         # print(self.massiv)
 
     def check_attribute(self):
+        driver = self.app.driver
+        WebDriverWait(driver, 10).until(EC.visibility_of((self.time)))
         if "item detection" in self.time.get_attribute("class"):
             self.element_time = 2  # 2 = запись по детекции
         elif "item constant" in self.time.get_attribute("class"):

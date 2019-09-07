@@ -147,6 +147,8 @@ class Monitoring:
                 else:
                     # self.app.Requests.request_test()
                     self.app.Messages_for_the_report.archive_duration_is_shorter()
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="screen"]/div[1]/div/div[1]/img')))
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
 
     def seek_total_time(self):
@@ -174,3 +176,4 @@ class Monitoring:
     def screen_archive(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[2]').screenshot("1.png")  # делаем скриншот видеоплеера
+        time.sleep(1)
