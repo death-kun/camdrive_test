@@ -1,7 +1,10 @@
 import datetime
+import time
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import StaleElementReferenceException
 
 class Schedule:
 
@@ -29,6 +32,15 @@ class Schedule:
                     self.app.Tree.first_tree()
                 except:
                     driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+            else:
+                try:
+                    self.app.Tree.testing_group()
+                except:
+                    driver.find_element_by_xpath('//*[@id="node_4348"]/ins').click()
+                try:
+                    self.app.Tree.testing_group2()
+                except:
+                    driver.find_element_by_xpath('//*[@id="node_4349"]/ins').click()
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
@@ -68,6 +80,7 @@ class Schedule:
         # Воскресенье
         self.massiv = []
         for td in range(2, 26, 1):
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="schedule"]/table[1]/tbody/tr[7]/td[' + str(td) + ']')))
             self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[' + str(td) + ']')
             self.elem_time()
 
@@ -116,6 +129,7 @@ class Schedule:
         # Понедельник
         self.massiv = []
         for td in range(2, 26, 1):
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')))
             self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')
             self.elem_time()
 
@@ -131,9 +145,16 @@ class Schedule:
     def check_attribute(self):
         driver = self.app.driver
         WebDriverWait(driver, 10).until(EC.visibility_of((self.time)))
-        if "item detection" in self.time.get_attribute("class"):
-            self.element_time = 2  # 2 = запись по детекции
-        elif "item constant" in self.time.get_attribute("class"):
-            self.element_time = 1  # 1 = запись есть
-        else:
-            self.element_time = 0  # 0 = нет записи
+        attempt = 0
+        while attempt < 2:
+            try:
+                if "item detection" in self.time.get_attribute("class"):
+                    self.element_time = 2  # 2 = запись по детекции
+                elif "item constant" in self.time.get_attribute("class"):
+                    self.element_time = 1  # 1 = запись есть
+                else:
+                    self.element_time = 0  # 0 = нет записи
+                break
+            except StaleElementReferenceException:
+                print('Произошла обработка ошибки StaleElementReferenceException')
+                attempt +=1

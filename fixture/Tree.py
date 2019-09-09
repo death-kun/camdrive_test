@@ -1,3 +1,6 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class CameraTree:
 
@@ -18,3 +21,13 @@ class CameraTree:
         driver.find_element_by_xpath('//*[@id="node_12601"]/a')
         driver.find_element_by_xpath('//*[@id="node_6827"]/a')
         driver.find_element_by_xpath('//*[@id="node_12597"]/a')
+
+    def testing_group2(self):
+        driver = self.app.driver
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="node_4184"]/a')))
+        driver.find_element_by_xpath('//*[@id="node_4184"]/a')
+
+    def testing_group(self):
+        driver = self.app.driver
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="node_4343"]/a')))
+        driver.find_element_by_xpath('//*[@id="node_4343"]/a')

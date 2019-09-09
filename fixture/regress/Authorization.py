@@ -7,7 +7,7 @@ class AuthorizationHelper:
 
     def open_home_page(self):
         driver = self.app.driver
-        driver.get('http://test.camdrive.org/')
+        driver.get('https://test.camdrive.org/')
 
     def login_autotest(self):
         driver = self.app.driver

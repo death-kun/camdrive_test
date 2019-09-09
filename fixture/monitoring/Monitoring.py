@@ -164,6 +164,7 @@ class Monitoring:
 
     def title(self):
         driver = self.app.driver
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'a.jstree-clicked')))
         camera_title = driver.find_element_by_css_selector('a.jstree-clicked')
         camera_name = camera_title.get_attribute('textContent')
         return camera_name
