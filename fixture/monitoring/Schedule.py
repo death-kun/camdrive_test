@@ -69,48 +69,48 @@ class Schedule:
         self.massiv = []
         for td in range(2, 26, 1):
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="schedule"]/table[1]/tbody/tr[7]/td[' + str(td) + ']')))
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[7]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def saturday(self):
         driver = self.app.driver
         # Суббота
         self.massiv = []
         for td in range(2, 26, 1):
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[6]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def friday(self):
         driver = self.app.driver
         # Пятница
         self.massiv = []
         for td in range(2, 26, 1):
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[5]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def thursday(self):
         driver = self.app.driver
         # Четверг
         self.massiv = []
         for td in range(2, 26, 1):
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[4]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def wednesday(self):
         driver = self.app.driver
         # Среда
         self.massiv = []
         for td in range(2, 26, 1):
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[3]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def tuesday(self):
         driver = self.app.driver
         # Вторник
         self.massiv = []
         for td in range(2, 26, 1):
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[2]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
     def monday(self):
         driver = self.app.driver
@@ -118,10 +118,10 @@ class Schedule:
         self.massiv = []
         for td in range(2, 26, 1):
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')))
-            self.time = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')
-            self.elem_time()
+            self.schedule_cell = driver.find_element_by_xpath('//*[@id="schedule"]/table[1]/tbody/tr[1]/td[' + str(td) + ']')
+            self.array_of_schedule_cells()
 
-    def elem_time(self):
+    def array_of_schedule_cells(self):
         if self.massiv == []:
             self.check_attribute()
             self.massiv = [self.element_time]
@@ -136,9 +136,9 @@ class Schedule:
         attempt = 0
         while attempt < 2:
             try:
-                if "item detection" in self.time.get_attribute("class"):
+                if "item detection" in self.schedule_cell.get_attribute("class"):
                     self.element_time = 2  # 2 = запись по детекции
-                elif "item constant" in self.time.get_attribute("class"):
+                elif "item constant" in self.schedule_cell.get_attribute("class"):
                     self.element_time = 1  # 1 = запись есть
                 else:
                     self.element_time = 0  # 0 = нет записи

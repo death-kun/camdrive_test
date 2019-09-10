@@ -6,9 +6,9 @@ class DateDetermination:
 
     def find_yesterday(self):
         self.now = datetime.datetime.now()
-        cur_day = self.now.day
+        self.present_day = self.now.day
         self.strg_today = self.now.strftime('%B %d')
-        self.yesterday = str(cur_day - 1)
+        self.yesterday = str(self.present_day - 1)
 
     def find_previous_month(self):
         today = datetime.date.today()

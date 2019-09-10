@@ -17,7 +17,7 @@ class Monitoring:
         time.sleep(4)
         try:
             #Если "сегодняшний день" равен 1, то проверяется сколько было дней в прошлом месяце и переключатся календарь на тот месяц и выбирается последний день
-            if self.app.Date_determination.now.day == 1:
+            if self.app.Date_determination.present_day == 1:
                 self.app.Date_determination.find_previous_month()
                 driver.find_element_by_xpath('//*[@id="calendar"]/table/tbody/tr[1]/th[1]').click()
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
@@ -27,7 +27,7 @@ class Monitoring:
             else:
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]')))
                 driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]').click()
-        except TimeoutException:
+        except:
             self.app.Messages_for_the_report.no_archive_for_the()
             self.app.Authorization.logout_butten()
             self.app.destroy()
@@ -44,14 +44,6 @@ class Monitoring:
         except TimeoutException:
             print('Не загрузилось расписание')
             self.app.destroy()
-
-    def schedule_camera(self):
-        driver = self.app.driver
-        self.app.Schedule.open_schedule()
-        time.sleep(5)
-        self.app.Schedule.item_time()
-        self.app.Archive.open_archive()
-        WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[4]/div[3]/div[2]/ul/li/ul")))
 
     def camera_title(self):
         self.camera_name = self.title()
