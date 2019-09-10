@@ -118,3 +118,12 @@ class Messages:
             f.write('' + str(i) + ' - инедекс, который подставляем в для поиска контейнера с архивом , ' + str(
                 self.len_list_elements) + ' длина списка контейнеров с архивом. \n')
             f.close()
+
+    def there_was_no_motion_detection(self):
+        print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Архива ' + str(
+            self.app.LineHours.hour) + ' нет, т.к. не было никакого обнаружения движения.')
+        with open('monitoring report ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(
+                    self.app.LineHours.hour) + ' нет, т.к. не было никакого обнаружения движения.\n')
+            f.close()

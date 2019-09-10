@@ -134,7 +134,7 @@ class Monitoring:
             # self.app.Requests.request_test()
             self.app.Messages_for_the_report.video_download_and_the_duration_is_correct()
         else:
-            if self.app.LineHours.item_time == 2:
+            if self.app.LineHours.digit_from_the_schedule_array == 2:
                 # self.app.Requests.request_test()
                 self.app.Messages_for_the_report.motion_recording()
             else:
@@ -155,6 +155,7 @@ class Monitoring:
         driver = self.app.driver
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
         self.archive_time = archive_duration.get_attribute('textContent')
+        print(self.archive_time, ' - время длительности видео архива.')
         return self.archive_time
 
     def focus_element(self):
