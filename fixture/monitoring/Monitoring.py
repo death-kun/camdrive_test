@@ -1,6 +1,5 @@
 import time
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -56,20 +55,6 @@ class Monitoring:
 
     def camera_title(self):
         self.camera_name = self.title()
-
-    def check_second_tree(self):
-        driver = self.app.driver
-        try:
-            self.app.second_tree()
-        except NoSuchElementException:
-            driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
-
-    def check_first_tree(self):
-        driver = self.app.driver
-        try:
-            self.app.first_tree()
-        except NoSuchElementException:
-            driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
 
     def archive_check(self):
         self.app.LineHours.check_time_0()

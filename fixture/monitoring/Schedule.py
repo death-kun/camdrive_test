@@ -24,23 +24,11 @@ class Schedule:
             print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
             url = driver.current_url
             if url != 'https://test.camdrive.org/settings/schedule':
-                try:
-                    self.app.Tree.second_tree()
-                except:
-                    driver.find_element_by_xpath('//*[@id="node_12605"]/ins').click()
-                try:
-                    self.app.Tree.first_tree()
-                except:
-                    driver.find_element_by_xpath('//*[@id="node_12604"]/ins').click()
+                self.app.Tree.check_second_tree()
+                self.app.Tree.check_first_tree()
             else:
-                try:
-                    self.app.Tree.testing_group()
-                except:
-                    driver.find_element_by_xpath('//*[@id="node_4348"]/ins').click()
-                try:
-                    self.app.Tree.testing_group2()
-                except:
-                    driver.find_element_by_xpath('//*[@id="node_4349"]/ins').click()
+                self.app.Tree.check_testing_gruop()
+                self.app.Tree.check_testing_gruop2()
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
             driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
 
@@ -143,8 +131,8 @@ class Schedule:
         # print(self.massiv)
 
     def check_attribute(self):
-        driver = self.app.driver
-        WebDriverWait(driver, 10).until(EC.visibility_of((self.time)))
+        # driver = self.app.driver
+        # WebDriverWait(driver, 10).until(EC.visibility_of((self.time)))
         attempt = 0
         while attempt < 2:
             try:
