@@ -4,7 +4,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-from pathlib import Path
 
 class Monitoring:
 
@@ -146,11 +145,6 @@ class Monitoring:
         camera_title = driver.find_element_by_css_selector('a.jstree-clicked')
         camera_name = camera_title.get_attribute('textContent')
         return camera_name
-
-    def delete_txt(self):
-        txt_files = Path('.').glob('*.txt')
-        for f in txt_files:
-            Path.unlink(f)
 
     def screen_archive(self):
         driver = self.app.driver

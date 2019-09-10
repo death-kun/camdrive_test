@@ -23,6 +23,7 @@ from fixture.Requests import RequestsCamdrive
 from fixture.Tree import CameraTree
 from fixture.Registry import Regedit
 from fixture.RMS import RMS
+from fixture.Delete_TXT_files import DeleteTxtFile
 #тесты
 from model.autotest_gui.download_archive import downloadarchive
 from model.autotest_gui.balance_check import balance_LK
@@ -86,6 +87,7 @@ class Application:
         self.Date_determination = DateDetermination(self)
         self.RMS = RMS(self)
         self.Messages_for_the_report = Messages(self)
+        self.Delete_TXT_files = DeleteTxtFile(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)

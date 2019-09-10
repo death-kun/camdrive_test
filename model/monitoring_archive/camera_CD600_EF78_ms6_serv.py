@@ -9,6 +9,7 @@ class CD600_EF78_ms6_serv:
         self.app.Authorization.site_opening()
         self.app.Authorization.login_monitoring()
         self.app.Camera_List.click_CD600_EF78_ms6_serv()
+        self.app.Delete_TXT_files.delete_txt()
         self.app.Monitoring.open_schedule_open_archive()
         time.sleep(4)
         self.app.Monitoring.archive_check()
