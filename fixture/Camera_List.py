@@ -87,7 +87,7 @@ class CameraList:
 
     def click_camera_N1001_3A00_bwd(self):
         driver = self.app.driver
-        self.app.Tree.check_first_tree()
+        self.app.Tree.check_second_tree()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='node_14875']/a")))
         self.click_N1001_3A00_bwd = driver.find_element_by_xpath('//*[@id="node_14875"]/a').click()  # камера N1001(3A00)_bwd
         self.app.Monitoring.camera_title()
