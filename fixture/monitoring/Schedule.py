@@ -140,5 +140,5 @@ class Schedule:
                     self.element_time = 0  # 0 = нет записи
                 break
             except StaleElementReferenceException:
-                print('Произошла обработка ошибки StaleElementReferenceException')
+                self.app.Messages_for_the_report.error_StaleElementReferenceException()
                 attempt +=1

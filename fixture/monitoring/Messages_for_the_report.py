@@ -112,7 +112,7 @@ class Messages:
         self.len_list_elements = len(self.app.LineHours.list_elements)
         print(i,
               ' - инедекс, который подставляем в для поиска контейнера с архивом')  # Выводим индекс, чтобы отследить ошибку list index out of range
-        with open('выявления ошибки LIST INDEX OUT OF RANGE ' + self.app.Monitoring.camera_name.strip() + '.txt',
+        with open('выявление ошибки LIST INDEX OUT OF RANGE ' + self.app.Monitoring.camera_name.strip() + '.txt',
                   'a',
                   encoding='utf-8') as f:
             f.write('' + str(i) + ' - инедекс, который подставляем в для поиска контейнера с архивом , ' + str(
@@ -126,4 +126,10 @@ class Messages:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name.strip() + '" выполнена. Архива ' + str(
                     self.app.LineHours.hour) + ' нет, т.к. не было никакого обнаружения движения.\n')
+            f.close()
+
+    def error_StaleElementReferenceException(self):
+        print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. При проверки расписания для камеры "' + self.app.Monitoring.camera_name.strip() + '" произошла обработка ошибки StaleElementReferenceException.')
+        with open('выявление ошибки StaleElementReferenceException ' + self.app.Monitoring.camera_name.strip() + '.txt', 'a', encoding='utf-8') as f:
+            f.write('Произошла обработка ошибки StaleElementReferenceException.\n')
             f.close()
