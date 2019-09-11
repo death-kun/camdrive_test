@@ -44,9 +44,6 @@ class Monitoring:
             print('Не загрузилось расписание')
             self.app.destroy()
 
-    def camera_title(self):
-        self.camera_name = self.title()
-
     def archive_check(self):
         self.app.LineHours.check_time_0()
         self.app.LineHours.check_time_1()
@@ -132,19 +129,17 @@ class Monitoring:
         archive_duration = driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div/div[2]')
         self.archive_time = archive_duration.get_attribute('textContent')
         print(self.archive_time, ' - время длительности видео архива.')
-        return self.archive_time
 
     def focus_element(self):
         driver = self.app.driver
         focus = ActionChains(driver)
         focus.move_to_element(driver.find_element_by_css_selector('div.player-bottom-controlbar')).perform()
 
-    def title(self):
+    def title_camera(self):
         driver = self.app.driver
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, 'a.jstree-clicked')))
         camera_title = driver.find_element_by_css_selector('a.jstree-clicked')
-        camera_name = camera_title.get_attribute('textContent')
-        return camera_name
+        self.camera_name = camera_title.get_attribute('textContent')
 
     def screen_archive(self):
         driver = self.app.driver

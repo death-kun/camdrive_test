@@ -1,6 +1,4 @@
 import datetime
-import time
-
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -17,7 +15,7 @@ class Schedule:
         driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[3]/a').click()
         driver.find_element_by_xpath('//*[@id="subsections"]/table/tbody/tr/td[2]/a').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, 'jstree-open')))
-        self.camera_name_shedule = self.app.Monitoring.title()
+        self.camera_name_shedule = self.app.Monitoring.camera_name
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
         else:
@@ -131,8 +129,6 @@ class Schedule:
         # print(self.massiv)
 
     def check_attribute(self):
-        # driver = self.app.driver
-        # WebDriverWait(driver, 10).until(EC.visibility_of((self.time)))
         attempt = 0
         while attempt < 2:
             try:
