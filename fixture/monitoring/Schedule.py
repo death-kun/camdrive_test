@@ -27,8 +27,8 @@ class Schedule:
             else:
                 self.app.Tree.check_testing_gruop()
                 self.app.Tree.check_testing_gruop2()
-            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
-            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]').click()
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name + '")]')))
+            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name + '")]').click()
 
     def yesterday_day_of_the_week(self):
         now = datetime.datetime.today().weekday()

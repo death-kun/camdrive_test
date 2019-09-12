@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fixture/monitoring/Schedule.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Schedule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/test/1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/monitoring_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/monitoring_autotest.py" afterDir="false" />
     </list>
@@ -16,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fixture/monitoring/Monitoring.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
-              <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+              <caret line="48" selection-start-line="48" selection-end-line="70" selection-end-column="42" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -29,26 +28,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/monitoring error report CD120_D521.txt">
+        <entry file="file://$PROJECT_DIR$/fixture/RMS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/monitoring report CD120_D521.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+            <state relative-caret-position="-234">
+              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
+            <state relative-caret-position="206">
               <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -69,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
+            <state relative-caret-position="531">
               <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -79,19 +64,56 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
+        <entry file="file://$PROJECT_DIR$/fixture/monitoring/LineHours.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="5" selection-end-column="46" />
+            <state relative-caret-position="153">
+              <caret line="433" column="48" lean-forward="true" selection-start-line="433" selection-start-column="48" selection-end-line="433" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="204">
+              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Online.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="18" column="111" selection-start-line="18" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/Delete_TXT_files.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/Error_codes.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fixture/Registry.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-714">
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,6 +152,7 @@
       <find>Schedule</find>
       <find>list_index_out_of_range</find>
       <find>time</find>
+      <find>.strip()</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,7 +187,6 @@
         <option value="$PROJECT_DIR$/fixture/monitoring/Online.py" />
         <option value="$PROJECT_DIR$/fixture/Registry.py" />
         <option value="$PROJECT_DIR$/fixture/Error_codes.py" />
-        <option value="$PROJECT_DIR$/fixture/RMS.py" />
         <option value="$PROJECT_DIR$/test/test_autotest.py" />
         <option value="$PROJECT_DIR$/fixture/Requests.py" />
         <option value="$PROJECT_DIR$/model/monitoring_online/CD120_D521.py" />
@@ -186,10 +208,11 @@
         <option value="$PROJECT_DIR$/fixture/Application.py" />
         <option value="$PROJECT_DIR$/fixture/monitoring/LineHours.py" />
         <option value="$PROJECT_DIR$/fixture/Camera_List.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Schedule.py" />
-        <option value="$PROJECT_DIR$/test/monitoring_autotest.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" />
         <option value="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" />
+        <option value="$PROJECT_DIR$/test/monitoring_autotest.py" />
+        <option value="$PROJECT_DIR$/fixture/RMS.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Schedule.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" />
       </list>
     </option>
   </component>
@@ -457,12 +480,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 25m 16s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 25m 58s.xml">
-      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 31m 00s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
@@ -487,6 +504,12 @@
     <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.12 at 11h 53m 10s.xml">
       <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.12 at 13h 15m 58s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.12 at 13h 17m 43s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -501,12 +524,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49922958" visible="true" weight="0.20706007" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49922958" visible="true" weight="0.20706007" />
       <window_info id="Structure" order="1" sideWeight="0.5007704" side_tool="true" weight="0.105374075" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.58640677" visible="true" weight="0.30227518" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.58640677" visible="true" weight="0.30227518" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.41170096" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -571,27 +594,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/distutils/dist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="1185" column="8" selection-start-line="1185" selection-start-column="8" selection-end-line="1185" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/regress/Archive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/event_firing_webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD320_AA78_ms5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -623,16 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Online.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="111" selection-start-line="18" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,13 +719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E75A_ms3_dev.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -797,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Delete_TXT_files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD600_EF78_ms6_serv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -849,26 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/py/_code/source.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -876,33 +834,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/LineHours.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="433" column="48" lean-forward="true" selection-start-line="433" selection-start-column="48" selection-end-line="433" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/monitoring report CD120_D521.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Monitoring.py">
+    <entry file="file://$PROJECT_DIR$/test/monitoring error report CD120_D521.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -913,17 +851,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring error report CD120_D521.txt">
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="412">
+          <caret line="131" column="158" selection-start-line="131" selection-start-column="158" selection-end-line="131" selection-end-column="158" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-322">
+          <caret line="29" column="160" selection-start-line="29" selection-start-column="160" selection-end-line="29" selection-end-column="160" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/RMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/LineHours.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="433" column="48" lean-forward="true" selection-start-line="433" selection-start-column="48" selection-end-line="433" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Online.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="111" selection-start-line="18" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Delete_TXT_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Error_codes.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Registry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Monitoring.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+          <caret line="48" selection-start-line="48" selection-end-line="70" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
