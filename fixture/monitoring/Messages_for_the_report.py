@@ -5,7 +5,8 @@ class Messages:
         self.app = app
 
     def Player_did_not_load_in_10_seconds(self):
-        print('Не загрузилось видео за 10')
+        print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер ' + str(
+                self.app.LineHours.hour) + ' не загрузился за 10 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Плеер ' + str(
@@ -46,13 +47,13 @@ class Messages:
         print(
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка прошла успешно. Видео ' + str(
                 self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
-                self.app.Monitoring.archive_time) + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременный подключений.')
+                self.app.Monitoring.archive_time) + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременных подключений.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a',
                   encoding='utf-8') as f:
             f.write(
                 '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
-                    self.app.Monitoring.archive_time) + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременный подключений.\n')
+                    self.app.Monitoring.archive_time) + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременных подключений.\n')
             f.close()
 
     def motion_recording(self):
