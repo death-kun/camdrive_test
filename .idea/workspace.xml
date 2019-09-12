@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f22edf80-fa93-43d9-bbc0-8f0d7466464d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fixture/Requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/Requests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/test/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_autotest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/monitoring_autotest.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/monitoring_autotest.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fixture/monitoring/Monitoring.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="841">
-              <caret line="155" selection-start-line="155" selection-end-line="155" />
+            <state relative-caret-position="205">
+              <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -28,54 +29,69 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_autotest.py">
+        <entry file="file://$PROJECT_DIR$/test/monitoring error report CD120_D521.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/monitoring report CD120_D521.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/Error_codes.py">
+        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            <state relative-caret-position="756">
+              <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
+        <entry file="file://$PROJECT_DIR$/fixture/Application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="646">
+              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/Tree.py">
+        <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            <state relative-caret-position="1547">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fixture/monitoring/LineHours.py">
+        <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="343" column="31" selection-start-line="343" selection-start-column="31" selection-end-line="343" selection-end-column="31" />
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="5" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fixture/Requests.py">
+        <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="68" column="68" lean-forward="true" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="205">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
         </entry>
@@ -102,6 +118,18 @@
       <find>Requests</find>
       <find>node_12601</find>
       <find>Messages_for_the_report</find>
+      <find>.h</find>
+      <find>.h)</find>
+      <find>check_time_23</find>
+      <find>счетчик, длина пройденного таймлайна</find>
+      <find>camera_title</find>
+      <find>item_time</find>
+      <find>video_length_check</find>
+      <find>schedule_camera</find>
+      <find>open_schedule_open_archive</find>
+      <find>Schedule</find>
+      <find>list_index_out_of_range</find>
+      <find>time</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/monitoring_autotest_camera.py" />
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_CD100_E75A_ms3_dev.py" />
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_CD630_910D_ms6_dev.py" />
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_CD600_EF78_ms6_serv.py" />
@@ -121,8 +148,6 @@
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_CD310_2E51_ms4_dev.py" />
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_CD100_E772_ms4.py" />
         <option value="$PROJECT_DIR$/test/monitoring_autotest_camera_N1001_3A00_bwd.py" />
-        <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD120_D521.py" />
-        <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD_120.py" />
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_N1001_3A00_bwd.py" />
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD630_910D_ms6_dev.py" />
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD600_EF78_ms6_serv.py" />
@@ -132,9 +157,23 @@
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E778_ms5.py" />
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E772_ms4.py" />
         <option value="$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E75A_ms3_dev.py" />
-        <option value="$PROJECT_DIR$/model/monitoring_online/CD120_D521.py" />
         <option value="$PROJECT_DIR$/fixture/regress/Player.py" />
+        <option value="$PROJECT_DIR$/test/check_online_autotest.py" />
+        <option value="$PROJECT_DIR$/model/autotest_gui/balance_check.py" />
+        <option value="$PROJECT_DIR$/fixture/regress/BottomEditButtons.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Online.py" />
+        <option value="$PROJECT_DIR$/fixture/Registry.py" />
+        <option value="$PROJECT_DIR$/fixture/Error_codes.py" />
+        <option value="$PROJECT_DIR$/fixture/RMS.py" />
+        <option value="$PROJECT_DIR$/test/test_autotest.py" />
+        <option value="$PROJECT_DIR$/fixture/Requests.py" />
+        <option value="$PROJECT_DIR$/model/monitoring_online/CD120_D521.py" />
         <option value="$PROJECT_DIR$/fixture/regress/Authorization.py" />
+        <option value="$PROJECT_DIR$/fixture/Tree.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Date_determination.py" />
+        <option value="$PROJECT_DIR$/fixture/Delete_TXT_files.py" />
+        <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD120_D521.py" />
+        <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD_120.py" />
         <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD100_E75A_ms3_dev.py" />
         <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD100_E772_ms4.py" />
         <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD100_E778_ms5.py" />
@@ -145,29 +184,18 @@
         <option value="$PROJECT_DIR$/model/monitoring_archive/camera_CD630_910D_ms6_dev.py" />
         <option value="$PROJECT_DIR$/model/monitoring_archive/camera_N1001_3A00_bwd.py" />
         <option value="$PROJECT_DIR$/fixture/Application.py" />
-        <option value="$PROJECT_DIR$/test/check_online_autotest.py" />
-        <option value="$PROJECT_DIR$/model/autotest_gui/balance_check.py" />
-        <option value="$PROJECT_DIR$/fixture/regress/BottomEditButtons.py" />
-        <option value="$PROJECT_DIR$/test/monitoring_autotest.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Online.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Schedule.py" />
-        <option value="$PROJECT_DIR$/fixture/Camera_List.py" />
-        <option value="$PROJECT_DIR$/fixture/Tree.py" />
-        <option value="$PROJECT_DIR$/fixture/Registry.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" />
-        <option value="$PROJECT_DIR$/fixture/Error_codes.py" />
         <option value="$PROJECT_DIR$/fixture/monitoring/LineHours.py" />
-        <option value="$PROJECT_DIR$/fixture/RMS.py" />
-        <option value="$PROJECT_DIR$/fixture/monitoring/Date_determination.py" />
-        <option value="$PROJECT_DIR$/test/test_autotest.py" />
-        <option value="$PROJECT_DIR$/fixture/Requests.py" />
+        <option value="$PROJECT_DIR$/fixture/Camera_List.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Schedule.py" />
+        <option value="$PROJECT_DIR$/test/monitoring_autotest.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Monitoring.py" />
+        <option value="$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="236" />
-    <option name="y" value="-8" />
+    <option name="x" value="426" />
+    <option name="y" value="-10" />
     <option name="width" value="1089" />
     <option name="height" value="626" />
   </component>
@@ -197,17 +225,6 @@
             <path>
               <item name="camdrive_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="camdrive_test" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="camdrive_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="camdrive_test" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="monitoring_online" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="camdrive_test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="camdrive_test" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -226,7 +243,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/fixture" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -235,6 +252,7 @@
         <option name="myModuleName" value="camdrive_test" />
       </console-settings>
     </option>
+    <option name="myUseExistingConsole" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -257,7 +275,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_autotest.test_check_method">
+  <component name="RunManager" selected="Python tests.pytest in monitoring_autotest.py">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="camdrive_test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -409,16 +427,16 @@
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.camdrive_autotest" />
       <item itemvalue="Python tests.pytest for test.camdrive_autotest" />
-      <item itemvalue="Python tests.pytest in monitoring_autotest.py" />
-      <item itemvalue="Python tests.pytest for monitoring_autotest.test_camera_CD120_D521" />
-      <item itemvalue="Python tests.pytest for check_online_autotest.test_online_CD120_D521" />
       <item itemvalue="Python tests.pytest for check_balance_autotest.test_balance" />
+      <item itemvalue="Python tests.pytest for check_online_autotest.test_online_CD120_D521" />
+      <item itemvalue="Python tests.pytest for monitoring_autotest.test_camera_CD120_D521" />
       <item itemvalue="Python tests.pytest for test_autotest.test_check_method" />
+      <item itemvalue="Python tests.pytest in monitoring_autotest.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_autotest.test_check_method" />
         <item itemvalue="Python tests.pytest in monitoring_autotest.py" />
+        <item itemvalue="Python tests.pytest for test_autotest.test_check_method" />
         <item itemvalue="Python tests.pytest for check_balance_autotest.test_balance" />
         <item itemvalue="Python tests.pytest for check_online_autotest.test_online_CD120_D521" />
         <item itemvalue="Python tests.pytest for monitoring_autotest.test_camera_CD120_D521" />
@@ -439,35 +457,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 16h 42m 15s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 25m 16s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 16h 42m 38s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 25m 58s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 16h 44m 47s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 10h 31m 00s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 16h 45m 40s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 15h 12m 02s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 16h 46m 25s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 16h 59m 08s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 17h 14m 36s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 17h 26m 57s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 17h 22m 33s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 17h 29m 02s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 17h 22m 56s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.11 at 17h 33m 34s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 17h 27m 24s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.12 at 11h 48m 22s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_test_autotest_test_check_method - 2019.09.02 at 17h 28m 31s.xml">
-      <configuration name="pytest for test_autotest.test_check_method" configurationId="tests" />
+    <history-entry file="pytest_in_monitoring_autotest_py - 2019.09.12 at 11h 53m 10s.xml">
+      <configuration name="pytest in monitoring_autotest.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -480,16 +498,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49922958" visible="true" weight="0.17228661" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49922958" visible="true" weight="0.20706007" />
       <window_info id="Structure" order="1" sideWeight="0.5007704" side_tool="true" weight="0.105374075" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.58640677" visible="true" weight="0.33802816" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.33243608" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.58640677" visible="true" weight="0.30227518" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49894625" weight="0.41170096" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -553,38 +571,173 @@
     </option>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/distutils/dist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="1185" column="8" selection-start-line="1185" selection-start-column="8" selection-end-line="1185" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/regress/Archive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/event_firing_webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD320_AA78_ms5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="37" lean-forward="true" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD630_910D_ms6_dev.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/2123969204/_tkinter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="96" column="45" lean-forward="true" selection-start-line="96" selection-start-column="45" selection-end-line="97" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/lib2to3/pgen2/driver.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/wait.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/monitoring_online/CD120_D521.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Online.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <caret line="18" column="111" selection-start-line="18" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD630_910D_ms6_dev.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/string.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/remote_connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="373" selection-start-line="373" selection-end-line="373" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="393" selection-start-line="393" selection-end-line="393" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/camdrive_autotest.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/future/types/newbytes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="287" column="3" lean-forward="true" selection-start-line="287" selection-start-column="3" selection-end-line="288" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Requests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="80" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/regress/Authorization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/common/exceptions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="107" selection-start-line="107" selection-end-line="120" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/выявления ошибки LIST INDEX OUT OF RANGE CD120_D521.txt" />
+    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD320_AA06_ms3_dev.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_N1001_3A00_bwd.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        <state relative-caret-position="96">
+          <caret line="286" column="29" lean-forward="true" selection-start-line="286" selection-start-column="29" selection-end-line="286" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_N1001_3A00_bwd.py">
+    <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/2123969204/sys.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9027">
+          <caret line="675" selection-start-line="675" selection-end-line="675" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4250">
+          <caret line="255" column="20" lean-forward="true" selection-start-line="255" selection-start-column="20" selection-end-line="255" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E75A_ms3_dev.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -595,331 +748,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E772_ms4.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD100_E75A_ms3_dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/api.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD_120.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/sessions.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD100_E778_ms5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="412" column="13" selection-start-line="412" selection-start-column="13" selection-end-line="412" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/tldextract/__init__.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD310_2E51_ms4_dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-          <folding>
-            <element signature="e#45#73#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/test/test_json/__init__.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD320_AA06_ms3_dev.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD600_EF78_ms6_serv.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD320_AA78_ms5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="49" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD630_910D_ms6_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/Delete_TXT_files.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD600_EF78_ms6_serv.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="625" column="13" selection-start-line="625" selection-start-column="13" selection-end-line="625" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/monitoring_online/CD120_D521.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/regress/Balance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="332" column="56" lean-forward="true" selection-start-line="300" selection-start-column="4" selection-end-line="332" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/check_online_autotest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/command.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1759">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="214" column="21" lean-forward="true" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/pathlib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="999" column="8" selection-start-line="999" selection-start-column="8" selection-end-line="999" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conftest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/regress/BottomEditButtons.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD120_D521.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
+    <entry file="file://$PROJECT_DIR$/fixture/Tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Online.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        <state relative-caret-position="340">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-end-line="21" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Registry.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_N1001_3A00_bwd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_N1001_3A00_bwd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/2123969204/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2582">
-          <caret line="957" column="11" selection-start-line="957" selection-start-column="11" selection-end-line="957" selection-end-column="11" />
+        <state relative-caret-position="206">
+          <caret line="991" column="6" selection-start-line="991" selection-start-column="6" selection-end-line="991" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/os.py">
+    <entry file="file://$PROJECT_DIR$/model/monitoring_archive/camera_CD120_D521.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="1073" column="23" lean-forward="true" selection-start-line="1073" selection-start-column="23" selection-end-line="1073" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/pathlib.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/PIL/_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="628" column="26" selection-start-line="628" selection-start-column="26" selection-end-line="628" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/monitoring/monitoring_autotest_camera_CD100_E75A_ms3_dev.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/authorization_autotest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/common/action_chains.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="81" column="19" lean-forward="true" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
+        <state relative-caret-position="170">
+          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/Application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/RMS.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="70" lean-forward="true" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+        <state relative-caret-position="646">
+          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/autotest_gui/balance_check.py">
+    <entry file="file://$PROJECT_DIR$/fixture/Camera_List.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="80" lean-forward="true" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+        <state relative-caret-position="1547">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/check_balance_autotest.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/py/_code/source.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="316">
+          <caret line="71" column="8" selection-start-line="71" selection-start-column="8" selection-end-line="72" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Error_codes.py">
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Schedule.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Tree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        <state relative-caret-position="756">
+          <caret line="142" column="49" selection-start-line="142" selection-start-column="49" selection-end-line="142" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fixture/monitoring/LineHours.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="343" column="31" selection-start-line="343" selection-start-column="31" selection-end-line="343" selection-end-column="31" />
+        <state relative-caret-position="184">
+          <caret line="433" column="48" lean-forward="true" selection-start-line="433" selection-start-column="48" selection-end-line="433" selection-end-column="48" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/monitoring report CD120_D521.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/fixture/monitoring/Monitoring.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        <state relative-caret-position="205">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Date_determination.py">
+    <entry file="file://$PROJECT_DIR$/test/monitoring_autotest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-start-column="2" selection-end-line="5" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_autotest.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fixture/Requests.py">
+    <entry file="file://$PROJECT_DIR$/test/monitoring error report CD120_D521.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="68" column="68" lean-forward="true" selection-start-line="68" selection-start-column="68" selection-end-line="68" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture/monitoring/Messages_for_the_report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
