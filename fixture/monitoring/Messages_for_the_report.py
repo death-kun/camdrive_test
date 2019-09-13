@@ -9,7 +9,7 @@ class Messages:
                 self.app.LineHours.hour) + ' не загрузился за 10 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Плеер ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Плеер ' + str(
                     self.app.LineHours.hour) + ' не загрузился за 10 секунд.\n')
             f.close()
 
@@ -18,7 +18,7 @@ class Messages:
             'Проверка, что открывается каждый контейнер с архивом за Вчерашний день. Проверка провалилась. Плеер '+ str(self.app.LineHours.hour) +' не отобразился за 15 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Плеер '+ str(self.app.LineHours.hour) +' не отобразился за 15 секунд.\n')
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Плеер '+ str(self.app.LineHours.hour) +' не отобразился за 15 секунд.\n')
             f.close()
 
     def video_did_not_load_in_15_seconds(self):
@@ -27,7 +27,7 @@ class Messages:
                 self.app.LineHours.hour) + ' не загрузилось за 15 секунд.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' не загрузилось за 15 секунд.\n')
             f.close()
 
@@ -38,7 +38,7 @@ class Messages:
                 self.app.Monitoring.archive_time) + ' минут.')
         with open('monitoring report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time) + ' минут.\n')
             f.close()
@@ -51,7 +51,7 @@ class Messages:
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a',
                   encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time) + ' минут. Отображается сервисное сообщение - Превышено максимальное допустимое количество одновременных подключений.\n')
             f.close()
@@ -63,7 +63,7 @@ class Messages:
                 self.app.Monitoring.archive_time) + ' минут. Запись по детекции движения.')
         with open('monitoring report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time) + ' минут. Запись по детекции движения.\n')
             f.close()
@@ -75,17 +75,17 @@ class Messages:
                 self.app.Monitoring.archive_time) + ' минут. !Длительность Архива меньше допустимой!')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
                     self.app.Monitoring.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
             f.close()
 
     def no_archive_for_the(self):
         print(
-            'Проверка для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива за ' + self.app.Date_determination.yesterday + ' число нет.')
+            'Проверка для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива за ' + self.app.DateDetermination.yesterday + ' число нет.')
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива за ' + self.app.Date_determination.yesterday + ' число нет.\n')
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива за ' + self.app.DateDetermination.yesterday + ' число нет.\n')
             f.close()
 
     def no_archive(self):
@@ -95,7 +95,7 @@ class Messages:
         with open('monitoring error report ' + self.app.Monitoring.camera_name + '.txt', 'a',
                   encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" WARNING: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
                     self.app.LineHours.hour) + ' нет.\n')
             f.close()
 
@@ -104,7 +104,7 @@ class Messages:
             self.app.LineHours.hour) + ' нет по расписанию.')
         with open('monitoring report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
                     self.app.LineHours.hour) + ' нет по расписанию.\n')
             f.close()
 
@@ -125,7 +125,7 @@ class Messages:
             self.app.LineHours.hour) + ' нет, т.к. не было никакого обнаружения движения.')
         with open('monitoring report ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write(
-                '"' + self.app.Date_determination.strg_today + '" INFO: Проверка за '+ self.app.Date_determination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Архива ' + str(
                     self.app.LineHours.hour) + ' нет, т.к. не было никакого обнаружения движения.\n')
             f.close()
 
