@@ -1,5 +1,5 @@
 
-class balance_LK:
+class BalanceLK:
 
     def __init__(self, app):
         self.app = app
@@ -11,7 +11,7 @@ class balance_LK:
         self.app.Authorization.open_home_page()
         self.app.Authorization.login_autotest()
         self.app.Balance.balance_gui()
-        self.app.Date_determination.find_yesterday()
+        self.app.DateDetermination.find_yesterday()
         if self.app.Balance.parsing_balance_attribute == self.app.Requests.parsing3:
             print('Проверка баланса прошла успешно. Баланс запросом совпадает с балансом, который отображается в ЛК')
             with open('check balance report.txt', 'a', encoding='utf-8') as f:

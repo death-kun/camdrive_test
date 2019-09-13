@@ -1,5 +1,5 @@
 
-class password_visibility:
+class PasswordVisibility:
 
     def __init__(self, app):
         self.app = app

@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 
-class invalid_password:
+class InvalidPassword:
 
     def __init__(self, app):
         self.app = app

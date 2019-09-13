@@ -1,6 +1,6 @@
 import time
 
-class checkbox:
+class Checkbox:
 
     def __init__(self, app):
         self.app = app

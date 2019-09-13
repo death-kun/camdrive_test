@@ -66,7 +66,7 @@ class ArchiveCheck:
         driver.find_element_by_xpath('//*[@id="archive_download"]/div/table/tbody/tr[1]/td[2]/img').click()
         WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, "//*[@id='ui-datepicker-div']/table/tbody")))
-        self.app.Monitoring.find_yesterday()
+        self.app.DateDetermination.find_yesterday()
         driver.find_element_by_xpath(
             '//*[@class="ui-state-default" and contains(text(), "' + self.app.Monitoring.yesterday + '")]').click()
 

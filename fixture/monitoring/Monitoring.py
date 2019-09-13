@@ -12,22 +12,22 @@ class Monitoring:
 
     def click_yesterday(self):
         driver = self.app.driver
-        self.app.Date_determination.find_yesterday()
+        self.app.DateDetermination.find_yesterday()
         time.sleep(4)
         try:
             #Если "сегодняшний день" равен 1, то проверяется сколько было дней в прошлом месяце и переключатся календарь на тот месяц и выбирается последний день
-            if self.app.Date_determination.present_day == 1:
-                self.app.Date_determination.find_previous_month()
+            if self.app.DateDetermination.present_day == 1:
+                self.app.DateDetermination.find_previous_month()
                 driver.find_element_by_xpath('//*[@id="calendar"]/table/tbody/tr[1]/th[1]').click()
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
-                                                                            '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.number_of_days + '")]')))
+                                                                            '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.number_of_days + '")]')))
                 driver.find_element_by_xpath(
-                    '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.number_of_days + '")]').click()
+                    '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.number_of_days + '")]').click()
             else:
-                WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]')))
-                driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.Date_determination.yesterday + '")]').click()
+                WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]')))
+                driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]').click()
         except:
-            self.app.Messages_for_the_report.no_archive_for_the()
+            self.app.MessagesForTheReport.no_archive_for_the()
             self.app.Authorization.logout_butten()
             self.app.destroy()
 
@@ -87,39 +87,39 @@ class Monitoring:
                     width_element = size_element['width']
                 if width_element == 0:
                     self.app.LineHours.getting_time()
-                    self.app.Messages_for_the_report.video_did_not_load_in_15_seconds()
+                    self.app.MessagesForTheReport.video_did_not_load_in_15_seconds()
                     driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()
                 else:
                     self.focus_element()
                     self.seek_total_time()
                     self.video_length_check()
             except TimeoutException:
-                self.app.Messages_for_the_report.Player_did_not_load_in_10_seconds()
+                self.app.MessagesForTheReport.Player_did_not_load_in_10_seconds()
         except TimeoutException:
             self.app.LineHours.getting_time()
-            self.app.Date_determination.find_yesterday()
-            self.app.Messages_for_the_report.player_did_not_appear_in_15_seconds()
+            self.app.DateDetermination.find_yesterday()
+            self.app.MessagesForTheReport.player_did_not_appear_in_15_seconds()
 
     def video_length_check(self):
         # Проверка длительности записи Архива
         driver = self.app.driver
         if str(self.archive_time) > '11:50':
             # self.app.Requests.request_test()
-            self.app.Messages_for_the_report.video_download_and_the_duration_is_correct()
+            self.app.MessagesForTheReport.video_download_and_the_duration_is_correct()
         else:
             if self.app.LineHours.digit_from_the_schedule_array == 2:
                 # self.app.Requests.request_test()
-                self.app.Messages_for_the_report.motion_recording()
+                self.app.MessagesForTheReport.motion_recording()
             else:
                 if str(self.archive_time) == '00:13':
                     # self.app.Requests.request_test()
                     self.screen_archive()
                     self.app.RMS.computation_rms()
                     if self.app.RMS.rms4 == 0.0:
-                        self.app.Messages_for_the_report.maximum_allowed_concurrent_connections_exceeded()
+                        self.app.MessagesForTheReport.maximum_allowed_concurrent_connections_exceeded()
                 else:
                     # self.app.Requests.request_test()
-                    self.app.Messages_for_the_report.archive_duration_is_shorter()
+                    self.app.MessagesForTheReport.archive_duration_is_shorter()
         WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, '//*[@id="screen"]/div[1]/div/div[1]/img')))
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[1]/img').click()

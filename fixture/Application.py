@@ -25,15 +25,15 @@ from fixture.Registry import Regedit
 from fixture.RMS import RMS
 from fixture.Delete_TXT_files import DeleteTxtFile
 #тесты
-from model.autotest_gui.download_archive import downloadarchive
-from model.autotest_gui.balance_check import balance_LK
-from model.autotest_gui.rename_camera import rename
-from model.autotest_gui.enter_with_invalid_login import invalid_login
-from model.autotest_gui.enter_with_invalid_password import invalid_password
-from model.autotest_gui.password_visibility_check import password_visibility
-from model.autotest_gui.login_check_with_valid_data import valid_data
-from model.autotest_gui.check_activity_checkbox import checkbox
-from model.autotest_gui.check_forgot_your_password_gui import forgot_your_password
+from model.autotest_gui.download_archive import DownloadArchive
+from model.autotest_gui.balance_check import BalanceLK
+from model.autotest_gui.rename_camera import RenameCamera
+from model.autotest_gui.enter_with_invalid_login import InvalidLogin
+from model.autotest_gui.enter_with_invalid_password import InvalidPassword
+from model.autotest_gui.password_visibility_check import PasswordVisibility
+from model.autotest_gui.login_check_with_valid_data import ValidData
+from model.autotest_gui.check_activity_checkbox import Checkbox
+from model.autotest_gui.check_forgot_your_password_gui import ForgotYourPassword
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
@@ -69,25 +69,25 @@ class Application:
         self.Monitoring = Monitoring(self)
         self.Schedule = Schedule(self)
         self.LineHours = Hours(self)
-        self.Camera_List = CameraList(self)
-        self.download_archive = downloadarchive(self)
+        self.CameraList = CameraList(self)
+        self.DownloadArchive = DownloadArchive(self)
         self.Balance = Balance(self)
-        self.balance_check = balance_LK(self)
+        self.BalanceCheck = BalanceLK(self)
         self.Online = CheckOnlune(self)
-        self.rename_camera = rename(self)
+        self.RenameCamera = RenameCamera(self)
         self.Requests = RequestsCamdrive(self)
-        self.enter_with_invalid_login = invalid_login(self)
-        self.enter_with_invalid_password = invalid_password(self)
-        self.password_visibility_check = password_visibility(self)
-        self.login_check_with_valid_data = valid_data(self)
-        self.check_activity_checkbox = checkbox(self)
-        self.check_forgot_your_password_gui = forgot_your_password(self)
+        self.EnterWithInvalidLogin = InvalidLogin(self)
+        self.EnterWithInvalidPassword = InvalidPassword(self)
+        self.PasswordVisibilityCheck = PasswordVisibility(self)
+        self.LoginCheckWithValidData = ValidData(self)
+        self.CheckActivityCheckbox = Checkbox(self)
+        self.CheckForgotYourPasswordGui = ForgotYourPassword(self)
         self.Tree = CameraTree(self)
         self.Registry = Regedit(self)
-        self.Date_determination = DateDetermination(self)
+        self.DateDetermination = DateDetermination(self)
         self.RMS = RMS(self)
-        self.Messages_for_the_report = Messages(self)
-        self.Delete_TXT_files = DeleteTxtFile(self)
+        self.MessagesForTheReport = Messages(self)
+        self.DeleteTxtFiles = DeleteTxtFile(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)

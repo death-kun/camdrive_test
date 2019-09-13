@@ -1,5 +1,5 @@
 
-class downloadarchive:
+class DownloadArchive:
 
     def __init__(self, app):
         self.app = app
@@ -8,7 +8,7 @@ class downloadarchive:
         self.app.Monitoring.delete_txt()
         self.app.Authorization.open_home_page()
         self.app.Authorization.login_autotest()
-        self.app.Camera_List.click_camera_CD_120()
+        self.app.CameraList.click_camera_CD_120()
         self.app.Archive.open_archive()
         # Проверка есть ли в папке Downloads файл с расширением avi и удаляет его
         self.app.Archive.delete_avi()

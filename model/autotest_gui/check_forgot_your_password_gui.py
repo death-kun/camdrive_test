@@ -1,5 +1,5 @@
 
-class forgot_your_password:
+class ForgotYourPassword:
 
     def __init__(self, app):
         self.app = app

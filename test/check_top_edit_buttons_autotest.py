@@ -1,5 +1,5 @@
-# def test_rename_camera(app):
-#     app.rename_camera.autotest()
+def test_rename_camera(app):
+    app.RenameCamera.autotest()
 #
 # def test_add_camera_player1(app):
 #

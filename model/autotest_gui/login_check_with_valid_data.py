@@ -1,5 +1,5 @@
 
-class valid_data:
+class ValidData:
 
     def __init__(self, app):
         self.app = app

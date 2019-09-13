@@ -444,11 +444,11 @@ class Hours:
         if "item empty " in self.archive_container.get_attribute('class'):
             item = 0
             if item == self.digit_from_the_schedule_array:
-                self.app.Messages_for_the_report.there_is_no_scheduled_archive()
+                self.app.MessagesForTheReport.there_is_no_scheduled_archive()
             elif self.digit_from_the_schedule_array == 2 and item == 0:
-                self.app.Messages_for_the_report.there_was_no_motion_detection()
+                self.app.MessagesForTheReport.there_was_no_motion_detection()
             else:
-                self.app.Messages_for_the_report.no_archive()
+                self.app.MessagesForTheReport.no_archive()
         else:
             self.archive_container.click()
             self.app.Monitoring.check_player()
@@ -457,7 +457,7 @@ class Hours:
         self.list_elements = driver.find_elements_by_xpath(
                 '//div[@id="time-intervals"]//td//div')
         self.len_list_elements = len(self.list_elements)
-        self.app.Messages_for_the_report.error_list_index_out_of_range(i)
+        self.app.MessagesForTheReport.error_list_index_out_of_range(i)
 
     def check_len_list_elements(self, driver):
         timeout = 0

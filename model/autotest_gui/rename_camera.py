@@ -1,4 +1,5 @@
-class rename:
+
+class RenameCamera:
 
     def __init__(self, app):
         self.app = app
@@ -18,3 +19,4 @@ class rename:
         else:
             print('Проверка, что изменилось имя камеры. Проверка провалилась. Камера не переименована')
             self.app.Authorization.logout_butten()
+
