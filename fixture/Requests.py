@@ -11,7 +11,7 @@ class RequestsCamdrive:
         DATA = {'controller':'online', 'config':'{"balance":true,"tree":true,"check_camera_public_payment":false,"cameras":false}'}
         URL = 'https://test.camdrive.org/state'
 
-        request_balance = self.create_session.post(url=URL, data=DATA, cookies=self.receive_cookies)  # Отправка запроса на получение баланса
+        request_balance = self.create_session.post(url=URL, data=DATA, cookies=self.receive_cookies_auth)  # Отправка запроса на получение баланса
         print(request_balance)
         print(request_balance.text)
         split_request_balance = request_balance.text.split('],')[1]
@@ -26,7 +26,7 @@ class RequestsCamdrive:
 
         self.create_session = requests.Session()  # Создание сеанс
         self.request_auth = self.create_session.post(URL, data=DATA)  # Авторизация запросом
-        self.receive_cookies = self.request_auth.cookies.get_dict()  # Получаем куки
+        self.receive_cookies_auth = self.request_auth.cookies.get_dict()  # Получаем куки
 
     def request_online(self):
 
@@ -38,11 +38,11 @@ class RequestsCamdrive:
 
         create_session = requests.Session()  # Создание сеанс
         request_auth = create_session.post(URL_1, data=DATA_AUTH)  # Авторизация запросом
-        self.receive_cookies = request_auth.cookies.get_dict()  # Получаем куки
-        print(self.receive_cookies)
+        self.receive_cookies_auth = request_auth.cookies.get_dict()  # Получаем куки
+        print(self.receive_cookies_auth)
 
-        request_video = create_session.post(url=URL_2, data=DATA, cookies=self.receive_cookies,
-                               headers={'Connection': 'close'})  # Отправка запроса на получение видео
+        request_video = create_session.post(url=URL_2, data=DATA, cookies=self.receive_cookies_auth,
+                                            headers={'Connection': 'close'})  # Отправка запроса на получение видео
         request_video2 = request_video.text
         create_session.close()
         print(request_video2)
@@ -55,15 +55,17 @@ class RequestsCamdrive:
     def request_call(self):
         PUSH_SERVER = "push-for-test.beward.ru"
         MAC = "186882304CDE"
-        SIP_ADDRESS = "8_872_363"
+        SIP_ADDRESS = "8_872_353"
         SIP_SERVER = "pbx.dev.ktotam.info"
         IP_ADDRESS = "192.168.28.159"
         LOGIN = "admin"
-        PASSWORD = "qweQWE123"
+        PASSWORD = "admin"
         create_session = requests.Session()
         push = create_session.get(url='https://'+ PUSH_SERVER +'/intercom/?mac='+ MAC +'&event=0&mode=0&sipaddr1='+ SIP_ADDRESS +'@'+ SIP_SERVER +'')
         call = create_session.get(url='http://'+ LOGIN +':'+ PASSWORD +'@'+ IP_ADDRESS +'/cgi-bin/sip_cgi?action=call&Uri='+ SIP_ADDRESS +'@'+ SIP_SERVER +'')
         create_session.close()
+        # print(push.headers)
+        print(call.headers)
 
     def request_setting(self):
         DATA_AUTH = {'username': 'autotest', 'password': 'autotest'}
