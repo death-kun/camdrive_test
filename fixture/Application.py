@@ -4,12 +4,12 @@ from sys import platform
 #для регреса
 from fixture.regress.Authorization import AuthorizationHelper
 from fixture.regress.OnlinePageTestSuite import onlineTestSuite
-from fixture.regress.Localization_RU import Local_RU
-from fixture.regress.Player import player_check
-from fixture.regress.Archive import archive_check
-from fixture.regress.TopEditButtons import top_edit_buttons
-from fixture.regress.BottomEditButtons import bottom_edit_buttons
-from fixture.regress.Balance import balance
+from fixture.regress.Localization_RU import LocalRU
+from fixture.regress.Player import PlayerCheck
+from fixture.regress.Archive import ArchiveCheck
+from fixture.regress.TopEditButtons import TopEditButtons
+from fixture.regress.BottomEditButtons import BottomEditButtons
+from fixture.regress.Balance import Balance
 #для мониторинга
 from fixture.monitoring.Monitoring import Monitoring
 from fixture.monitoring.Schedule import Schedule
@@ -61,17 +61,17 @@ class Application:
 
         self.Authorization = AuthorizationHelper(self)
         self.OnlinePageTestSuite = onlineTestSuite(self)
-        self.Localization_RU = Local_RU(self)
-        self.Player = player_check(self)
-        self.Archive = archive_check(self)
-        self.TopEditButtons = top_edit_buttons(self)
-        self.BottomEditButtons = bottom_edit_buttons(self)
+        self.Localization_RU = LocalRU(self)
+        self.Player = PlayerCheck(self)
+        self.Archive = ArchiveCheck(self)
+        self.TopEditButtons = TopEditButtons(self)
+        self.BottomEditButtons = BottomEditButtons(self)
         self.Monitoring = Monitoring(self)
         self.Schedule = Schedule(self)
         self.LineHours = Hours(self)
         self.Camera_List = CameraList(self)
         self.download_archive = downloadarchive(self)
-        self.Balance = balance(self)
+        self.Balance = Balance(self)
         self.balance_check = balance_LK(self)
         self.Online = CheckOnlune(self)
         self.rename_camera = rename(self)

@@ -1,7 +1,7 @@
 import time
 from selenium.common.exceptions import NoSuchElementException
 
-class player_check:
+class PlayerCheck:
     def __init__(self, app):
         self.app = app
 

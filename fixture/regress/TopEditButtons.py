@@ -1,7 +1,7 @@
 import time
 from selenium.webdriver.common.keys import Keys
 
-class top_edit_buttons:
+class TopEditButtons:
 
     def __init__(self, app):
         self.app = app

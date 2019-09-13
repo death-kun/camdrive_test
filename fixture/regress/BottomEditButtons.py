@@ -4,7 +4,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 
-class bottom_edit_buttons:
+class BottomEditButtons:
 
     def __init__(self, app):
         self.app = app

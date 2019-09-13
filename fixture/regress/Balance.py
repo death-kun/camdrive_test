@@ -1,5 +1,5 @@
 
-class balance:
+class Balance:
 
     def __init__(self, app):
         self.app = app

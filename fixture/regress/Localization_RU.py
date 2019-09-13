@@ -1,6 +1,6 @@
 import time
 
-class Local_RU:
+class LocalRU:
 
     def __init__(self, app):
         self.app = app
