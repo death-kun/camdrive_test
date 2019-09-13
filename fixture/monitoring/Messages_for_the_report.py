@@ -77,7 +77,7 @@ class Messages:
             f.write(
                 '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Monitoring.camera_name + '" выполнена. Видео ' + str(
                     self.app.LineHours.hour) + ' загрузилось. Длительность видео ' + str(
-                    self.app.Monitoring.archive_time) + ' минут. !Длительность Архива меньше допустимой!\n')
+                    self.app.Monitoring.archive_time) + ' минут. Длительность Архива меньше допустимой!\n')
             f.close()
 
     def no_archive_for_the(self):
@@ -133,4 +133,20 @@ class Messages:
         print('Проверка, что открывается каждый контейнер с архивом за Вчерашний день. При проверки расписания для камеры "' + self.app.Monitoring.camera_name + '" произошла обработка ошибки StaleElementReferenceException.')
         with open('выявление ошибки StaleElementReferenceException ' + self.app.Monitoring.camera_name + '.txt', 'a', encoding='utf-8') as f:
             f.write('Произошла обработка ошибки StaleElementReferenceException.\n')
+            f.close()
+
+    def download_the_desired_archive_file(self):
+        print('Скачался нужный файл.')
+        with open('download archive report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Скачался нужный файл архива. Скачался ' + str(
+                    self.app.Archive.avi_file) + '.\n')
+            f.close()
+
+    def wrong_archive_file_downloaded(self):
+        print("Скачался не тот файл.")
+        with open('download archive error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Скачался не тот файл архива. Скачался ' + str(
+                    self.app.Archive.avi_file) + '.\n')
             f.close()

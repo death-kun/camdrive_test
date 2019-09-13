@@ -14,9 +14,8 @@ class ArchiveCheck:
 
     def open_archive(self):
         driver = self.app.driver
-        driver.find_element_by_xpath('/html/body/div[1]/div[3]/table/tbody/tr/td[2]/a').click()
+        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
 
-#TODO :: Сделать Рефакторинг. Добавить создание отчета. Таймаут для ожидания скачивания файла заменить на проверку/ожидание
     def video_archive_fragment_download(self):
         driver = self.app.driver
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//*[@id='time-intervals']/table/tbody"))) #Ожидание отрисовки таблицы с контейнерами с архивом
@@ -68,42 +67,30 @@ class ArchiveCheck:
             EC.visibility_of_element_located((By.XPATH, "//*[@id='ui-datepicker-div']/table/tbody")))
         self.app.DateDetermination.find_yesterday()
         driver.find_element_by_xpath(
-            '//*[@class="ui-state-default" and contains(text(), "' + self.app.Monitoring.yesterday + '")]').click()
+            '//*[@class="ui-state-default" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]').click()
 
     def search_avi(self):
-        T = 0
-        while T != 1:
+        counter = 0
+        while counter != 1:
             PATH = os.path.expanduser('~\Downloads')
             filelist = glob.glob(os.path.join(PATH, "*.avi"))
-
             for f in filelist:
                 print(f)
-                avi = Path(f).name #Файл, который скачался
-                print('Файл, который скачался', avi) 
+                self.avi_file = Path(f).name #Файл, который скачался
+                print('Файл, который скачался', self.avi_file)
                 print('Проверка, что скачался видеофайл архива. Проверка прошла успешно. Файл скачался.')
-                T += 1
-                m_Y_element = self.app.Monitoring.now.strftime('%m_%Y')
-
-                if int(self.app.Monitoring.yesterday) < 10:
-                    camer_name = '' + self.app.Monitoring.camera_name.strip() + '_0' + self.app.Monitoring.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
-                    print('Файл, который мы ищем', camer_name)
+                counter += 1
+                m_Y_element = self.app.DateDetermination.now.strftime('%m_%Y') #Определяем месяц и год
+                if int(self.app.DateDetermination.yesterday) < 10:
+                    file_name = '' + self.app.Monitoring.camera_name.strip() + '_0' + self.app.DateDetermination.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
+                    print('Файл, который мы ищем', file_name)
                 else:
-                    camer_name = '' + self.app.Monitoring.camera_name.strip() + '_' + self.app.Monitoring.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
-                    print('Файл, который мы ищем', camer_name)
-
-                if camer_name == avi:
-                    print('Скачался нужный файл.')
-                    with open('download archive report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                            '"' + self.app.Monitoring.strg_today + '" "Проверка скачивания Архива" INFO: Проверка выполнена. Архив ' + str(avi) + ' скачался.\n')
-                        f.close()
+                    file_name = '' + self.app.Monitoring.camera_name.strip() + '_' + self.app.DateDetermination.yesterday + '_' + m_Y_element + '_' + self.attribute_time_timing + '.avi' #Файл, который мы ищем
+                    print('Файл, который мы ищем', file_name)
+                if file_name == self.avi_file:
+                    self.app.MessagesForTheReport.download_the_desired_archive_file()
                 else:
-                    print("Скачался не тот файл.")
-                    with open('download archive error report.txt', 'a', encoding='utf-8') as f:
-                        f.write(
-                            '"' + self.app.Monitoring.strg_today + '" "Проверка скачивания Архива" WARNING: Проверка выполнена. Архив ' + str(avi) + ' не скачался.\n')
-                        f.close()
-
+                    self.app.MessagesForTheReport.wrong_archive_file_downloaded()
 
     def delete_avi(self):
         PATH = os.path.expanduser('~/Downloads')

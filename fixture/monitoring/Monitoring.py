@@ -38,7 +38,7 @@ class Monitoring:
         try:
             WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div#schedule")))
             self.app.Schedule.yesterday_day_of_the_week()
-            driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[2]/a').click()
+            self.app.Archive.open_archive()
             self.click_yesterday()
         except TimeoutException:
             print('Не загрузилось расписание')
