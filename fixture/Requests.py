@@ -69,12 +69,18 @@ class RequestsCamdrive:
 
     def request_setting(self):
         DATA_AUTH = {'username': 'autotest', 'password': 'autotest'}
-        URL_1 = 'https://test.camdrive.org/'
+        URL_1 = 'https://test.camdrive.org'
+
+        DATA = {'action': 'save', 'type': 'current', 'channel_id': 'cd2aec6529925a5632118fb0974a4a97', 'timezone': 'UP7', 'password': '',
+                'password_confirm': '', 'mobile_audio': 0, 'device_audio_disabled': 0, 'lighting': 0, 'audio_input_gain': 28, 'frame_rate': 25,
+                'resolution': 640*480, 'indication': 1, 'bitrate_limit': 0}
+
+        DATA1 = {'action': 'content' , 'channel_id': 'cd2aec6529925a5632118fb0974a4a97', 'remember_tree': '{"node_id":"4184"}'}
 
         create_session = requests.Session()  # Создание сеанс
         request_auth = create_session.post(url=URL_1, data=DATA_AUTH)  # Авторизация запросом
         receive_cookies = request_auth.cookies.get_dict()  # Получаем куки
-        request_setting = create_session.post(url='https://test.camdrive.org/settings/other/action', cookies=receive_cookies, data={"action": "content", "channel_id": "dbe81e3bd23e8f6b697b9b234784cc39dbe81e3bd23e8f6b697b9b234784cc39"})
+        request_setting = create_session.post(url='https://test.camdrive.org/settings/other/action', cookies=receive_cookies, data=DATA1)
         create_session.close()
         print(request_setting.text)
 

@@ -1,3 +1,5 @@
+import pytest
+
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
@@ -29,7 +31,7 @@ class Monitoring:
         except:
             self.app.MessagesForTheReport.no_archive_for_the()
             self.app.Authorization.logout_butten()
-            self.app.destroy()
+            pytest.fail(msg='Архива за '+ self.app.DateDetermination.yesterday + ' число нет.', pytrace=False)
 
     def open_schedule_open_archive(self):
         driver = self.app.driver
