@@ -22,9 +22,9 @@ class Monitoring:
                 self.app.DateDetermination.find_previous_month()
                 driver.find_element_by_xpath('//*[@id="calendar"]/table/tbody/tr[1]/th[1]').click()
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH,
-                                                                            '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.number_of_days + '")]')))
+                                                                            '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]')))
                 driver.find_element_by_xpath(
-                    '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.number_of_days + '")]').click()
+                    '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]').click()
             else:
                 WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]')))
                 driver.find_element_by_xpath('//div[@class="item day" and contains(text(), "' + self.app.DateDetermination.yesterday + '")]').click()

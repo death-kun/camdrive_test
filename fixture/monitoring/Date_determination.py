@@ -14,5 +14,5 @@ class DateDetermination:
         today = datetime.date.today()
         first = today.replace(day=1)
         last_month = first - datetime.timedelta(days=1)
-        self.number_of_days = last_month.strftime('%d') #Определяем сколько дней в прошлем месяце
-        print(self.number_of_days)
+        self.yesterday = last_month.strftime('%d') #Определяем сколько дней в прошлем месяце
+        print(self.yesterday)

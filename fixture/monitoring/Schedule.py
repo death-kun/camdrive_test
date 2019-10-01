@@ -16,10 +16,12 @@ class Schedule:
         driver.find_element_by_xpath('//*[@id="subsections"]/table/tbody/tr/td[2]/a').click()
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.CLASS_NAME, 'jstree-open')))
         self.camera_name_shedule = self.app.Monitoring.camera_name
+        self.app.Monitoring.title_camera()
         if self.app.Monitoring.camera_name == self.camera_name_shedule:
             return True
         else:
-            print('!!!ОШИБКА СЕРВЕРА!!! Выбранная камера не совпадает с камерой для, которой проходит тест')
+            self.app.DateDetermination.find_yesterday()
+            self.app.MessagesForTheReport.wrong_camera_selected()
             url = driver.current_url
             if url != 'https://test.camdrive.org/settings/schedule':
                 self.app.Tree.check_second_tree()
@@ -27,8 +29,8 @@ class Schedule:
             else:
                 self.app.Tree.check_testing_gruop()
                 self.app.Tree.check_testing_gruop2()
-            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name + '")]')))
-            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name + '")]').click()
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.camera_name_shedule.strip() + '")]')))
+            driver.find_element_by_xpath('//a[@href="#" and contains(text(), "' + self.camera_name_shedule.strip() + '")]').click()
 
     def yesterday_day_of_the_week(self):
         now = datetime.datetime.today().weekday()
