@@ -27,7 +27,7 @@ from fixture.Delete_TXT_files import DeleteTxtFile
 #тесты
 from model.autotest_gui.download_archive import DownloadArchive
 from model.autotest_gui.balance_check import BalanceLK
-from model.autotest_gui.rename_camera import RenameCamera
+from model.autotest_gui.check_top_edit_buttons import CheckTopEditButtons
 from model.autotest_gui.enter_with_invalid_login import InvalidLogin
 from model.autotest_gui.enter_with_invalid_password import InvalidPassword
 from model.autotest_gui.password_visibility_check import PasswordVisibility
@@ -74,7 +74,7 @@ class Application:
         self.Balance = Balance(self)
         self.BalanceCheck = BalanceLK(self)
         self.Online = CheckOnlune(self)
-        self.RenameCamera = RenameCamera(self)
+        self.CheckTopEditButtons = CheckTopEditButtons(self)
         self.Requests = RequestsCamdrive(self)
         self.EnterWithInvalidLogin = InvalidLogin(self)
         self.EnterWithInvalidPassword = InvalidPassword(self)

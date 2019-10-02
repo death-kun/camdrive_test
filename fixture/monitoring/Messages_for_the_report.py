@@ -158,3 +158,59 @@ class Messages:
             f.write(
                 '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка за '+ self.app.DateDetermination.yesterday +' число для камеры "' + self.app.Schedule.camera_name_shedule + '" выполнена. При переходе на Расписание произошла ошибка сервера и была выбрана камера '+ self.app.Monitoring.camera_name +'.\n')
             f.close()
+
+    def player1_added(self):
+        print('Проверка добавления камеры в Плеер 1. Проверка прошла успешно. Добавлена камера в Плеер 1')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка добавления камеры в Плеер 1 прошла успешно. Добавлена камера в Плеер 1.\n')
+            f.close()
+
+    def player2_added(self):
+        print('Проверка добавления камеры в Плеер 2. Проверка прошла успешно. Добавлена камера в Плеер 2')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка добавления камеры в Плеер 2 прошла успешно. Добавлена камера в Плеер 2.\n')
+            f.close()
+
+    def player3_added(self):
+        print('Проверка добавления камеры в Плеер 3. Проверка прошла успешно. Добавлена камера в Плеер 3')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка добавления камеры в Плеер 1 прошла успешно. Добавлена камера в Плеер 1.\n')
+            f.close()
+
+    def player4_added(self):
+        print('Проверка добавления камеры в Плеер 4. Проверка прошла успешно. Добавлена камера в Плеер 4')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка добавления камеры в Плеер 4 прошла успешно. Добавлена камера в Плеер 4.\n')
+            f.close()
+
+    def no_player4_added(self):
+        print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 4')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка добавления камеры в Плеер 4 провалилась. Камера не добавлена в Плеер 4.\n')
+            f.close()
+
+    def no_player3_added(self):
+        print('Проверка добавления камеры в Плеер 3. Проверка провалилась. Камера не добавлена в Плеер 3')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка добавления камеры в Плеер 3 провалилась. Камера не добавлена в Плеер 3.\n')
+            f.close()
+
+    def no_player2_added(self):
+        print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 2')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка добавления камеры в Плеер 2 провалилась. Камера не добавлена в Плеер 2.\n')
+            f.close()
+
+    def no_player1_added(self):
+        print('Проверка добавления камеры в Плеер 4. Проверка провалилась. Камера не добавлена в Плеер 1')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка добавления камеры в Плеер 1 провалилась. Камера не добавлена в Плеер 1.\n')
+            f.close()
