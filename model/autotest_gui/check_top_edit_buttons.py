@@ -16,5 +16,5 @@ class CheckTopEditButtons:
         self.app.TopEditButtons.add_camera_player4()
         self.app.TopEditButtons.add_camera_button()
         self.app.TopEditButtons.camera_rename_button()
-        self.app.TopEditButtons.remove_camera_button()
+        self.app.TopEditButtons.camera_delete_button()
         self.app.Authorization.logout_butten()

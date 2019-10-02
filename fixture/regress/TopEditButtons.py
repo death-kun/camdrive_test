@@ -58,11 +58,11 @@ class TopEditButtons:
         if driver.find_element_by_xpath(
                 '//*[@id="body"]/div[1]').text == "Форма добавления камеры":
             driver.find_element_by_xpath('//*[@id="body"]/div[2]/div[3]/input[1]').click()
-            print('Проверка, что открылась Форма добавления камеры. Проверка прошла успешно. Открылась Форма добавления камеры')
+            self.app.MessagesForTheReport.camera_add_form_is_open()
         else:
-            print('Проверка, что открылась Форма добавления камеры. Проверка провалилась. Не открылась Форма добавления камеры')
+            self.app.MessagesForTheReport.camera_add_form_is_not_open()
 
-    def remove_camera_button(self):
+    def camera_delete_button(self):
         driver = self.app.driver
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//a[@href="#" and contains(text(), "' + self.app.Monitoring.camera_name.strip() + '")]')))
         driver.find_element_by_xpath('//*[@id="deactivation-device"]').click()
@@ -70,11 +70,9 @@ class TopEditButtons:
         WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="body"]/div[1]')))
         if driver.find_element_by_xpath(
                 '//*[@id="body"]/div[1]').text == "Форма удаления камеры":
-            print(
-                'Проверка, что открылась Форма удаления камеры. Проверка прошла успешно. Открылась Форма удаления камеры')
+            self.app.MessagesForTheReport.camera_delete_form_is_open()
         else:
-            print(
-                'Проверка, что открылась Форма удаления камеры. Проверка провалилась. Не открылась Форма удаления камеры')
+            self.app.MessagesForTheReport.camera_delete_form_is_not_open()
 
     def camera_rename_CD120_D521(self):
         driver = self.app.driver
@@ -98,8 +96,8 @@ class TopEditButtons:
         new_name_camera = driver.find_element_by_class_name('jstree-clicked').text
         # Проверка, что изменилось имя камеры
         if new_name_camera != old_name_camera:
-            print('Проверка, что изменилось имя камеры. Проверка прошла успешно. Камера переименована')
+            self.app.MessagesForTheReport.camera_renamed()
             if 'test_name' in new_name_camera:
                 self.app.TopEditButtons.camera_rename_CD120_D521()
         else:
-            print('Проверка, что изменилось имя камеры. Проверка провалилась. Камера не переименована')
+            self.app.MessagesForTheReport.camera_not_renamed()

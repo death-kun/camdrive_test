@@ -214,3 +214,45 @@ class Messages:
             f.write(
                 '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка добавления камеры в Плеер 1 провалилась. Камера не добавлена в Плеер 1.\n')
             f.close()
+
+    def camera_add_form_is_open(self):
+        print('Проверка, что открылась Форма добавления камеры. Проверка прошла успешно. Открылась Форма добавления камеры')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write('"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что открылась Форма добавления камеры прошла успешно. Открылась Форма добавления камеры.\n')
+            f.close()
+
+    def camera_add_form_is_not_open(self):
+        print('Проверка, что открылась Форма добавления камеры. Проверка провалилась. Форма добавления камеры не открылась')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write('"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что открылась Форма добавления камеры провалилась. Форма добавления камеры не открылась.\n')
+            f.close()
+
+    def camera_delete_form_is_open(self):
+        print(
+            'Проверка, что открылась Форма удалени камеры. Проверка прошла успешно. Открылась Форма удаления камеры')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что открылась Форма удаления камеры прошла успешно. Открылась Форма удаления камеры.\n')
+            f.close()
+
+    def camera_delete_form_is_not_open(self):
+        print(
+            'Проверка, что открылась Форма удаления камеры. Проверка провалилась. Форма удаления камеры не открылась')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что открылась Форма удаления камеры провалилась. Форма удаления камеры не открылась.\n')
+            f.close()
+
+    def camera_renamed(self):
+        print('Проверка, что изменилось имя камеры. Проверка прошла успешно. Камера переименована')
+        with open('top edit buttons report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что изменилось имя камеры прошла успешно. Камера переименована.\n')
+            f.close()
+
+    def camera_not_renamed(self):
+        print('Проверка, что изменилось имя камеры. Проверка прошла успешно. Камера переименована')
+        with open('top edit buttons error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что изменилось имя камеры провалилась. Камера не переименована.\n')
+            f.close()
