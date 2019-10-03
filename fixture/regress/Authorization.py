@@ -64,6 +64,21 @@ class AuthorizationHelper:
         except TimeoutException:
             self.app.MessagesForTheReport.correct_password_entered()
 
+    def blocking_account(self):
+        driver = self.app.driver
+        i = 0
+        while i < 5:
+            driver.find_element_by_xpath('//input[@name="username"]').clear()
+            driver.find_element_by_xpath('//input[@name="password"]').clear()
+            self.authorization_with_invalid_password()
+            i+=1
+        error_notification = driver.find_element_by_xpath('//*[@id="login-box"]/div[2]').text
+        self.login_autotest()
+        if 'Вход в личный кабинет заблокирован. Вы превысили максимальное количество попыток авторизации. Повторите через 15 мин.' in error_notification:
+            self.app.MessagesForTheReport.login_blocked()
+        else:
+            self.app.MessagesForTheReport.no_lock_occurred()
+
     def authorization_with_invalid_password(self):
         driver = self.app.driver
         driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')

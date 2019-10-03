@@ -12,3 +12,4 @@ class CheckAuthorization:
         self.app.Authorization.logout_butten()
         self.app.Authorization.login_with_incorrect_username()
         self.app.Authorization.login_with_incorrect_password()
+        self.app.Authorization.blocking_account()
