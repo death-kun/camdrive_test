@@ -28,12 +28,10 @@ from fixture.Delete_TXT_files import DeleteTxtFile
 from model.autotest_gui.download_archive import DownloadArchive
 from model.autotest_gui.balance_check import BalanceLK
 from model.autotest_gui.check_top_edit_buttons import CheckTopEditButtons
-from model.autotest_gui.enter_with_invalid_login import InvalidLogin
-from model.autotest_gui.enter_with_invalid_password import InvalidPassword
 from model.autotest_gui.password_visibility_check import PasswordVisibility
-from model.autotest_gui.login_check_with_valid_data import ValidData
 from model.autotest_gui.check_activity_checkbox import Checkbox
 from model.autotest_gui.check_forgot_your_password_gui import ForgotYourPassword
+from model.autotest_gui.check_authorization import CheckAuthorization
 #тестовые камеры
 from model.monitoring_archive.camera_CD120_D521 import CD120_D521
 from model.monitoring_archive.camera_CD_120 import CD_120
@@ -76,10 +74,8 @@ class Application:
         self.Online = CheckOnlune(self)
         self.CheckTopEditButtons = CheckTopEditButtons(self)
         self.Requests = RequestsCamdrive(self)
-        self.EnterWithInvalidLogin = InvalidLogin(self)
-        self.EnterWithInvalidPassword = InvalidPassword(self)
         self.PasswordVisibilityCheck = PasswordVisibility(self)
-        self.LoginCheckWithValidData = ValidData(self)
+        self.CheckAuthorization = CheckAuthorization(self)
         self.CheckActivityCheckbox = Checkbox(self)
         self.CheckForgotYourPasswordGui = ForgotYourPassword(self)
         self.Tree = CameraTree(self)

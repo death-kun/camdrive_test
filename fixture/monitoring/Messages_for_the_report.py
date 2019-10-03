@@ -256,3 +256,46 @@ class Messages:
             f.write(
                 '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что изменилось имя камеры провалилась. Камера не переименована.\n')
             f.close()
+
+    def authorization_was_successful(self):
+        print(
+            'Проверка того, что указан верный логин и пароль. Проверка прошла успешно. Логин и пароль введены корректно')
+        with open('authorization report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что после ввода корректного логина и пароля происходит авторизация прошла успешно. Открылся личный кабинет пользователя.\n')
+            f.close()
+
+    def authorization_failed(self):
+        print('Проверка того, что указан верный логин и пароль. Проверка провалилась. Данные введены некорректно')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что после ввода корректного логина и пароля происходит авторизация провалилась. Авторизация не произошла.\n')
+            f.close()
+
+    def incorrect_login_entered(self):
+        print('Проверка того, что указан не верный пароль. Проверка прошла успешно. Введен некорректный логин')
+        with open('authorization report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что после ввода не корректного логина не происходит авторизация прошла успешно. Отобразилась надпись "Ошибка идентификации".\n')
+            f.close()
+
+    def correct_login_entered(self):
+        print('Проверка того, что указан не верный пароль. Проверка провалилась. Введены корректные значения')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+            '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что после ввода не корректного логина не происходит авторизация провалилась. Сообщение "Ошибка идентификации" не появилось.\n')
+            f.close()
+
+    def incorrect_password_entered(self):
+        print('Проверка того, что указан не верный пароль. Проверка прошла успешно. Введен некорректный пароль')
+        with open('authorization report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что после ввода не корректного пароля не происходит авторизация прошла успешно. Отобразилась надпись "Ошибка идентификации".\n')
+            f.close()
+
+    def correct_password_entered(self):
+        print('Проверка того, что указан не верный пароль. Проверка провалилась. Введены корректные значения')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что после ввода не корректного пароля не происходит авторизация провалилась. Сообщение "Ошибка идентификации" не появилось.\n')
+            f.close()
