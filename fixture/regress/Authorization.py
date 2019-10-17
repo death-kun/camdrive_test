@@ -23,8 +23,12 @@ class AuthorizationHelper:
 
     def login_autotest(self):
         driver = self.app.driver
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
+        username = driver.find_element_by_xpath('//input[@name="username"]')
+        username.clear()
+        username.send_keys('autotest')
+        password = driver.find_element_by_xpath('//input[@name="password"]')
+        password.clear()
+        password.send_keys('autotest')
         driver.find_element_by_id('login').click()
 
     def site_opening(self):
@@ -81,14 +85,22 @@ class AuthorizationHelper:
 
     def authorization_with_invalid_password(self):
         driver = self.app.driver
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('autotest')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
+        username = driver.find_element_by_xpath('//input[@name="username"]')
+        username.clear()
+        username.send_keys('autotest')
+        password = driver.find_element_by_xpath('//input[@name="password"]')
+        password.clear()
+        password.send_keys('1')
         driver.find_element_by_id('login').click()
 
     def authorization_with_invalid_username(self):
         driver = self.app.driver
-        driver.find_element_by_xpath('//input[@name="username"]').send_keys('1')
-        driver.find_element_by_xpath('//input[@name="password"]').send_keys('autotest')
+        username = driver.find_element_by_xpath('//input[@name="username"]')
+        username.clear()
+        username.send_keys('1')
+        password = driver.find_element_by_xpath('//input[@name="password"]')
+        password.clear()
+        password.send_keys('autotest')
         driver.find_element_by_id('login').click()
 
     def password_visibility(self):

@@ -48,6 +48,7 @@ from model.monitoring_archive.camera_CD310_2E51_ms4_dev import CD310_2E51_ms4_de
 from model.monitoring_archive.camera_CD100_E772_ms4 import CD100_E772_ms4
 from model.monitoring_archive.camera_N1001_3A00_bwd import N1001_3A00_bwd
 
+from model.everyday_monitoring_camera_CD120_D521 import MonitoringCD120_D521
 
 class Application:
 
@@ -84,6 +85,8 @@ class Application:
         self.RMS = RMS(self)
         self.MessagesForTheReport = Messages(self)
         self.DeleteTxtFiles = DeleteTxtFile(self)
+
+        self.MonitoringCD120_D521 = MonitoringCD120_D521(self)
 
         #тестовые камеры
         self.camera_CD120_D521 = CD120_D521(self)
