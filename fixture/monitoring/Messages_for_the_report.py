@@ -313,3 +313,31 @@ class Messages:
             f.write(
                 '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что после ввода не корректного пароля не происходит авторизация провалилась. Сообщение "Вход в личный кабинет заблокирован." не появилось.\n')
             f.close()
+
+    def password_is_displayed(self):
+        print('Проверка, что при нажатии на "глаз" видно введенный пароль. Проверка прошла успешно. Пароль - 111')
+        with open('authorization report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка, что при нажатии на "глаз" видно введенный пароль прошла успешно. Введенный пароль отображается корректно.\n')
+            f.close()
+
+    def password_is_not_displayed(self):
+        print('Проверка, что при нажатии на "глаз" видно введенный пароль. Проверка провалилась. Пароль не видно')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+                f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка, что при нажатии на "глаз" видно введенный пароль провалилась. Введенный пароль не отображается.\n')
+                f.close()
+
+    def open_form_forgot_password(self):
+        print('Проверка перехода на форму "Забыли пароль?". Проверка прошла успешно. Открылась форма "Забыли пароль?".')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" INFO: Проверка перехода на форму "Забыли пароль?" прошла успешно. Открылась форма "Забыли пароль?".\n')
+            f.close()
+
+    def did_not_open_form_forgot_the_password(self):
+        print('Проверка перехода на форму "Забыли пароль?". Проверка провалилась. Форма "Забыли пароль?" не открылась.')
+        with open('authorization error report.txt', 'a', encoding='utf-8') as f:
+            f.write(
+                '"' + self.app.DateDetermination.strg_today + '" WARNING: Проверка перехода на форму "Забыли пароль?" провалилась. Не открылась форма "Забыли пароль?".\n')
+            f.close()

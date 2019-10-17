@@ -95,3 +95,16 @@ class AuthorizationHelper:
         driver = self.app.driver
         driver.find_element_by_xpath('//input[@name="password"]').send_keys('111')
         driver.find_element_by_xpath('//div[@id="login-box"]/form/table/tbody/tr[2]/td[2]/div/div').click()
+        if driver.find_element_by_xpath('//input[@name="password"]').get_attribute('value') == "111":
+            self.app.MessagesForTheReport.password_is_displayed()
+        else:
+            self.app.MessagesForTheReport.password_is_not_displayed()
+
+    def open_form_forgot_yout_password(self):
+        driver = self.app.driver
+        driver.find_element_by_link_text('Забыли пароль?').click()
+        # Проверка перехода на форму "Забыли пароль?"
+        if driver.find_element_by_css_selector('.info-title').text == "Восстановление пароля":
+            self.app.MessagesForTheReport.open_form_forgot_password()
+        else:
+            self.app.MessagesForTheReport.did_not_open_form_forgot_the_password()
