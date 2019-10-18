@@ -213,3 +213,6 @@ class Monitoring:
             print('Не загрузилось расписание')
             self.app.destroy()
 
+    def open_online(self):
+        driver = self.app.driver
+        driver.find_element_by_xpath('//*[@id="navigation"]/table/tbody/tr/td[1]/a').click()

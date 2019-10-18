@@ -12,6 +12,7 @@ class TopEditButtons:
 
     def add_camera_player1(self):
         driver = self.app.driver
+        # WebDriverWait(driver, 5).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="lpanel"]/div[1]')))
         driver.find_element_by_xpath('//*[@id="screen_1"]').click()
         #Проверка добавления камеры в Плеер 1
         try:
