@@ -15,7 +15,7 @@ class MonitoringCD120_D521:
         self.app.CameraList.click_camera_CD120_D521()
         self.app.Monitoring.getting_schedule()
         time.sleep(4)
-        self.app.Monitoring.definition_of_archive_time_period()
+        self.app.LineHours.monitoring_archive()
         self.app.Monitoring.open_online()
         time.sleep(1)
         self.app.TopEditButtons.add_camera_player1()

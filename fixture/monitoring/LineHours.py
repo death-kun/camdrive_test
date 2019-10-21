@@ -1,4 +1,5 @@
 import time
+import random
 
 class Hours:
 
@@ -468,3 +469,20 @@ class Hours:
             print(timeout, ' - счетчик таймаута.')
             timeout += 1
             print(self.len_list_elements, ' - длина списка контейнеров с архивом после ожидания.')
+
+    def monitoring_archive(self):
+        self.minutes = 0
+        driver = self.app.driver
+        id_xpath = int(self.app.DateDetermination.time_to_check) + 1
+        i = 0
+        while i < 2:
+            id_td = random.randint(2, 6)
+            self.archive_container = driver.find_element_by_xpath(
+                    '//*[@id="' + str(id_xpath) + '"]/td[' + str(id_td) + ']/div')
+            self.digit_from_the_schedule_array = self.app.Schedule.massiv[23]
+            item = driver.find_element_by_xpath('//*[@id="24"]/td[1]')
+            self.time_name = item.get_attribute('textContent')
+            self.time_column = self.time_name.partition(':')[0]  # Получаем первую часть времени
+            self.getting_time()
+            self.check_for_emptiness()
+            i += 1

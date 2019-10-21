@@ -1,5 +1,4 @@
 import pytest
-
 import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
@@ -147,57 +146,6 @@ class Monitoring:
         driver = self.app.driver
         driver.find_element_by_xpath('//*[@id="screen"]/div[1]/div/div[2]/div[2]').screenshot("1.png")  # делаем скриншот видеоплеера
         time.sleep(1)
-
-    def definition_of_archive_time_period(self):
-        #определяем за какое время смотреть архив
-        if int(self.app.DateDetermination.time_to_check) == 0:
-            self.app.LineHours.check_time_0()
-        elif int(self.app.DateDetermination.time_to_check) == 1:
-            self.app.LineHours.check_time_1()
-        elif int(self.app.DateDetermination.time_to_check) == 2:
-            self.app.LineHours.check_time_2()
-        elif int(self.app.DateDetermination.time_to_check) == 3:
-            self.app.LineHours.check_time_3()
-        elif int(self.app.DateDetermination.time_to_check) == 4:
-            self.app.LineHours.check_time_4()
-        elif int(self.app.DateDetermination.time_to_check) == 5:
-            self.app.LineHours.check_time_5()
-        elif int(self.app.DateDetermination.time_to_check) == 6:
-            self.app.LineHours.check_time_6()
-        elif int(self.app.DateDetermination.time_to_check) == 7:
-            self.app.LineHours.check_time_7()
-        elif int(self.app.DateDetermination.time_to_check) == 8:
-            self.app.LineHours.check_time_8()
-        elif int(self.app.DateDetermination.time_to_check) == 9:
-            self.app.LineHours.check_time_9()
-        elif int(self.app.DateDetermination.time_to_check) == 10:
-            self.app.LineHours.check_time_10()
-        elif int(self.app.DateDetermination.time_to_check) == 11:
-            self.app.LineHours.check_time_11()
-        elif int(self.app.DateDetermination.time_to_check) == 12:
-            self.app.LineHours.check_time_12()
-        elif int(self.app.DateDetermination.time_to_check) == 13:
-            self.app.LineHours.check_time_13()
-        elif int(self.app.DateDetermination.time_to_check) == 14:
-            self.app.LineHours.check_time_14()
-        elif int(self.app.DateDetermination.time_to_check) == 15:
-            self.app.LineHours.check_time_15()
-        elif int(self.app.DateDetermination.time_to_check) == 16:
-            self.app.LineHours.check_time_16()
-        elif int(self.app.DateDetermination.time_to_check) == 17:
-            self.app.LineHours.check_time_17()
-        elif int(self.app.DateDetermination.time_to_check) == 18:
-            self.app.LineHours.check_time_18()
-        elif int(self.app.DateDetermination.time_to_check) == 19:
-            self.app.LineHours.check_time_19()
-        elif int(self.app.DateDetermination.time_to_check) == 20:
-            self.app.LineHours.check_time_20()
-        elif int(self.app.DateDetermination.time_to_check) == 21:
-            self.app.LineHours.check_time_21()
-        elif int(self.app.DateDetermination.time_to_check) == 22:
-            self.app.LineHours.check_time_22()
-        elif int(self.app.DateDetermination.time_to_check) == 23:
-            self.app.LineHours.check_time_23()
 
     def getting_schedule(self):
         driver = self.app.driver
